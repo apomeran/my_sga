@@ -47,6 +47,7 @@ $this->menu=array(
 					echo "<td>" . date("Y - M - d D", strtotime($inasistencia->date_inasistencia)) . "</td>";
 					$total += $inasistencia->valor;
 					echo "<td>" .  $inasistencia->valor . "</td>";
+					echo "<td>" .  CHtml::link("Eliminar",array('faltaAlumno/Mydelete&id=' .$inasistencia->id .'&redirect_id=' . $model->id)) . "</td>";
 
 				echo "</tr>";
 				$j++;

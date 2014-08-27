@@ -32,7 +32,7 @@ class FaltaAlumnoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'createstep'),
+				'actions'=>array('create','update', 'createstep', 'Mydelete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -131,8 +131,14 @@ class FaltaAlumnoController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	public function actionMydelete($id ,$redirect_id){
+		$this->loadModel($id)->delete();
+		$this->redirect(array('FaltaAlumno/createstep', 'id'=>$redirect_id));
+	}
 	public function actionDelete($id)
 	{
+	
+		
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
