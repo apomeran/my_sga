@@ -32,7 +32,7 @@ class ApartadoMateriaNotaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'createstep', 'createstep2'),
+				'actions'=>array('create','update', 'createstep', 'createstep2', 'viewall', 'view_calificaciones' ,'view_calificaciones_materia'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -44,11 +44,55 @@ class ApartadoMateriaNotaController extends Controller
 			),
 		);
 	}
+	
+	public function actionViewall(){
+		$cursos = Curso::model()->findAll();
+		$this->render('view_all',array(
+			'cursos' => $cursos,
+		));
+	}
+	
+	public function actionView_calificaciones($id){
+
+		$curso_d = CursoMateria::model()->findAllByAttributes(array('curso'=>$id));
+		$materias = array();
+		foreach($curso_d as $curso){
+			$materias[] = $curso->materia0;
+		 }
+		$this->render('view_calificaciones',array(
+			'materias' => $materias,
+			'curso_id' => $id
+		));
+	}
+	
+	public function actionView_calificaciones_materia($id , $curso_id, $periodo = 1){
+
+		$alumnos = array();
+		$materia = Materia::model()->findByPk($id);
+		$curso = Curso::model()->findByPk($curso_id);
+		$alumnos_d = $curso->cursoAlumnos;
+		
+		foreach($alumnos_d as $alumno_d){
+			$alumnos[] = $alumno_d->alumno0;
+		 
+		 }
+		$this->render('view_calificaciones_materia',array(
+			'param1' => $id,
+			'param2' => $curso_id,
+			'materia' => $materia,
+			'alumnos'=> $alumnos,
+			'curso' => $curso,
+			'periodo' => $periodo
+		));
+	}
+
 
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+	 
+
 	public function actionView($id)
 	{
 		$this->render('view',array(

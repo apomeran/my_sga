@@ -49,7 +49,7 @@ class Materia extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'nivel' => array(self::BELONGS_TO, 'Nivel', 'nivelid'),
-			'temasMaterias' => array(self::HAS_MANY, 'TemasMateria', 'materiaid'),
+			'apartadosMaterias' => array(self::HAS_MANY, 'ApartadoMateria', 'materia'),
 		);
 	}
 	

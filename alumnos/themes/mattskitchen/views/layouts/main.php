@@ -38,7 +38,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Inscripcion', 'url'=>array('cursoAlumno/admin')),
 				array('label'=>'Calificar', 'url'=>array('apartadoMateriaNota/create')),
-				array('label'=>'Ver Calificaciones', 'url'=>array('notaMateria/view')),
+				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall')),
 				array('label'=>'Cargar Falta', 'url'=>array('faltaAlumno/create')),
 				array('label'=>'Ver Faltas', 'url'=>array('faltaAlumno/view')),
 				array('label'=>'Alumnos', 'url'=>array('alumnos/admin')),

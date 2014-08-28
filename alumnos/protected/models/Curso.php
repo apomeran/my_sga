@@ -59,6 +59,18 @@ class Curso extends CActiveRecord
 		);
 	}
 	
+	public function getPeriodoName(){
+	if	($this->nivelid == 1){ // JARDIN
+		    return "N/A";
+		}
+		if($this->nivelid == 2){ // PRIMARIA
+			return "Bimestre";
+		}
+		if($this->nivelid == 3){ // SECUNDARIO
+			return "Trimestre";
+		}
+	}
+	
 	public function getPeriodosCount(){
 	if	($this->nivelid == 1){ // JARDIN
 		    return -1;

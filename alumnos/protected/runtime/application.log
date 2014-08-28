@@ -5599,3 +5599,738 @@ Stack trace:
 REQUEST_URI=/my_sga/alumnos/index.php?r=faltaAlumno/Mydelete&id=4&redirect_id14
 HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=FaltaAlumno/createstep&id=14
 ---
+2014/08/28 19:37:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\my_sga\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(CursoAlumno))
+#7 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php(136): CActiveRecord->__construct('search')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): CursoAlumnoController->actionAdmin()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cursoAlumno/adm...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=cursoAlumno/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/login
+---
+2014/08/28 19:38:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "notaMateria/view".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('notaMateria/vie...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=notaMateria/view
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/create
+---
+2014/08/28 19:41:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "notaMateria/view".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('notaMateria/vie...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=notaMateria/view
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=notaMateria/view
+---
+2014/08/28 19:41:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:42:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:42:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('viewall')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:42:27 [error] [exception.CException] exception 'CException' with message 'ApartadoMateriaNotaController cannot find the requested view "view_all".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_all', NULL, true)
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): CController->render('view_all')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('viewall')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:42:45 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): ApartadoMateriaNotaController->render()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php (7)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (50)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 19:43:56 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): ApartadoMateriaNotaController->render()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php (7)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (50)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 19:44:25 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): ApartadoMateriaNotaController->render()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php (7)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (50)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 19:44:39 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php:12)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): ApartadoMateriaNotaController->render()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php (12)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (50)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 19:45:38 [error] [php] include(Cursos.php): failed to open stream: No such file or directory (C:\xampp\htdocs\my_sga\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php(15): spl_autoload_call()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): ApartadoMateriaNotaController->renderInternal()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#5 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): ApartadoMateriaNotaController->render()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php (15)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (50)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 19:48:13 [error] [exception.CException] exception 'CException' with message 'Property "Curso.fullname" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('fullname')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php(22): CActiveRecord->__get('fullname')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_all', NULL, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): CController->render('view_all')
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('viewall')
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#18 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:49:50 [error] [exception.CException] exception 'CException' with message 'Property "Curso.id" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_all.php(20): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_all', NULL, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(50): CController->render('view_all')
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): ApartadoMateriaNotaController->actionViewall()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('viewall')
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#18 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/08/28 19:53:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view_califications".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('view_calificati...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificati...')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_califications&id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+---
+2014/08/28 19:55:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificati...')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_califications&id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+---
+2014/08/28 19:55:50 [error] [exception.CException] exception 'CException' with message 'Property "ApartadoMateriaNota.nombre" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_califications.php(14): CActiveRecord->__get('nombre')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificati...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(57): CController->render('view_calificati...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_califications('4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificati...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_califications&id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+---
+2014/08/28 20:32:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/viewall
+---
+2014/08/28 20:34:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=1
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 20:35:07 [error] [php] Undefined variable: curso (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php:70)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=1
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (70)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 20:39:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=1
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 20:39:06 [error] [php] Undefined variable: Curso (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php:71)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (71)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 20:39:15 [error] [php] Undefined variable: curso (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(80): ApartadoMateriaNotaController->render()
+#3 unknown(0): ApartadoMateriaNotaController->actionView_calificaciones_materia()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php (20)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (80)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 20:45:32 [error] [php] include(apartado_materia.php): failed to open stream: No such file or directory (C:\xampp\htdocs\my_sga\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(182): model()
+#2 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel()
+#3 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct()
+#5 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(280): Materia->getActiveFinder()
+#6 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(143): Materia->getRelated()
+#7 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(71): Materia->__get()
+#8 unknown(0): ApartadoMateriaNotaController->actionView_calificaciones_materia()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#20 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (71)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 20:46:56 [error] [exception.CException] exception 'CException' with message 'Property "ApartadoMateria.nombre" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php(30): CActiveRecord->__get('nombre')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificaci...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): CController->render('view_calificaci...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_calificaciones_materia('5', '4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 20:47:28 [error] [exception.CException] exception 'CException' with message 'Property "Apartado.nombre" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php(30): CActiveRecord->__get('nombre')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificaci...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): CController->render('view_calificaci...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_calificaciones_materia('5', '4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 21:04:05 [error] [exception.CException] exception 'CException' with message 'Property "Alumnos.id" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php(45): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificaci...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): CController->render('view_calificaci...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_calificaciones_materia('5', '4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 21:04:16 [error] [exception.CException] exception 'CException' with message 'Property "Alumnos.id" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php(45): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificaci...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): CController->render('view_calificaci...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_calificaciones_materia('5', '4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 21:04:26 [error] [exception.CException] exception 'CException' with message 'Property "Alumnos.alumnoid" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('alumnoid')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php(45): CActiveRecord->__get('alumnoid')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view_calificaci...', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): CController->render('view_calificaci...', Array)
+#7 [internal function]: ApartadoMateriaNotaController->actionView_calificaciones_materia('5', '4')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones&id=4
+---
+2014/08/28 21:04:30 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php:48)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(83): ApartadoMateriaNotaController->render()
+#3 unknown(0): ApartadoMateriaNotaController->actionView_calificaciones_materia()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php (48)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (83)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 21:30:05 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(84): ApartadoMateriaNotaController->render()
+#3 unknown(0): ApartadoMateriaNotaController->actionView_calificaciones_materia()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php (31)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (84)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 21:30:37 [error] [php] Undefined variable: model (C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): ApartadoMateriaNotaController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): ApartadoMateriaNotaController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(84): ApartadoMateriaNotaController->render()
+#3 unknown(0): ApartadoMateriaNotaController->actionView_calificaciones_materia()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): ApartadoMateriaNotaController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): ApartadoMateriaNotaController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): ApartadoMateriaNotaController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): ApartadoMateriaNotaController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=5&curso_id=4
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\apartadoMateriaNota\view_calificaciones_materia.php (31)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (84)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/08/28 21:47:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php:233
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(154): ApartadoMateriaNotaController->loadModel('27')
+#1 [internal function]: ApartadoMateriaNotaController->actionCreatestep2('27', '4', '5')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('createstep2')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/createstep2&id=27&id_alumno=4&id_materia=5
+---
+2014/08/28 21:48:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php:233
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php(154): ApartadoMateriaNotaController->loadModel('27')
+#1 [internal function]: ApartadoMateriaNotaController->actionCreatestep2('27', '4', '5')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApartadoMateriaNotaController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApartadoMateriaNotaController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('createstep2')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/createstep2&id=27&id_alumno=4&id_materia=5
+---
