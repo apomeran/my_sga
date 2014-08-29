@@ -53,8 +53,8 @@ class Nivel extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idnivel' => 'Idnivel',
-			'nombre' => 'Nombre',
+			'idnivel' => 'Nivel - ID',
+			'nombre' => 'Nivel',
 		);
 	}
 

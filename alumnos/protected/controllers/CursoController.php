@@ -69,7 +69,10 @@ class CursoController extends Controller
 
 		if(isset($_POST['Curso']))
 		{
+		
+			
 			$model->attributes=$_POST['Curso'];
+			$model->titular = $_POST['Curso']['titular'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->cursoid));
 		}

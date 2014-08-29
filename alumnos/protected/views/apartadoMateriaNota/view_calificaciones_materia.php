@@ -28,10 +28,11 @@ $this->menu = array(
 
 <table style="width:600px; font-size:11px !important">
 <tr>
-<td> </td>
+<td></td>
 <td>Apellido y Nombre</td>
 <?php
   $k=0;
+  $ap_aux_array = array();
   foreach($materia->apartadosMaterias as $ap){
 	echo '<td>' . $ap->apartado0->titulo . '</td>';
 	$ap_aux_array[$k]  = $ap->id;
@@ -58,7 +59,8 @@ $this->menu = array(
 				}
 				echo '<td><b>' . $nota . '</b></td>';
 		}
-		echo '<td>' . CHtml::link("Calificar", array()) . '</td>';
+		if (count($ap_aux_array) > 0)
+		 echo '<td>' . CHtml::link("Calificar", array()) . '</td>';
 		echo "</tr>";
 		$j++;
 	}

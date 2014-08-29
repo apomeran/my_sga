@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ApartadoMateriaNota', 'url'=>array('index')),
-	array('label'=>'Create ApartadoMateriaNota', 'url'=>array('create')),
-	array('label'=>'Update ApartadoMateriaNota', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ApartadoMateriaNota', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ApartadoMateriaNota', 'url'=>array('admin')),
+	array('label'=>'Listar Notas', 'url'=>array('index')),
+	array('label'=>'Crear Nota', 'url'=>array('create')),
+	array('label'=>'Actualizar Nota', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Nota', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar ApartadoMateriaNota', 'url'=>array('admin')),
 );
 ?>
 
@@ -21,7 +21,6 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'id_apartado_materia',
 		'nota_conceptual',
 		'periodo',

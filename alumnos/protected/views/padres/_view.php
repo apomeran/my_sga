@@ -5,16 +5,8 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('idpadre')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->idpadre), array('view', 'id'=>$data->idpadre)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
-	<?php echo CHtml::encode($data->nombre); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('apellido')); ?>:</b>
-	<?php echo CHtml::encode($data->apellido); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre completo')); ?>:</b>
+	<?php echo CHtml::encode($data->fullname); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('observaciones')); ?>:</b>

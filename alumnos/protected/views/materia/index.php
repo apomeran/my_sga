@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Materia', 'url'=>array('create')),
-	array('label'=>'Manage Materia', 'url'=>array('admin')),
+	array('label'=>'Crear Materia', 'url'=>array('create')),
+	array('label'=>'Listar Materias', 'url'=>array('admin')),
 );
 ?>
 

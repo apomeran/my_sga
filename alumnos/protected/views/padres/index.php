@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Padres', 'url'=>array('create')),
-	array('label'=>'Manage Padres', 'url'=>array('admin')),
+	array('label'=>'Crear Padres', 'url'=>array('create')),
+	array('label'=>'Administrar Padres', 'url'=>array('admin')),
 );
 ?>
 

@@ -63,7 +63,7 @@ class Materia extends CActiveRecord
 			'nombre' => 'Nombre',
 			'descripcion' => 'Descripcion',
 			'nivelid' => 'Nivelid',
-			'ano_grado' => 'Ano Grado',
+			'ano_grado' => 'Año/Grado',
 		);
 	}
 

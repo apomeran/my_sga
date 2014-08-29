@@ -17,9 +17,26 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'alumno'); ?>
-		<?php echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAll(),'idalumno','fullname'));?>
+		<?php
+	
+			$this->widget('zii.widgets.jui.CJuiAutoComplete', array(
+			'model' => $model,
+			'attribute' => 'alumno',
+			'name'=>'customerid',
+			'value'=>'',
+			'source'=>$this->createUrl('ApartadoMateriaNota/autocomplete'),
+			// additional javascript options for the autocomplete plugin
+			'options'=>array(
+					'showAnim'=>'fold',
+					'minLength'=>'1',
+				),
+			));
+			
+			?>
 		<?php echo $form->error($model,'alumno'); ?>
 	</div>
 

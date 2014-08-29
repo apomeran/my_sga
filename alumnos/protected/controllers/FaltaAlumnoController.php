@@ -32,7 +32,7 @@ class FaltaAlumnoController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'createstep', 'Mydelete'),
+				'actions'=>array('create','update', 'createstep', 'Mydelete' , 'viewall' ,'view_faltas', 'View_faltas_materia'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -45,6 +45,26 @@ class FaltaAlumnoController extends Controller
 		);
 	}
 
+	public function actionViewall()
+	{
+		$cursos = Curso::model()->findAll();
+		$this->render('view_all',array(
+			'cursos' => $cursos,
+		));
+	}
+	
+	public function actionView_faltas($id){
+		$curso = Curso::model()->findByPk($id);
+		$alumnos = array();
+		$alumnos_d = $curso->cursoAlumnos;
+		foreach($alumnos_d as $alumno_d){
+			$alumnos[] = $alumno_d->alumno0;
+		}
+		$this->render('view_faltas',array(
+			'curso' => $curso,
+			'alumnos' => $alumnos,
+		));
+	}
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

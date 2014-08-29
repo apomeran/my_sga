@@ -40,16 +40,13 @@
 				array('label'=>'Calificar', 'url'=>array('apartadoMateriaNota/create')),
 				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall')),
 				array('label'=>'Cargar Falta', 'url'=>array('faltaAlumno/create')),
-				array('label'=>'Ver Faltas', 'url'=>array('faltaAlumno/view')),
+				array('label'=>'Ver Faltas', 'url'=>array('faltaAlumno/viewall')),
 				array('label'=>'Alumnos', 'url'=>array('alumnos/admin')),
 				array('label'=>'Padres', 'url'=>array('padres/admin')),
 				array('label'=>'Cursos', 'url'=>array('curso/admin')),
 				array('label'=>'Docentes', 'url'=>array('docentes/admin')),
-				array('label'=>'Materia', 'url'=>array('materia/admin')),
-				array('label'=>'Curso-Materia', 'url'=>array('cursomateria/admin')),
-			
-				array('label'=>'Niveles', 'url'=>array('nivel/admin')),
-				array('label'=>'Turnos', 'url'=>array('turnos/admin')),
+				array('label'=>'Materias', 'url'=>array('materia/admin')),
+				array('label'=>'Materias por Curso', 'url'=>array('cursomateria/admin')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
         );

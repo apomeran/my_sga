@@ -5,10 +5,7 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
 	<?php echo CHtml::encode($data->nombre); ?>
 	<br />
@@ -17,8 +14,8 @@
 	<?php echo CHtml::encode($data->descripcion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nivelid')); ?>:</b>
-	<?php echo CHtml::encode($data->nivelid); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nivel')); ?>:</b>
+	<?php echo CHtml::encode($data->nivel->nombre); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ano_grado')); ?>:</b>

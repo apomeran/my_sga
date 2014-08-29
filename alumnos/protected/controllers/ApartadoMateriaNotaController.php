@@ -32,7 +32,7 @@ class ApartadoMateriaNotaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'createstep', 'createstep2', 'viewall', 'view_calificaciones' ,'view_calificaciones_materia'),
+				'actions'=>array('create','update', 'createstep', 'createstep2', 'viewall', 'view_calificaciones' ,'view_calificaciones_materia', 'autocomplete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -244,6 +244,33 @@ class ApartadoMateriaNotaController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+	
+	public function actionAutocomplete(){
+	
+		if (isset($_GET['term'])) {
+		
+				$criteria=new CDbCriteria;
+				$criteria->alias = "alumnos";
+				$term = $_GET['term'];
+				$criteria->condition = "alumnos.nombre like '$term%' OR alumnos.apellido like '$term%' OR alumnos.codigoalumno like '$term%'";
+			 
+				$dataProvider = new CActiveDataProvider(get_class(Alumnos::model()), array(
+					'criteria'=>$criteria,'pagination'=>false,
+				));
+				$alumnos = $dataProvider->getData();
+			 
+				$return_array = array();
+				foreach($alumnos as $alumno) {
+				  $return_array[] = array(
+								'label'=>$alumno->fullname,
+								'value'=>$alumno->idalumno,
+								'id'=>$alumno->idalumno,
+								);
+				}
+			 
+				echo CJSON::encode($return_array);
 		}
 	}
 }

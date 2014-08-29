@@ -5,39 +5,25 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('idalumno')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->idalumno), array('view', 'id'=>$data->idalumno)); ?>
-	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre')); ?>:</b>
-	<?php echo CHtml::encode($data->nombre); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre completo')); ?>:</b>
+	<?php echo CHtml::encode($data->fullname); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('apellido')); ?>:</b>
-	<?php echo CHtml::encode($data->apellido); ?>
-	<br />
-
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dni')); ?>:</b>
 	<?php echo CHtml::encode($data->dni); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cursoactualid')); ?>:</b>
-	<?php echo CHtml::encode($data->cursoactualid); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('curso actual')); ?>:</b>
+	<?php echo CHtml::encode($data->cursoactual->nombre); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('codigoalumno')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('codigo alumno')); ?>:</b>
 	<?php echo CHtml::encode($data->codigoalumno); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('padreid')); ?>:</b>
-	<?php echo CHtml::encode($data->padreid); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Padre')); ?>:</b>
+	<?php echo CHtml::encode($data->padre->fullname); ?>
 	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('madreid')); ?>:</b>
-	<?php echo CHtml::encode($data->madreid); ?>
-	<br />
-
-	*/ ?>
 
 </div>

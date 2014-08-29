@@ -33,7 +33,7 @@ $this->menu=array(
 <b><?php
 
 	if (count($inasistencias) == 0 ){
-		echo "El alumno <i>" . $alumno->nombre . " " . $alumno->apellido . "</i> no presenta inasistencias al dia de hoy";
+		echo "El alumno <i>" . $alumno->nombre . " " . $alumno->apellido . "</i> no presenta inasistencias al dia de hoy <br><br>";
 	}
 	?><table>
 	<?php 
