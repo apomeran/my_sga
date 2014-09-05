@@ -24,6 +24,13 @@ $this->menu=array(
 		'nombre',
 		'descripcion',
 		'nivel.nombre',
-		'ano_grado',
 	),
 )); ?>
+<br>
+<br>
+<h3>Apartados</h3>
+<?php foreach ($apartados as $ap) {
+	echo '<li>' . $ap->apartado0->titulo . '</li>';
+}
+?>
+

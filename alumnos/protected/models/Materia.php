@@ -8,114 +8,106 @@
  * @property string $nombre
  * @property string $descripcion
  * @property integer $nivelid
- * @property string $ano_grado
  *
  * The followings are the available model relations:
  * @property Nivel $nivel
  * @property TemasMateria[] $temasMaterias
  */
-class Materia extends CActiveRecord
-{
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'materia';
-	}
+class Materia extends CActiveRecord {
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('nombre, descripcion, nivelid, ano_grado', 'required'),
-			array('nivelid', 'numerical', 'integerOnly'=>true),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, descripcion, nivelid, ano_grado', 'safe', 'on'=>'search'),
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'materia';
+    }
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'nivel' => array(self::BELONGS_TO, 'Nivel', 'nivelid'),
-			'apartadosMaterias' => array(self::HAS_MANY, 'ApartadoMateria', 'materia'),
-		);
-	}
-	
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'nombre' => 'Nombre',
-			'descripcion' => 'Descripcion',
-			'nivelid' => 'Nivelid',
-			'ano_grado' => 'Año/Grado',
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('nombre, nivelid', 'required'),
+            array('nivelid', 'numerical', 'integerOnly' => true),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('id, nombre, descripcion, nivelid', 'safe', 'on' => 'search'),
+        );
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	 
-	public function getPeriodosCount(){
-	if	($this->nivelid == 1){ // JARDIN
-		    return -1;
-		}
-		if($this->nivelid == 2){ // PRIMARIA
-			return 4;
-		}
-		if($this->nivelid == 3){ // SECUNDARIO
-			return 3;
-		}
-	}
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'nivel' => array(self::BELONGS_TO, 'Nivel', 'nivelid'),
+            'apartadosMaterias' => array(self::HAS_MANY, 'ApartadoMateria', 'materia'),
+        );
+    }
 
-		$criteria=new CDbCriteria;
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'id' => 'ID',
+            'nombre' => 'Nombre',
+            'descripcion' => 'Descripcion',
+            'nivelid' => 'Nivelid',
+        );
+    }
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('nivelid',$this->nivelid);
-		$criteria->compare('ano_grado',$this->ano_grado,true);
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function getPeriodosCount() {
+        if ($this->nivelid == 1) { // JARDIN
+            return -1;
+        }
+        if ($this->nivelid == 2) { // PRIMARIA
+            return 4;
+        }
+        if ($this->nivelid == 3) { // SECUNDARIO
+            return 3;
+        }
+    }
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+    public function search() {
+        // @todo Please modify the following code to remove attributes that should not be searched.
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return Materia the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+        $criteria = new CDbCriteria;
+
+        $criteria->compare('id', $this->id);
+        $criteria->compare('nombre', $this->nombre, true);
+        $criteria->compare('descripcion', $this->descripcion, true);
+        $criteria->compare('nivelid', $this->nivelid);
+
+        return new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Materia the static model class
+     */
+    public static function model($className = __CLASS__) {
+        return parent::model($className);
+    }
+
 }

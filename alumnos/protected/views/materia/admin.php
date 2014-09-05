@@ -48,7 +48,6 @@ o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar 
 		'nombre',
 		'descripcion',
 		'nivel.nombre',
-		'ano_grado',
 		array(
 			'class'=>'CButtonColumn',
 		),

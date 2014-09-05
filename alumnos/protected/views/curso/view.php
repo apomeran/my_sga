@@ -24,3 +24,11 @@ $this->menu=array(
 		'nombre',
 	),
 )); ?>
+<br>
+<br>
+<h3>Materias</h3>
+<?php foreach ($materias as $m) {
+	echo '<li>' . $m->materia0->nombre . '</li>';
+}
+?>
+

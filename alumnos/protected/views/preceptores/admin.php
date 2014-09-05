@@ -45,9 +45,8 @@ o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar 
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'idpreceptor',
-		'nombre',
-		'apellido',
+		'curso0.nombre',
+		'usuario0.username',
 		array(
 			'class'=>'CButtonColumn',
 		),

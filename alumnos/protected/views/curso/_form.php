@@ -27,7 +27,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'titular'); ?>
-		<?php echo $form->dropDownList($model,'titular',CHtml::listData(Docentes::model()->findAll(),'id','nombre'));?>
+		<?php echo $form->dropDownList($model,'titular',CHtml::listData(Docentes::model()->findAll(),'id','fullname'));?>
 		<?php echo $form->error($model,'titular'); ?>
 	</div>
 	
@@ -44,9 +44,9 @@
 	</div>
 
 		<div class="row">
-		<?php echo $form->labelEx($model,'turnoid'); ?>
+		<?php echo $form->labelEx($model,'Turno'); ?>
 		<?php echo $form->dropDownList($model,'turnoid',CHtml::listData(Turnos::model()->findAll(),'idturno','nombre'));?>
-		<?php echo $form->error($model,'turnoid'); ?>
+		<?php echo $form->error($model,'Turno'); ?>
 	</div>
 
 	<div class="row">

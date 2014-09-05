@@ -37,11 +37,7 @@
 		<?php echo $form->error($model,'nivelid'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ano_grado'); ?>
-		<?php echo $form->textArea($model,'ano_grado',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'ano_grado'); ?>
-	</div>
+	
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

@@ -16,7 +16,6 @@ $this->menu=array(
 <?php $curso = Curso::model()->findByPk($alumno->cursoactualid)?>
 <?php $nivel = Nivel::model()->findByPk($curso->nivelid)?>
 <?php $materia = Materia::model()->findByPk($id_materia)?>
-<?php $materias = CursoMateria::model()->findAllByAttributes(array('curso'=>$alumno->cursoactualid));?>
 <?php $apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia));?>
 <?php $notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_conceptual != 0 AND id_apartado_materia != 0');?>
 <h1>Calificar Alumno - <small><?php echo $alumno->fullname?></small></h1>

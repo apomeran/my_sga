@@ -20,21 +20,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'idpreceptor'); ?>
-		<?php echo $form->textField($model,'idpreceptor'); ?>
-		<?php echo $form->error($model,'idpreceptor'); ?>
+		<?php echo $form->labelEx($model,'curso'); ?>
+		<?php echo $form->dropDownList($model,'curso',CHtml::listData(Curso::model()->findAll(),'cursoid','nombre'));?>
+		<?php echo $form->error($model,'curso'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'nombre'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'apellido'); ?>
-		<?php echo $form->textField($model,'apellido',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'apellido'); ?>
+		<?php echo $form->labelEx($model,'usuario'); ?>
+		<?php echo $form->dropDownList($model,'usuario',CHtml::listData(User::model()->findAllByAttributes(array(),"rol != 2"),'id','username'));?>		
+		<?php echo $form->error($model,'usuario'); ?>
 	</div>
 
 	<div class="row buttons">

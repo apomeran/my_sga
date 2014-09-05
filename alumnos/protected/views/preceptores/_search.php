@@ -12,18 +12,18 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'idpreceptor'); ?>
-		<?php echo $form->textField($model,'idpreceptor'); ?>
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'curso'); ?>
+		<?php echo $form->textField($model,'curso'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'apellido'); ?>
-		<?php echo $form->textField($model,'apellido',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'usuario'); ?>
+		<?php echo $form->textField($model,'usuario'); ?>
 	</div>
 
 	<div class="row buttons">

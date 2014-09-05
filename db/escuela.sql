@@ -295,7 +295,6 @@ CREATE TABLE IF NOT EXISTS `materia` (
   `nombre` text NOT NULL,
   `descripcion` text NOT NULL,
   `nivelid` int(11) NOT NULL,
-  `ano_grado` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nivelid` (`nivelid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
@@ -304,12 +303,6 @@ CREATE TABLE IF NOT EXISTS `materia` (
 -- Volcado de datos para la tabla `materia`
 --
 
-INSERT INTO `materia` (`id`, `nombre`, `descripcion`, `nivelid`, `ano_grado`) VALUES
-(1, 'Formacion General I', 'Materia de Grado', 2, '1'),
-(2, 'Ciencias Sociales', 'Ciencias Sociales', 2, '1'),
-(3, 'Ciencias Naturales', 'Ciencias Naturales', 2, '1'),
-(4, 'Ciencias Naturales II', 'Ciencias Naturales II', 2, '2'),
-(5, 'Ingles', 'Ingles', 2, '1');
 
 -- --------------------------------------------------------
 

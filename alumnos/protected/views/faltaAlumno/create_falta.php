@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 <?php $alumno = Alumnos::model()->findByPk($model->alumno)?>
-<?php $curso = Curso::model()->findByPk($alumno->cursoactualid)?>
+<?php $curso = $alumno->cursoactual; ?>
 <?php $materias = CursoMateria::model()->findAllByAttributes(array('curso'=>$alumno->cursoactualid));?>
 <?php $inasistencias = FaltaAlumno::model()->findAllByAttributes(array('alumno'=>$model->alumno), "curso = " . $alumno->cursoactualid . " AND valor != 0) ORDER BY (date_inasistencia");?>
 <h1>Inasistencias Alumno - <small><?php echo $alumno->fullname?></small></h1>

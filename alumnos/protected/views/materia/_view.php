@@ -17,10 +17,17 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nivel')); ?>:</b>
 	<?php echo CHtml::encode($data->nivel->nombre); ?>
 	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ano_grado')); ?>:</b>
-	<?php echo CHtml::encode($data->ano_grado); ?>
+	<br>
+	
+	<b><?php 
+    echo CHtml::encode($data->getAttributeLabel('Apartados')); ?>:</b>
+	<?php foreach ($data->apartadosMaterias as $ap) {
+	echo '<li>' . $ap->apartado0->titulo . '</li>';
+	}
+	?>
 	<br />
+
+
 
 
 </div>

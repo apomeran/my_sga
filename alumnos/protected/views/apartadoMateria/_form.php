@@ -21,13 +21,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'materia'); ?>
-		<?php echo $form->textField($model,'materia'); ?>
+		<?php echo $form->dropDownList($model,'materia',CHtml::listData(Materia::model()->findAll(),'id','nombre'));?>
 		<?php echo $form->error($model,'materia'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'apartado'); ?>
-		<?php echo $form->textField($model,'apartado'); ?>
+		<?php echo $form->dropDownList($model,'apartado',CHtml::listData(Apartado::model()->findAll(),'id','titulo'));?>
 		<?php echo $form->error($model,'apartado'); ?>
 	</div>
 

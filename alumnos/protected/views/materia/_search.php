@@ -31,11 +31,7 @@
 		<?php echo $form->textField($model,'nivelid'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'ano_grado'); ?>
-		<?php echo $form->textArea($model,'ano_grado',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
