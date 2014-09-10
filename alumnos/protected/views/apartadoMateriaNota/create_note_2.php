@@ -27,7 +27,6 @@ $this->menu=array(
      $j = 0;
 	 $periodos_count = array();
 	 foreach($apartados as $apartado){
-		
 		if ($j != 0){
 				echo "<tr>";
 		}
@@ -35,19 +34,16 @@ $this->menu=array(
 		if ($title->id == 9) //Calificacion final
 			$title->titulo = '<b>' . $title->titulo . '</b>';
 		echo "<td>" . $title->titulo . "</td>";
-		
 		for($i=0; $i < $materia->getPeriodosCount(); $i++){
 			
 			$periodos_count[$i+1] = $i+1 ."º Periodo";
 			$nota_value = " - ";
 			foreach($notas as $nota){
 				 if($nota->idApartadoMateria->id == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
-					if ($curso->nivelid == 2){
-				 		 $nota_value = $nota->notaConceptual->codigo;
-					}
-					if ($curso->nivelid == 3){
-				 		 $nota_value = $nota->nota_numerica;
-					}
+					if ($curso->nivelid == 2)
+					 $nota_value = $nota->notaConceptual->codigo;
+					if ($curso->nivelid == 3)
+					 $nota_value = $nota->nota_numerica; 
 				 }
 			}
 			echo "<td>" . $nota_value . "</td>";
@@ -97,7 +93,12 @@ $this->menu=array(
 		 }
 		 if ($curso->nivelid == 3){
 			 echo $form->labelEx($model,'nota_numerica'); 
-			 echo $form->textField($model,'nota_numerica');
+			$this->widget('CMaskedTextField', array(
+			'model' => $model,
+			'attribute' => 'nota_numerica',
+			'mask' => '9,99',
+			'htmlOptions' => array('size' => 3)
+			));
 			 echo $form->error($model,'nota_numerica'); 
 		 }
 		 ?>

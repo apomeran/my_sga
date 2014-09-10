@@ -159,8 +159,15 @@ class ApartadoMateriaNotaController extends Controller {
             if (isset($_POST['ApartadoMateriaNota'])) {
                 $model = $this->loadModel($id);
                 // $alumno_id = $model->alumno;
-
+				$n_numerica = null;
+				if (isset($_POST['ApartadoMateriaNota']['nota_numerica'])){
+					$n_numerica = $_POST['ApartadoMateriaNota']['nota_numerica'];
+					$n_numerica = str_replace(",",".", $n_numerica);
+					$n_numerica *= 1.0;
+				}
                 $model->attributes = $_POST['ApartadoMateriaNota'];
+				if (isset($n_numerica))
+				 $model->nota_numerica = $n_numerica;
                 if ($model->save()) {
                     $model = new ApartadoMateriaNota('insert');
                     $model->alumno = $id_alumno;
@@ -170,6 +177,7 @@ class ApartadoMateriaNotaController extends Controller {
                     $this->redirect(array('apartadoMateriaNota/createstep2', 'id' => $model->id, 'id_alumno' => $id_alumno, 'id_materia' => $id_materia));
                 }
             }
+
 			$model = $this->loadModel($id);
 			$alumno = Alumnos::model()->findByPk($model->alumno);
 			$curso = Curso::model()->findByPk($alumno->cursoactualid);
@@ -177,19 +185,19 @@ class ApartadoMateriaNotaController extends Controller {
 			$materia = Materia::model()->findByPk($id_materia);
 			$apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia));
 			if ($curso->nivelid == 2)
-				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_conceptual != 0 AND id_apartado_materia != 0');	
+				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno),'nota_conceptual != 0 AND id_apartado_materia != 0');
 			if ($curso->nivelid == 3)
-				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_numerica != -1 AND id_apartado_materia != 0');
+				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno),'nota_numerica != -1 AND id_apartado_materia != 0');
             $this->render('create_note_2', array(
-                'model' => $model, 
+                'model' => $model,
+				'id_alumno' => $id_alumno,
+				'id_materia' => $id_materia,
 				'alumno' => $alumno,
-				'curso' => $curso, 
+				'curso' => $curso,
 				'nivel' => $nivel,
 				'materia' => $materia,
 				'apartados' => $apartados,
 				'notas' => $notas,
-				'id_alumno' => $id_alumno, 
-				'id_materia' => $id_materia,
             ));
         } else {
             $this->render('forbidden', array(
