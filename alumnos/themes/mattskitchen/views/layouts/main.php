@@ -42,7 +42,7 @@
 				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
 				array('label'=>'Cargar Falta', 'url'=>array('faltaAlumno/create'), 'visible'=>Yii::app()->user->isPreceptor()),
 				array('label'=>'Ver Faltas', 'url'=>array('faltaAlumno/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Cargar Previas', 'url'=>array('alumnoMateriaPrevia/index'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Cargar Previas', 'url'=>array('alumnoMateriaPrevia/create'), 'visible'=>Yii::app()->user->isPreceptor()),
 				array('label'=>'Alumnos', 'url'=>array('alumnos/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Padres', 'url'=>array('padres/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Cursos', 'url'=>array('curso/admin'), 'visible'=>Yii::app()->user->isAdmin()),

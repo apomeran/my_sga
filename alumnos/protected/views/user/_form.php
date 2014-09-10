@@ -37,12 +37,6 @@
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'rol'); ?>
-		<?php echo $form->dropDownList($model,'rol',CHtml::listData(Roles::model()->findAll(),'id','nombre'));?>
-		<?php echo $form->error($model,'rol'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

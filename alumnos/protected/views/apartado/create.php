@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Apartados'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Apartado', 'url'=>array('index')),
-	array('label'=>'Manage Apartado', 'url'=>array('admin')),
+	array('label'=>'Listar Apartados', 'url'=>array('index')),
+	array('label'=>'Administrar Apartados', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Apartado</h1>
+<h1>Crear Apartado</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

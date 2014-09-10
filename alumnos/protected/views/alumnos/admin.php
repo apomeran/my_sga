@@ -3,13 +3,13 @@
 /* @var $model Alumnos */
 
 $this->breadcrumbs=array(
-	'Alumnoses'=>array('index'),
-	'Manage',
+	'Alumnos'=>array('index'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List Alumnos', 'url'=>array('index')),
-	array('label'=>'Create Alumnos', 'url'=>array('create')),
+	array('label'=>'Listar Alumnos', 'url'=>array('index')),
+	array('label'=>'Crear Alumnos', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

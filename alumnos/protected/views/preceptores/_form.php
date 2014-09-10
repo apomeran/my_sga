@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usuario'); ?>
-		<?php echo $form->dropDownList($model,'usuario',CHtml::listData(User::model()->findAllByAttributes(array(),"rol != 2"),'id','username'));?>		
+		<?php echo $form->dropDownList($model,'usuario',CHtml::listData(User::model()->findAllByAttributes(array(),"rol = 4"),'id','username'));?>		
 		<?php echo $form->error($model,'usuario'); ?>
 	</div>
 

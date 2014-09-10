@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Alumno Materia Previas'=>array('index'),
-	'Manage',
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List AlumnoMateriaPrevia', 'url'=>array('index')),
-	array('label'=>'Create AlumnoMateriaPrevia', 'url'=>array('create')),
+	array('label'=>'Listar Previas', 'url'=>array('index')),
+	array('label'=>'Crear Previas', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Alumno Materia Previas</h1>
+<h1>Administrar Alumno Materia Previas</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

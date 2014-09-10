@@ -26,11 +26,11 @@ class AlumnosController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'legajo', 'verMateria'),
+                'actions' => array( 'legajo', 'verMateria'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin'),
+                'actions' => array('index', 'view','create', 'update', 'admin'),
                 'users' => array('admin'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions

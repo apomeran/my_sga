@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create AlumnoMateriaPrevia', 'url'=>array('create')),
-	array('label'=>'Manage AlumnoMateriaPrevia', 'url'=>array('admin')),
+	array('label'=>'Crear Previas', 'url'=>array('create')),
+	array('label'=>'Administrar Previas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Alumno Materia Previas</h1>
+<h1>Alumno - Materias Previas</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

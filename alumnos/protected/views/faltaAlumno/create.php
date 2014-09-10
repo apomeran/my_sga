@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List FaltaAlumno', 'url'=>array('')),
-	array('label'=>'Manage FaltaAlumno', 'url'=>array('')),
+	array('label'=>'Listar Inasistencias', 'url'=>array('')),
+	array('label'=>'Administrar Inasistencias', 'url'=>array('')),
 );
 ?>
 

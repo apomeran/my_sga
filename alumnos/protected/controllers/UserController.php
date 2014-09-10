@@ -72,6 +72,7 @@ class UserController extends Controller
 			
 			$model->attributes=$_POST['User'];
 			$model->password = crypt($_POST['User']['password']);
+			$model->rol = 4;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

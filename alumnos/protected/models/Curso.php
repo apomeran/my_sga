@@ -127,13 +127,14 @@ class Curso extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'cursoid' => 'Cursoid',
+            'cursoid' => 'Id Curso',
             'ano_calendario' => 'Ano Calendario',
             'ano_academico' => 'Ano Academico',
             'nivelid' => 'Nivelid',
             'turnoid' => 'Turnoid',
             'division_salita' => 'Division Salita',
             'titular' => 'Titular',
+			'nombre' => 'Curso',
         );
     }
 

@@ -1,6 +1,6 @@
 <?php
 /* @var $this ApartadoMateriaController */
-/* @var $model ApartadoMateria */
+/* @var $model Apartados por Materia */
 
 $this->breadcrumbs=array(
 	'Apartado Materias'=>array('index'),
@@ -8,21 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ApartadoMateria', 'url'=>array('index')),
-	array('label'=>'Create ApartadoMateria', 'url'=>array('create')),
-	array('label'=>'Update ApartadoMateria', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ApartadoMateria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ApartadoMateria', 'url'=>array('admin')),
+	array('label'=>'Ver Apartados por Materia', 'url'=>array('index')),
+	array('label'=>'Create Apartados por Materia', 'url'=>array('create')),
+	array('label'=>'Update Apartados por Materia', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Apartados por Materia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Apartados por Materia', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View ApartadoMateria #<?php echo $model->id; ?></h1>
+<h1>Apartados por Materia</h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'materia',
-		'apartado',
+		'materia0.nombre',
+		'apartado0.titulo',
 	),
 )); ?>

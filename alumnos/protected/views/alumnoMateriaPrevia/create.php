@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List AlumnoMateriaPrevia', 'url'=>array('index')),
-	array('label'=>'Manage AlumnoMateriaPrevia', 'url'=>array('admin')),
+	array('label'=>'Listar Previas', 'url'=>"#"),
+	array('label'=>'Administrar Previas', 'url'=>"#"),
 );
 ?>
 
-<h1>Create AlumnoMateriaPrevia</h1>
+<h1>Cargar una Materia Previa</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

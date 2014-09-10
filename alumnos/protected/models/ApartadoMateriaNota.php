@@ -8,6 +8,8 @@
  * @property integer $id_apartado_materia
  * @property integer $alumno
  * @property integer $nota_conceptual
+ * @property double $nota_numerica
+
  * @property integer $periodo
  * @property string $observaciones
  *
@@ -33,10 +35,10 @@ class ApartadoMateriaNota extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('alumno', 'required'),
-            array('id_apartado_materia, alumno, nota_conceptual, periodo', 'numerical', 'integerOnly' => true),
+            array('id_apartado_materia, alumno, nota_conceptual, nota_numerica, periodo', 'numerical', 'integerOnly' => true),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, id_apartado_materia, alumno, nota_conceptual, periodo, observaciones', 'safe', 'on' => 'search'),
+            array('id, id_apartado_materia, alumno, periodo, observaciones', 'safe', 'on' => 'search'),
         );
     }
 

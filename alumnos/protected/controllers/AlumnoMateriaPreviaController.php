@@ -48,6 +48,7 @@ class AlumnoMateriaPreviaController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+	
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -58,6 +59,7 @@ class AlumnoMateriaPreviaController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+	
         $model = new AlumnoMateriaPrevia;
 
         // Uncomment the following line if AJAX validation is needed
@@ -95,6 +97,7 @@ class AlumnoMateriaPreviaController extends Controller {
         $this->render('update', array(
             'model' => $model,
         ));
+
     }
 
     /**
@@ -103,11 +106,14 @@ class AlumnoMateriaPreviaController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+		
+
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		
     }
 
     /**

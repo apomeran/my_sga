@@ -5,7 +5,9 @@
 $this->breadcrumbs=array(
 	'Alumnos'=>array('index'),
 );
-
+$this->menu=array(
+	array('label'=>'Volver al legajo', 'url'=>array('alumnos/legajo&id=' . $alumno->idalumno)),
+);
 
 ?>
 

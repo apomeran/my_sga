@@ -53,7 +53,10 @@ $this->menu = array(
 				$val_2 = $ap_aux_array[$l];
 				$nota = ApartadoMateriaNota::model()->findByAttributes(array('periodo' => $periodo, 'alumno' => $val_1,'id_apartado_materia' => $val_2));
 				if ($nota != null){
-					$nota = $nota->notaConceptual->codigo;
+					if ($curso->nivelid ==2)
+				    	$nota = $nota->notaConceptual->codigo;
+					if ($curso->nivelid ==3)
+				    	$nota = $nota->nota_numerica;
 				}else{
 					$nota = "-";
 				}

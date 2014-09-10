@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Apartado Materias'=>array('index'),
-	'Manage',
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List ApartadoMateria', 'url'=>array('index')),
-	array('label'=>'Create ApartadoMateria', 'url'=>array('create')),
+	array('label'=>'Listar Apartado por Materia', 'url'=>array('index')),
+	array('label'=>'Crear Apartado por Materia', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,14 +26,14 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Apartado Materias</h1>
+<h1>Administrar Apartado Materias</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar como la comparacion deberia realizarse.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -45,9 +45,8 @@ o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar 
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'materia',
-		'apartado',
+		'materia0.nombre',
+		'apartado0.titulo',
 		array(
 			'class'=>'CButtonColumn',
 		),

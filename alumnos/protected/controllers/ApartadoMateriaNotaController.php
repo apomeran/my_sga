@@ -73,7 +73,7 @@ class ApartadoMateriaNotaController extends Controller {
     }
 
     public function actionView_calificaciones_materia($id, $curso_id, $periodo = 1) {
-        if (Yii::app()->user->isPreceptor()) {
+       if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
             $alumnos = array();
             $materia = Materia::model()->findByPk($id);
             $curso = Curso::model()->findByPk($curso_id);
@@ -102,7 +102,7 @@ class ApartadoMateriaNotaController extends Controller {
      */
     public function actionView($id) {
 
-        if (Yii::app()->user->isPreceptor()) {
+        if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
             $this->render('view', array(
                 'model' => $this->loadModel($id),
             ));
@@ -142,7 +142,7 @@ class ApartadoMateriaNotaController extends Controller {
     }
 
     public function actionCreatestep($id) {
-        if (Yii::app()->user->isPreceptor()) {
+       if (Yii::app()->user->isPreceptor()) {
 
             $this->render('create_note', array(
                 'model' => $this->loadModel($id),
@@ -162,7 +162,6 @@ class ApartadoMateriaNotaController extends Controller {
 
                 $model->attributes = $_POST['ApartadoMateriaNota'];
                 if ($model->save()) {
-
                     $model = new ApartadoMateriaNota('insert');
                     $model->alumno = $id_alumno;
                     $model->periodo = 0;
@@ -171,9 +170,26 @@ class ApartadoMateriaNotaController extends Controller {
                     $this->redirect(array('apartadoMateriaNota/createstep2', 'id' => $model->id, 'id_alumno' => $id_alumno, 'id_materia' => $id_materia));
                 }
             }
-
+			$model = $this->loadModel($id);
+			$alumno = Alumnos::model()->findByPk($model->alumno);
+			$curso = Curso::model()->findByPk($alumno->cursoactualid);
+			$nivel = Nivel::model()->findByPk($curso->nivelid);
+			$materia = Materia::model()->findByPk($id_materia);
+			$apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia));
+			if ($curso->nivelid == 2)
+				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_conceptual != 0 AND id_apartado_materia != 0');	
+			if ($curso->nivelid == 3)
+				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_numerica != -1 AND id_apartado_materia != 0');
             $this->render('create_note_2', array(
-                'model' => $this->loadModel($id), 'id_alumno' => $id_alumno, 'id_materia' => $id_materia
+                'model' => $model, 
+				'alumno' => $alumno,
+				'curso' => $curso, 
+				'nivel' => $nivel,
+				'materia' => $materia,
+				'apartados' => $apartados,
+				'notas' => $notas,
+				'id_alumno' => $id_alumno, 
+				'id_materia' => $id_materia,
             ));
         } else {
             $this->render('forbidden', array(
@@ -187,7 +203,7 @@ class ApartadoMateriaNotaController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        if (Yii::app()->user->isPreceptor()) {
+      if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
             $model = $this->loadModel($id);
 
             // Uncomment the following line if AJAX validation is needed
@@ -214,7 +230,7 @@ class ApartadoMateriaNotaController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        if (Yii::app()->user->isPreceptor()) {
+        if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
 
             $this->loadModel($id)->delete();
 

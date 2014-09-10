@@ -12,12 +12,7 @@ $this->menu=array(
 	array('label'=>'Manage NotaMateria', 'url'=>array('admin')),
 );
 ?>
-<?php $alumno = Alumnos::model()->findByPk($model->alumno)?>
-<?php $curso = Curso::model()->findByPk($alumno->cursoactualid)?>
-<?php $nivel = Nivel::model()->findByPk($curso->nivelid)?>
-<?php $materia = Materia::model()->findByPk($id_materia)?>
-<?php $apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia));?>
-<?php $notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno), 'nota_conceptual != 0 AND id_apartado_materia != 0');?>
+
 <h1>Calificar Alumno - <small><?php echo $alumno->fullname?></small></h1>
 
 <br>
@@ -32,6 +27,7 @@ $this->menu=array(
      $j = 0;
 	 $periodos_count = array();
 	 foreach($apartados as $apartado){
+		
 		if ($j != 0){
 				echo "<tr>";
 		}
@@ -39,13 +35,19 @@ $this->menu=array(
 		if ($title->id == 9) //Calificacion final
 			$title->titulo = '<b>' . $title->titulo . '</b>';
 		echo "<td>" . $title->titulo . "</td>";
+		
 		for($i=0; $i < $materia->getPeriodosCount(); $i++){
 			
 			$periodos_count[$i+1] = $i+1 ."º Periodo";
 			$nota_value = " - ";
 			foreach($notas as $nota){
-				 if($nota->idApartadoMateria->apartado == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
-					 $nota_value = $nota->notaConceptual->codigo;
+				 if($nota->idApartadoMateria->id == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
+					if ($curso->nivelid == 2){
+				 		 $nota_value = $nota->notaConceptual->codigo;
+					}
+					if ($curso->nivelid == 3){
+				 		 $nota_value = $nota->nota_numerica;
+					}
 				 }
 			}
 			echo "<td>" . $nota_value . "</td>";

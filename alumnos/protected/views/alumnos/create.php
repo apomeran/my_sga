@@ -3,16 +3,16 @@
 /* @var $model Alumnos */
 
 $this->breadcrumbs=array(
-	'Alumnoses'=>array('index'),
-	'Create',
+	'Alumnos'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Alumnos', 'url'=>array('index')),
-	array('label'=>'Manage Alumnos', 'url'=>array('admin')),
+	array('label'=>'Listar Alumnos', 'url'=>array('index')),
+	array('label'=>'Administrar Alumnos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Alumnos</h1>
+<h1>Crear Alumnos</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

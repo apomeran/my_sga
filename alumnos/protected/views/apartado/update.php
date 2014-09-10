@@ -5,17 +5,17 @@
 $this->breadcrumbs=array(
 	'Apartados'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List Apartado', 'url'=>array('index')),
-	array('label'=>'Create Apartado', 'url'=>array('create')),
-	array('label'=>'View Apartado', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Apartado', 'url'=>array('admin')),
+	array('label'=>'Listar Apartados', 'url'=>array('index')),
+	array('label'=>'Crear Apartado', 'url'=>array('create')),
+	array('label'=>'Ver Apartados', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Apartados', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Apartado <?php echo $model->id; ?></h1>
+<h1>Actualizar Apartado <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

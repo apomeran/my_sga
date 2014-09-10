@@ -48,12 +48,15 @@ class SGAUser extends CWebUser
 		
 		public function getPreceptorCursos(){
 			$response = array();
+			
 			if (Yii::app()->user->isExclusivePreceptor()){
+			
 				$r = Preceptores::model()->findByAttributes(array(), "usuario = " . $this->id );
 			    $response = Curso::model()->findAllByAttributes(array(), "nivelid != 1 AND cursoid = " . $r->curso0->cursoid);
 			}
 			if (Yii::app()->user->isExclusiveAdmin()){
-				$response = Curso::model()->findAll(array(), "nivelid != 1");
+			
+				$response = Curso::model()->findAllByAttributes(array(), "nivelid != 1");
 			}
 			
 			return $response;
