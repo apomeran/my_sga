@@ -3,20 +3,20 @@
 /* @var $model Programas */
 
 $this->breadcrumbs=array(
-	'Programases'=>array('index'),
+	'Programas'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Programas', 'url'=>array('index')),
-	array('label'=>'Create Programas', 'url'=>array('create')),
-	array('label'=>'Update Programas', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Programas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Programas', 'url'=>array('admin')),
+	array('label'=>'Listar Programas', 'url'=>array('index')),
+	array('label'=>'Crear Programas', 'url'=>array('create')),
+	array('label'=>'Actualizar Programas', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Programas', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de querer eliminar este item?')),
+	array('label'=>'Administrar Programas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Programas #<?php echo $model->id; ?></h1>
+<h1>Ver Programa #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

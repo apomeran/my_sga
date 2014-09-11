@@ -8,8 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NotaMateria', 'url'=>array('index')),
-	array('label'=>'Manage NotaMateria', 'url'=>array('admin')),
+	array('label'=>'Ver calificaciones', 'url'=>array('apartadoMateriaNota/viewall')),
 );
 ?>
 

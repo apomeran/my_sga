@@ -4,12 +4,11 @@
 
 $this->breadcrumbs=array(
 	'Nota Materias'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List NotaMateria', 'url'=>array('index')),
-	array('label'=>'Manage NotaMateria', 'url'=>array('admin')),
+	array('label'=>'Ver todas las Inasistencias', 'url'=>array('faltaAlumno/viewall')),
 );
 ?>
 <?php $alumno = Alumnos::model()->findByPk($model->alumno)?>

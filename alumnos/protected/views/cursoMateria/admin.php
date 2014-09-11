@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CursoMateria', 'url'=>array('index')),
-	array('label'=>'Create CursoMateria', 'url'=>array('create')),
+	array('label'=>'Listar Materias por curso', 'url'=>array('index')),
+	array('label'=>'Asociar materia a un curso', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

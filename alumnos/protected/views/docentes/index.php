@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Docentes', 'url'=>array('create')),
-	array('label'=>'Manage Docentes', 'url'=>array('admin')),
+	array('label'=>'Crear Docente', 'url'=>array('create')),
+	array('label'=>'Administrar Docentes', 'url'=>array('admin')),
 );
 ?>
 

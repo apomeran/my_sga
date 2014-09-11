@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create CursoAlumno', 'url'=>array('create')),
-	array('label'=>'Manage CursoAlumno', 'url'=>array('admin')),
+	array('label'=>'Listar Inscripciones', 'url'=>array('index')),
+	array('label'=>'Inscribir Alumno', 'url'=>array('create')),
 );
 ?>
 
-<h1>Curso Alumnos</h1>
+<h1>Alumnos por Curso</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -49,7 +49,7 @@ class Docentes extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'nombre' => 'Nombre',
+            'nombre' => 'Nombre Docente',
             'apellido' => 'Apellido',
             'dni' => 'Dni',
             'notas' => 'Notas',

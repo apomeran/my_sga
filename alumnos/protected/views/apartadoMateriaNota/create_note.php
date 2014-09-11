@@ -8,8 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Nota por Materia', 'url'=>array('index')),
-	array('label'=>'Administrar Nota por Materia', 'url'=>array('admin')),
+	array('label'=>'Ver calificaciones', 'url'=>array('apartadoMateriaNota/viewall')),
 );
 ?>
 <?php $alumno = Alumnos::model()->findByPk($model->alumno)?>

@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Programa Materias',
+	'Materias por Programa',
 );
 
 $this->menu=array(
-	array('label'=>'Create ProgramaMateria', 'url'=>array('create')),
-	array('label'=>'Manage ProgramaMateria', 'url'=>array('admin')),
+	array('label'=>'Crear Materias por Programa', 'url'=>array('create')),
+	array('label'=>'Administrar Materias por Programa', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Programa Materias</h1>
+<h1>Materias por Programa</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

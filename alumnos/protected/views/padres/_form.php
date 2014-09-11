@@ -15,13 +15,13 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'usuario'); ?>
-		<?php echo $form->textField($model,'usuario'); ?>
+		<?php echo $form->dropDownList($model,'usuario',CHtml::listData(User::model()->findAll(),'id','username'));?>
 		<?php echo $form->error($model,'usuario'); ?>
 	</div>
 
@@ -68,7 +68,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

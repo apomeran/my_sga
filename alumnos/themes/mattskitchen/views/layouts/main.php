@@ -30,13 +30,13 @@
 <div class="container" id="wrapper">
 
   <header id="header">
-    <div id="logo"><?php echo CHtml::link(CHtml::encode(Yii::app()->name), '/'); ?></div>
+    <div id="logo"><?php echo CHtml::link("Instituto Amanecer" , '/'); ?></div>
 
     <nav id="mainmenu">
 	
       <?php
         $menuItems = array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Inscripcion', 'url'=>array('cursoAlumno/admin') , 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Calificar', 'url'=>array('apartadoMateriaNota/create'), 'visible'=>Yii::app()->user->isPreceptor()),
 				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
@@ -50,9 +50,9 @@
 				array('label'=>'Preceptores', 'url'=>array('preceptores/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Usuarios', 'url'=>array('user/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Materias', 'url'=>array('materia/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Materias por Curso', 'url'=>array('cursomateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Materias por Curso', 'url'=>array('cursoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Apartados', 'url'=>array('apartado/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Apartado por materia', 'url'=>array('apartadomateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Apartado por materia', 'url'=>array('apartadoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Programas', 'url'=>array('programas/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Asociar Materias a Programas', 'url'=>array('programaMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				
@@ -65,8 +65,8 @@
 			}
 		}
 		
-		$menuItems[] = array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
-		$menuItems[] = array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
+		$menuItems[] = array('label'=>'Ingresar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
+		$menuItems[] = array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
       ?>
       <?php $this->widget('zii.widgets.CMenu',array(
         'items'=>$menuItems,

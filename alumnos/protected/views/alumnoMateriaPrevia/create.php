@@ -8,8 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Previas', 'url'=>"#"),
-	array('label'=>'Administrar Previas', 'url'=>"#"),
+	array('label'=>'-', 'url'=>"#"),
 );
 ?>
 

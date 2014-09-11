@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Preceptores', 'url'=>array('index')),
-	array('label'=>'Create Preceptores', 'url'=>array('create')),
-	array('label'=>'Update Preceptores', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Preceptores', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Preceptores', 'url'=>array('admin')),
+	array('label'=>'Listar Preceptores', 'url'=>array('index')),
+	array('label'=>'Crear Preceptores', 'url'=>array('create')),
+	array('label'=>'Actualizar Preceptores', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Preceptores', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar este item?')),
+	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Preceptores #<?php echo $model->id; ?></h1>
+<h1>Ver Preceptor #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

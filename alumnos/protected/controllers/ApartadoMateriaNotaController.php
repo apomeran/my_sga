@@ -101,15 +101,16 @@ class ApartadoMateriaNotaController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-
-        if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
-            $this->render('view', array(
-                'model' => $this->loadModel($id),
+		$this->render('forbidden', array(
             ));
-        } else {
-            $this->render('forbidden', array(
-            ));
-        }
+        // if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
+            // $this->render('view', array(
+                // 'model' => $this->loadModel($id),
+            // ));
+        // } else {
+            // $this->render('forbidden', array(
+            // ));
+        // }
     }
 
     /**
@@ -211,25 +212,27 @@ class ApartadoMateriaNotaController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-      if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
-            $model = $this->loadModel($id);
-
-            // Uncomment the following line if AJAX validation is needed
-            // $this->performAjaxValidation($model);
-
-            if (isset($_POST['ApartadoMateriaNota'])) {
-                $model->attributes = $_POST['ApartadoMateriaNota'];
-                if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->id));
-            }
-
-            $this->render('update', array(
-                'model' => $model,
+		$this->render('forbidden', array(
             ));
-        }else {
-            $this->render('forbidden', array(
-            ));
-        }
+      // if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
+            // $model = $this->loadModel($id);
+
+            // // Uncomment the following line if AJAX validation is needed
+            // // $this->performAjaxValidation($model);
+
+            // if (isset($_POST['ApartadoMateriaNota'])) {
+                // $model->attributes = $_POST['ApartadoMateriaNota'];
+                // if ($model->save())
+                    // $this->redirect(array('view', 'id' => $model->id));
+            // }
+
+            // $this->render('update', array(
+                // 'model' => $model,
+            // ));
+        // }else {
+            // $this->render('forbidden', array(
+            // ));
+        // }
     }
 
     /**
@@ -238,41 +241,49 @@ class ApartadoMateriaNotaController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
-
-            $this->loadModel($id)->delete();
-
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        }else {
-            $this->render('forbidden', array(
+		$this->render('forbidden', array(
             ));
-        }
+        // if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
+		
+
+            // $this->loadModel($id)->delete();
+
+            // // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            // if (!isset($_GET['ajax']))
+                // $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        // }else {
+            // $this->render('forbidden', array(
+            // ));
+        // }
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('ApartadoMateriaNota');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
+		$this->render('forbidden', array(
+            ));
+        // $dataProvider = new CActiveDataProvider('ApartadoMateriaNota');
+        // $this->render('index', array(
+            // 'dataProvider' => $dataProvider,
+        // ));
     }
 
     /**
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new ApartadoMateriaNota('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['ApartadoMateriaNota']))
-            $model->attributes = $_GET['ApartadoMateriaNota'];
+		$this->render('forbidden', array(
+            ));
+	
+        // $model = new ApartadoMateriaNota('search');
+        // $m (isset($_GET['ApartadoMateriaNota']))
+            // $model->attributes = $_GET['ApartadoMateriaNota'];
 
-        $this->render('admin', array(
-            'model' => $model,
-        ));
+        // $this->render('admin', array(
+            // 'model' => $model,
+        // ));odel->unsetAttributes();  // clear any default values
+        // if
     }
 
     /**

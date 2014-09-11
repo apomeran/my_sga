@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CursoMateria', 'url'=>array('index')),
-	array('label'=>'Create CursoMateria', 'url'=>array('create')),
-	array('label'=>'Update CursoMateria', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete CursoMateria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CursoMateria', 'url'=>array('admin')),
+	array('label'=>'Listar Asociaciones', 'url'=>array('index')),
+	array('label'=>'Crear Asociacion', 'url'=>array('create')),
+	array('label'=>'Actualizar Asociacion', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Asociacion', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar este item?')),
+	array('label'=>'Administrar Asociaciones', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View CursoMateria #<?php echo $model->id; ?></h1>
+<h1>Ver Asociacion #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

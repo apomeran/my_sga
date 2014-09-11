@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Apartado', 'url'=>array('index')),
-	array('label'=>'Create Apartado', 'url'=>array('create')),
-	array('label'=>'Update Apartado', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Apartado', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Apartado', 'url'=>array('admin')),
+	array('label'=>'Listar Apartados', 'url'=>array('index')),
+	array('label'=>'Crear Apartado', 'url'=>array('create')),
+	array('label'=>'Actualizar Apartado', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Apartado', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro que queres eliminar este item?')),
+	array('label'=>'Administrar Apartados', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Apartado #<?php echo $model->id; ?></h1>
+<h1>Ver Apartado #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

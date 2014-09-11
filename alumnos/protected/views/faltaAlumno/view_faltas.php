@@ -7,15 +7,9 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Ver faltas', 'url' => array('')),
+    array('label' => 'Ver faltas', 'url' => array('faltaAlumno/viewall')),
 );
 ?>
-
-<?php
-
-?>
-
-
 
 <h3>Faltas para  <small> - <?php echo $curso->nombre ?> </small></h3>
 <br>
@@ -24,13 +18,22 @@ $this->menu = array(
 <table style="width:600px; font-size:11px !important">
 <tr>
 <td></td>
-<td>Apellido y Nombre</td>
-<td>Faltas Totales</td>
 
-<tr>
+
+
 <?php
 	$j=0;
-	
+	if (count($alumnos) == 0){
+	 echo "No hay alumnos asociados a este curso";
+	 echo '<br>';
+	 echo '<br>';
+     echo CHtml::link("Volver al listado", array('faltaAlumno/viewall'));
+
+	}else{
+		echo '<td>Apellido y Nombre</td>';
+		echo '<td>Faltas Totales</td>';
+		echo '<tr>';
+	}
 	foreach($alumnos as $alu){
 		if ($j != 0)
 				echo "<tr>";
@@ -44,7 +47,7 @@ $this->menu = array(
 			
 		}
 		echo '<td><b>' . $total . '</b></td>';
-	    echo '<td>' . CHtml::link("Ver", array()) . '</td>';
+	    echo '<td>' . CHtml::link("Ver", array('alumnos/legajo&id=' . $alu->idalumno)) . '</td>';
 		echo "</tr>";
 		$j++;
 	}

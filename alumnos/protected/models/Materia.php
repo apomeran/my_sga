@@ -55,7 +55,7 @@ class Materia extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'nombre' => 'Nombre',
+            'nombre' => 'Nombre Materia',
             'descripcion' => 'Descripcion',
             'nivelid' => 'Nivelid',
         );
