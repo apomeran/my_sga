@@ -8,22 +8,22 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Alumnos', 'url'=>array('index')),
-	array('label'=>'Create Alumnos', 'url'=>array('create')),
-	array('label'=>'Update Alumnos', 'url'=>array('update', 'id'=>$model->idalumno)),
-	array('label'=>'Delete Alumnos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idalumno),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Alumnos', 'url'=>array('admin')),
+	array('label'=>'Listado Alumnos', 'url'=>array('index')),
+	array('label'=>'Crear Alumnos', 'url'=>array('create')),
+	array('label'=>'Actualizar Alumnos', 'url'=>array('update', 'id'=>$model->idalumno)),
+	array('label'=>'Eliminar Alumnos', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idalumno),'confirm'=>'Estas seguro de eliminar este alumno?')),
+	array('label'=>'Administracion de Alumnos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Alumnos #<?php echo $model->idalumno; ?></h1>
+<h1>Alumno <?php echo $model->fullname; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'fullname',
 		'dni',
-		'cursoactualid',
+		'cursoactual.nombre',
 		'codigoalumno',
 		'padre.fullname',
 		'madre.fullname',

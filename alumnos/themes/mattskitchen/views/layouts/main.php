@@ -53,8 +53,8 @@
 				array('label'=>'Materias por Curso', 'url'=>array('cursoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Apartados', 'url'=>array('apartado/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Apartado por materia', 'url'=>array('apartadoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Programas', 'url'=>array('programas/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Asociar Materias a Programas', 'url'=>array('programaMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				// array('label'=>'Programas', 'url'=>array('programas/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				// array('label'=>'Asociar Materias a Programas', 'url'=>array('programaMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				
 				
         );

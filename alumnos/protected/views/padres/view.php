@@ -8,20 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Padres', 'url'=>array('index')),
-	array('label'=>'Create Padres', 'url'=>array('create')),
-	array('label'=>'Update Padres', 'url'=>array('update', 'id'=>$model->idpadre)),
-	array('label'=>'Delete Padres', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idpadre),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Padres', 'url'=>array('admin')),
+	array('label'=>'Listar Padres', 'url'=>array('index')),
+	array('label'=>'Crear Padre', 'url'=>array('create')),
+	array('label'=>'Actualizar Padres', 'url'=>array('update', 'id'=>$model->idpadre)),
+	array('label'=>'Eliminar Padre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->idpadre),'confirm'=>'Estas seguro de eliminar este item?')),
+	array('label'=>'Administracion de Padres', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Padres #<?php echo $model->idpadre; ?></h1>
+<h1>Adulto Responsable - <?php echo $model->fullname; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'idpadre',
+		'usuario0.username',
 		'nombre',
 		'apellido',
 		'observaciones',
@@ -29,5 +29,6 @@ $this->menu=array(
 		'mail',
 		'telefono_fijo',
 		'telefono_celular',
+		
 	),
 )); ?>

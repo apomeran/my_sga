@@ -38,12 +38,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Curso Actual'); ?>
-		<?php echo $form->dropDownList($model,'cursoactualid',CHtml::listData(Curso::model()->findAll(),'cursoid','nombre'));?>
-		<?php echo $form->error($model,'cursoactualid'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'Codigo Alumno'); ?>
 		<?php echo $form->textField($model,'codigoalumno',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'codigoalumno'); ?>
@@ -68,3 +62,14 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script>
+		var canvas = document.getElementById('Alumnos_nombre');
+		var canvas = document.getElementById('Alumnos_apellido');
+		
+		canvas.onchange = function(bf) { 
+			    var text1 = document.getElementById("Alumnos_nombre").value;
+			    var text2 = document.getElementById("Alumnos_apellido").value;
+              
+                document.getElementById("Alumnos_codigoalumno").value = text1.substr(0,1) + text2;
+        };
+</script>

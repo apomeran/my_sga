@@ -40,7 +40,7 @@ class Alumnos extends CActiveRecord {
             array('codigoalumno', 'length', 'max' => 45),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('idalumno, nombre, apellido, dni, cursoactualid, codigoalumno, padreid, madreid', 'safe', 'on' => 'search'),
+            array('idalumno, nombre, apellido, dni, codigoalumno', 'safe', 'on' => 'search'),
         );
     }
 
@@ -71,10 +71,10 @@ class Alumnos extends CActiveRecord {
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
             'dni' => 'Dni',
-            'cursoactualid' => 'Cursoactualid',
-            'codigoalumno' => 'Codigoalumno',
-            'padreid' => 'Padreid',
-            'madreid' => 'Madreid',
+            'cursoactualid' => 'Curso Actual Id',
+            'codigoalumno' => 'Codigo del alumno',
+            'padreid' => 'Padre Id',
+            'madreid' => 'Madre Id',
             'fullname' => 'Nombre Completo Alumno',
         );
     }

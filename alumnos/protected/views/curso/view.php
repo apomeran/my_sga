@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Curso', 'url'=>array('index')),
-	array('label'=>'Create Curso', 'url'=>array('create')),
-	array('label'=>'Update Curso', 'url'=>array('update', 'id'=>$model->cursoid)),
-	array('label'=>'Delete Curso', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->cursoid),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Curso', 'url'=>array('admin')),
+	array('label'=>'Listar Curso', 'url'=>array('index')),
+	array('label'=>'Crear Curso', 'url'=>array('create')),
+	array('label'=>'Actualizar Curso', 'url'=>array('update', 'id'=>$model->cursoid)),
+	array('label'=>'Eliminar Curso', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->cursoid),'confirm'=>'Estas seguro de eliminar este Curso?')),
+	array('label'=>'Administrar Curso', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Curso #<?php echo $model->cursoid; ?></h1>
+<h1>Ver Curso</h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -24,6 +24,15 @@ $this->menu=array(
 		'nombre',
 	),
 )); ?>
+
+<br>
+<br>
+<h3>Titular</h3>
+<?php 
+	echo '<li>' . $model->titular0->fullname . '</li>';
+
+?>
+
 <br>
 <br>
 <h3>Materias</h3>
@@ -31,4 +40,10 @@ $this->menu=array(
 	echo '<li>' . $m->materia0->nombre . '</li>';
 }
 ?>
-
+<br>
+<br>
+<h3>Alumnos</h3>
+<?php foreach ($model->alumnoses as $alumno) {
+	echo '<li>' . $alumno->fullname . '</li>';
+}
+?>

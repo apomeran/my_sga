@@ -17,7 +17,8 @@ $this->menu=array(
 <h1>Calificar Alumno - <small><?php echo $alumno->fullname?></small></h1>
 
 <h3>-Datos alumno- </h3>
-
+<img style="height:100px;" src="http://simpleicon.com/wp-content/uploads/user1.png">
+<br>
 <b>- Nombre:</b>  <?php echo $alumno->nombre ?> <br>
 <b>- Apellido:</b>  <?php echo $alumno->apellido ?> <br>
 <b>- DNI: </b> <?php echo $alumno->dni ?> <br>

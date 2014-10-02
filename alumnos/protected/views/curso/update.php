@@ -9,13 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Curso', 'url'=>array('index')),
-	array('label'=>'Create Curso', 'url'=>array('create')),
-	array('label'=>'View Curso', 'url'=>array('view', 'id'=>$model->cursoid)),
-	array('label'=>'Manage Curso', 'url'=>array('admin')),
+	array('label'=>'-', 'url'=>array('#')),
 );
 ?>
 
-<h1>Update Curso <?php echo $model->cursoid; ?></h1>
+<h1>Actualizar Curso <?php echo $model->nombre; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

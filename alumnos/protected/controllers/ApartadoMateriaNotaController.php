@@ -184,7 +184,7 @@ class ApartadoMateriaNotaController extends Controller {
 			$curso = Curso::model()->findByPk($alumno->cursoactualid);
 			$nivel = Nivel::model()->findByPk($curso->nivelid);
 			$materia = Materia::model()->findByPk($id_materia);
-			$apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia));
+			$apartados = ApartadoMateria::model()->findAllByAttributes(array('materia'=>$id_materia), '');
 			if ($curso->nivelid == 2)
 				$notas = ApartadoMateriaNota::model()->findAllByAttributes(array('alumno'=>$alumno->idalumno),'nota_conceptual != 0 AND id_apartado_materia != 0');
 			if ($curso->nivelid == 3)
@@ -335,12 +335,11 @@ class ApartadoMateriaNotaController extends Controller {
             $return_array = array();
             foreach ($alumnos as $alumno) {
                 $return_array[] = array(
-                    'label' => $alumno->fullname,
+                    'label' => $alumno->fullname . " - " . $alumno->cursoactual->getNombre(),
                     'value' => $alumno->idalumno,
                     'id' => $alumno->idalumno,
                 );
             }
-
             echo CJSON::encode($return_array);
         }
     }

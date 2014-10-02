@@ -109,10 +109,10 @@ class AlumnosController extends Controller {
         if (isset($_POST['Alumnos'])) {
             $model->attributes = $_POST['Alumnos'];
             if ($model->save()) {
-                $cursoEntry = new CursoAlumno('insert');
-                $cursoEntry->setAttribute('curso', $model->cursoactualid);
-                $cursoEntry->setAttribute('alumno', $model->idalumno);
-                $cursoEntry->save();
+                // $cursoEntry = new CursoAlumno('insert');
+                // $cursoEntry->setAttribute('curso', $model->cursoactualid);
+                // $cursoEntry->setAttribute('alumno', $model->idalumno);
+                // $cursoEntry->save();
                 $this->redirect(array('view', 'id' => $model->idalumno));
             }
         }

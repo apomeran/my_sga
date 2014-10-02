@@ -24,18 +24,33 @@ $this->menu=array(
  <tr>
 	<?php
      $j = 0;
+     $i = 0;
 	 $periodos_count = array();
+	 $apartados_final = array();
 	 foreach($apartados as $apartado){
+		$title = $apartado->apartado0;
+		if ($title->id == 9 || $title->id == 35){
+		 $apartados_final[count($apartados)] = $apartado;
+		 }
+		else{
+		 $apartados_final[$i] = $apartado;
+		}
+		$i++;
+	 }
+	 ksort($apartados_final);
+	 foreach($apartados_final as $apartado){
+		$title = $apartado->apartado0;
+
 		if ($j != 0){
 				echo "<tr>";
 		}
-		$title = $apartado->apartado0;
-		if ($title->id == 9) //Calificacion final
-			$title->titulo = '<b>' . $title->titulo . '</b>';
+		if ($materia->getPeriodosCount() == 3){ $txt = "Trimestre";}
+		else
+		if ($materia->getPeriodosCount() == 4){ $txt = "Bimestre";}
 		echo "<td>" . $title->titulo . "</td>";
 		for($i=0; $i < $materia->getPeriodosCount(); $i++){
 			
-			$periodos_count[$i+1] = $i+1 ."º Periodo";
+			$periodos_count[$i+1] = $i+1 ."º $txt";
 			$nota_value = " - ";
 			foreach($notas as $nota){
 				 if($nota->idApartadoMateria->id == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
@@ -47,6 +62,7 @@ $this->menu=array(
 			}
 			echo "<td>" . $nota_value . "</td>";
 		}
+		
 		echo "</tr>";
 		$j++;
 	}?>

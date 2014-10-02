@@ -14,9 +14,18 @@ $this->menu = array(
 <h1>Ver Faltas por curso</h1>
 <br>
 <?php
-foreach ($cursos as $curso) {
-    echo '<li>' . CHtml::link($curso->nombre, array('faltaAlumno/view_faltas&id=' . $curso->cursoid)) . '</li>';
-}
+echo "<b>Primaria:</b> <br>";
+	foreach($cursos as $curso){
+		if ($curso->nivel->nombre == "Primaria")
+						echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) . '</li>';
+
+	}
+	echo "<br><b>Secundaria: </b>";
+	foreach($cursos as $curso){
+		if ($curso->nivel->nombre == "Secundario")
+			echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) . '</li>';
+	}
+	
 ?>
 
 

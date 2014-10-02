@@ -45,7 +45,6 @@ o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar 
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'username',
 		'email',
 		'rol0.nombre',

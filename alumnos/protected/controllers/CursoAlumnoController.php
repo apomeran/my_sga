@@ -123,10 +123,7 @@ class CursoAlumnoController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new CursoAlumno('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['CursoAlumno']))
-            $model->attributes = $_GET['CursoAlumno'];
+		$model = Curso::model()->findAll();
 
         $this->render('admin', array(
             'model' => $model,

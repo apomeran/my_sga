@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Inscripciones', 'url'=>array('index')),
 	array('label'=>'Inscribir Alumno', 'url'=>array('create')),
 );
 
@@ -26,29 +25,21 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar Alumnos por Curso</h1>
-
-<p>
-Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar como la comparacion deberia realizarse.
-</p>
-
-<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'curso-alumno-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'curso0.nombre',
-		'alumno0.nombre',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<h1>Cursos Vigentes</h1>
+<?php
+	echo "<b>Primaria:</b> <br>";
+	foreach($model as $curso){
+		if ($curso->nivel->nombre == "Primaria")
+			echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) . " -- " .   count($curso->alumnoses) . " Alumno(s) " . ' </li>';
+	}
+	echo "<br><b>Secundaria: </b>";
+	foreach($model as $curso){
+		if ($curso->nivel->nombre == "Secundario")
+			echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) .  " -- " .   count($curso->alumnoses) . " Alumno(s) " .'</li>';
+	}
+	echo "<br><b>Jardin:</b> ";
+	foreach($model as $curso){
+		if ($curso->nivel->nombre == "Jardin")
+			echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) .  " -- " .   count($curso->alumnoses) . " Alumno(s) " . '</li>';
+	}
+?>

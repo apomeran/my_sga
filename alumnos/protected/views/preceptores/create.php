@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Preceptores'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Preceptores', 'url'=>array('index')),
-	array('label'=>'Manage Preceptores', 'url'=>array('admin')),
+	array('label'=>'Listar Preceptores', 'url'=>array('index')),
+	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Preceptores</h1>
+<h1>Crear Preceptor</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

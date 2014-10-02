@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Preceptores', 'url'=>array('create')),
-	array('label'=>'Manage Preceptores', 'url'=>array('admin')),
+	array('label'=>'Crear Preceptores', 'url'=>array('create')),
+	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
 );
 ?>
 

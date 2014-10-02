@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Inscripciones', 'url'=>array('index')),
 	array('label'=>'Inscribir Alumno', 'url'=>array('create')),
 );
 ?>
 
-<h1>Inscripción</h1>
+<h1>Inscripción Ciclo Lectivo <?php echo date("Y"); ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

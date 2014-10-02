@@ -22,8 +22,12 @@
 	<?php echo CHtml::encode($data->codigoalumno); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Padre')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Nombre Completo Padre')); ?>:</b>
 	<?php echo CHtml::encode($data->padre->fullname); ?>
+	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Nombre Completo Madre')); ?>:</b>
+	<?php echo CHtml::encode($data->madre->fullname); ?>
 	<br />
 
 </div>

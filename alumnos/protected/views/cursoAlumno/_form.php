@@ -14,7 +14,8 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-
+	<?php $alumnos = Alumnos::model()->findAllByAttributes(array(),'cursoactualid = 0'); ?>
+	<?php if (count($alumnos) > 0){ ?>
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
@@ -27,14 +28,22 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'alumno'); ?>
-		<?php echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAll(),'idalumno','nombre'));?>
+		<?php 
+		
+				 echo $form->dropDownList($model,'alumno',CHtml::listData($alumnos),'idalumno','nombre');
+			
+		?>
 		<?php echo $form->error($model,'alumno'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Inscribir' : 'Guardar'); ?>
 	</div>
-
+	<?php
+	}else{
+				 echo "Todos los alumnos se encuentran ya inscriptos";
+			}
+	?>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

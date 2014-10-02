@@ -5,6 +5,10 @@
 
 <div class="view">
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Usuario')); ?>:</b>
+	<?php echo CHtml::encode($data->usuario0->username); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre completo')); ?>:</b>
 	<?php echo CHtml::encode($data->fullname); ?>
 	<br />
@@ -25,11 +29,6 @@
 	<?php echo CHtml::encode($data->telefono_fijo); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('telefono_celular')); ?>:</b>
-	<?php echo CHtml::encode($data->telefono_celular); ?>
-	<br />
 
-	*/ ?>
 
 </div>
