@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2014 a las 16:33:22
+-- Tiempo de generación: 03-10-2014 a las 21:46:24
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `alumnos` (
   `nombre` varchar(255) DEFAULT NULL,
   `apellido` varchar(255) DEFAULT NULL,
   `dni` varchar(255) DEFAULT NULL,
-  `cursoactualid` int(11) DEFAULT NULL,
+  `cursoactualid` int(11) DEFAULT '0',
   `codigoalumno` varchar(45) DEFAULT NULL,
   `padreid` int(11) DEFAULT NULL,
   `madreid` int(11) DEFAULT NULL,
@@ -42,15 +42,7 @@ CREATE TABLE IF NOT EXISTS `alumnos` (
   KEY `padre_idx` (`padreid`),
   KEY `madre_idx` (`madreid`),
   KEY `cursoactualid` (`cursoactualid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Volcado de datos para la tabla `alumnos`
---
-
-INSERT INTO `alumnos` (`idalumno`, `nombre`, `apellido`, `dni`, `cursoactualid`, `codigoalumno`, `padreid`, `madreid`) VALUES
-(1, 'Alan', 'Pomerantz', '23999000', 12, 'apomeran', 1, 2),
-(2, 'Gaston', 'Farro', '48000932', 30, 'gfarro', 2, 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -78,45 +70,48 @@ CREATE TABLE IF NOT EXISTS `alumno_materia_previa` (
 CREATE TABLE IF NOT EXISTS `apartado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` text NOT NULL,
+  `final` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Volcado de datos para la tabla `apartado`
 --
 
-INSERT INTO `apartado` (`id`, `titulo`) VALUES
-(10, 'Demuestra leer comprensivamente'),
-(11, 'Produce textos escritos'),
-(12, 'Se expresa oralmente utilizando vocabulario específico'),
-(13, 'Demuestra comprender el contenido'),
-(14, 'Realiza cálculos con exactitud y eficacia'),
-(15, 'Resuelve problemas y explica las soluciones'),
-(16, 'Demuestra capacidad de pensar científicamente'),
-(17, 'Demuestra capacidad de aplicar los conocimientos de las Ciencias Sociales'),
-(18, 'Comprende lo que escucha'),
-(19, 'Se expresa oralmente'),
-(20, 'Comprende lo que lee'),
-(21, 'Produce textos escritos'),
-(22, 'Desarrolla la capacidad creativa'),
-(23, 'Comprende los procedimientos artísticos'),
-(24, 'Desarrolla la capacidad creativa'),
-(25, 'Comprende los procedimientos artísticos'),
-(26, 'Comprende y respeta las consignas'),
-(27, 'Desarrolla habilidades motrices'),
-(28, 'Participa activamente en clase'),
-(29, 'Posee conceptos básicos teóricos'),
-(30, 'Aplica en la práctica los contenidos'),
-(31, 'Utiliza técnicas propias del juego'),
-(32, 'Se relaciona con su compañero'),
-(33, 'Trabaja y juega con los demás en forma cooperativa'),
-(34, 'Respeta la normativa de la clase y de la escuela'),
-(35, 'Calificación Final'),
-(36, '1º Parcial'),
-(37, '2º Parcial'),
-(38, '3º Parcial'),
-(39, '4º Parcial'),
-(40, '5º Parcial');
+INSERT INTO `apartado` (`id`, `titulo`, `final`) VALUES
+(10, 'Demuestra leer comprensivamente', 0),
+(11, 'Produce textos escritos', 0),
+(12, 'Se expresa oralmente utilizando vocabulario específico', 0),
+(13, 'Demuestra comprender el contenido', 0),
+(14, 'Realiza cálculos con exactitud y eficacia', 0),
+(15, 'Resuelve problemas y explica las soluciones', 0),
+(16, 'Demuestra capacidad de pensar científicamente', 0),
+(17, 'Demuestra capacidad de aplicar los conocimientos de las Ciencias Sociales', 0),
+(18, 'Comprende lo que escucha', 0),
+(19, 'Se expresa oralmente', 0),
+(20, 'Comprende lo que lee', 0),
+(21, 'Produce textos escritos', 0),
+(22, 'Desarrolla la capacidad creativa', 0),
+(23, 'Comprende los procedimientos artísticos', 0),
+(24, 'Desarrolla la capacidad creativa', 0),
+(25, 'Comprende los procedimientos artísticos', 0),
+(26, 'Comprende y respeta las consignas', 0),
+(27, 'Desarrolla habilidades motrices', 0),
+(28, 'Participa activamente en clase', 0),
+(29, 'Posee conceptos básicos teóricos', 0),
+(30, 'Aplica en la práctica los contenidos', 0),
+(31, 'Utiliza técnicas propias del juego', 0),
+(32, 'Se relaciona con su compañero', 0),
+(33, 'Trabaja y juega con los demás en forma cooperativa', 0),
+(34, 'Respeta la normativa de la clase y de la escuela', 0),
+(35, 'Calificación Final', 1),
+(36, '1º Parcial', 0),
+(37, '2º Parcial', 0),
+(38, '3º Parcial', 0),
+(39, '4º Parcial', 0),
+(40, '5º Parcial', 0),
+(41, 'Diciembre', 0),
+(42, 'Marzo', 0);
 
 -- --------------------------------------------------------
 
@@ -131,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `apartado_materia` (
   PRIMARY KEY (`id`),
   KEY `materia` (`materia`,`apartado`),
   KEY `apartado` (`apartado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=140 ;
 
 --
 -- Volcado de datos para la tabla `apartado_materia`
@@ -174,11 +169,11 @@ INSERT INTO `apartado_materia` (`id`, `materia`, `apartado`) VALUES
 (33, 28, 32),
 (34, 28, 35),
 (26, 33, 27),
+(47, 57, 35),
 (43, 57, 36),
 (44, 57, 37),
 (45, 57, 38),
 (46, 57, 39),
-(47, 57, 40),
 (39, 60, 36),
 (40, 60, 37),
 (41, 60, 38),
@@ -197,26 +192,14 @@ CREATE TABLE IF NOT EXISTS `apartado_materia_nota` (
   `id_apartado_materia` int(11) NOT NULL,
   `alumno` int(11) NOT NULL,
   `nota_conceptual` int(11) NOT NULL,
-  `nota_numerica` double NOT NULL DEFAULT '-1',
+  `nota_numerica` float NOT NULL DEFAULT '-1',
   `periodo` int(11) NOT NULL,
   `observaciones` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_apartado_materia` (`id_apartado_materia`,`nota_conceptual`),
   KEY `nota_conceptual` (`nota_conceptual`),
   KEY `alumno` (`alumno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Volcado de datos para la tabla `apartado_materia_nota`
---
-
-INSERT INTO `apartado_materia_nota` (`id`, `id_apartado_materia`, `alumno`, `nota_conceptual`, `nota_numerica`, `periodo`, `observaciones`) VALUES
-(1, 0, 1, 0, -1, 0, ''),
-(2, 0, 2, 0, -1, 0, ''),
-(3, 39, 2, 0, -1, 1, ''),
-(4, 39, 2, 0, -1, 1, ''),
-(5, 41, 2, 0, -1, 3, ''),
-(6, 39, 2, 0, -1, 1, '');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
 
 -- --------------------------------------------------------
 
@@ -259,8 +242,8 @@ INSERT INTO `curso` (`cursoid`, `ano_calendario`, `ano_academico`, `nivelid`, `t
 (25, 2014, '7º', 2, 1, 'A', 5),
 (26, 2014, '7º', 2, 1, 'B', 5),
 (27, 2014, '7º', 2, 3, 'A', 5),
-(28, 2014, 'Jardin', 1, 1, 'Sala Azul', 5),
-(29, 2014, 'Jardin', 1, 1, 'Sala Naranja', 5),
+(28, 2014, 'Jardin', 1, 1, 'Sala_Azul', 5),
+(29, 2014, 'Jardin', 1, 1, 'Sala_Naranja', 5),
 (30, 2014, '1º', 3, 1, 'A', 5),
 (31, 2014, '2º', 3, 1, 'A', 5),
 (32, 2014, '3º', 3, 1, 'A', 5),
@@ -280,15 +263,7 @@ CREATE TABLE IF NOT EXISTS `curso_alumno` (
   PRIMARY KEY (`id`),
   KEY `z` (`curso`,`alumno`),
   KEY `alumno` (`alumno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Volcado de datos para la tabla `curso_alumno`
---
-
-INSERT INTO `curso_alumno` (`id`, `curso`, `alumno`) VALUES
-(1, 12, 1),
-(2, 30, 2);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -389,14 +364,7 @@ CREATE TABLE IF NOT EXISTS `falta_alumno` (
   PRIMARY KEY (`id`),
   KEY `alumno` (`alumno`,`curso`),
   KEY `curso` (`curso`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Volcado de datos para la tabla `falta_alumno`
---
-
-INSERT INTO `falta_alumno` (`id`, `alumno`, `valor`, `curso`, `date_inasistencia`) VALUES
-(6, 1, 0, 0, '0000-00-00');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -533,15 +501,7 @@ CREATE TABLE IF NOT EXISTS `padres` (
   PRIMARY KEY (`idpadre`),
   UNIQUE KEY `idpadre_UNIQUE` (`idpadre`),
   KEY `usuario` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Volcado de datos para la tabla `padres`
---
-
-INSERT INTO `padres` (`idpadre`, `usuario`, `nombre`, `apellido`, `observaciones`, `dni`, `mail`, `telefono_fijo`, `telefono_celular`) VALUES
-(1, 2, 'Julian', 'Medina', 'Observaciones', '35.667.666', 'julian@sourcingup.com', '4-776-9008', '11-3-142-9987'),
-(2, 3, 'Mirtha', 'Legrand', 'Observaciones', '14.003.200', 'mirta@legrand.com.ar', '4-776-9009', '11-3-142-9986');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -553,18 +513,40 @@ CREATE TABLE IF NOT EXISTS `preceptores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `curso` int(11) NOT NULL,
   `usuario` int(11) NOT NULL,
+  `email` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `curso` (`curso`),
   KEY `usuario` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Volcado de datos para la tabla `preceptores`
 --
 
-INSERT INTO `preceptores` (`id`, `curso`, `usuario`) VALUES
-(13, 12, 2),
-(14, 30, 7);
+INSERT INTO `preceptores` (`id`, `curso`, `usuario`, `email`) VALUES
+(20, 12, 20, 'test@t.com'),
+(21, 13, 21, 'test@test.com'),
+(22, 14, 22, 'test@test.com'),
+(23, 15, 23, 'test@test.com'),
+(24, 16, 24, 'test@test.com'),
+(25, 17, 25, 'test@test.com'),
+(26, 18, 26, 'test@test.com'),
+(27, 19, 27, 'test@test.com'),
+(28, 20, 28, 'test@test.com'),
+(29, 21, 29, 'test@test.com'),
+(30, 22, 30, 'test@test.com'),
+(31, 23, 31, 'test@test.com'),
+(32, 24, 32, 'test@test.com'),
+(33, 25, 33, 'test@test.com'),
+(34, 26, 34, 'test@test.com'),
+(35, 27, 35, 'test@test.com'),
+(36, 28, 36, 'test@test.com'),
+(37, 29, 37, 'test@test.com'),
+(38, 30, 38, 'test@test.com'),
+(39, 31, 39, 'test@test.com'),
+(40, 32, 40, 'test@test.com'),
+(41, 33, 41, 'test@test.com'),
+(42, 34, 42, 'test@test.com');
 
 -- --------------------------------------------------------
 
@@ -699,21 +681,37 @@ CREATE TABLE IF NOT EXISTS `user` (
   `rol` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `rol` (`rol`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `rol`) VALUES
-(2, 'alan', '$1$f0..6A/.$43qCQeoIgVEyEkCPSM./30', 'alan@a.com', 2),
-(3, 'julianmedina', '$1$RM2.G04.$IoojUv.8jXa7VlyL88/v6.', 'a@a.com', 1),
-(4, 'mirthalegrand', '$1$0U..HI1.$AQbpvHlKXbaqIlODyqWRz.', 'a@a.com', 1),
-(5, 'admin', '$1$Q11.ZL..$yR6xjU5epZAkevPpkacw9.', 'admin@admin.com', 3),
-(6, 'preceptor', '$1$Zm5.uV..$tffEZ/1NPNMcoDfQ7.YL81', 'preceptor@preceptor.com', 2),
-(7, 'preceptor_secundario', '$1$nx3.ks3.$WFb2ChUb.5SemhzoSe0F10', 'preceptor_secundario@a.com', 2),
-(8, 'preceptor_secundario', '$1$KG1.LU2.$kwW8FG8CmmCuwYKHTUmTS.', 'preceptor_secundario@a.com', 1),
-(9, 'preceptor_jardin', '$1$2E4.hr5.$Zf0qnh7VouakkesZ7Wbeg1', 'precep_jardin@gmail.com', 4);
+(11, 'admin', '$1$kz..dZ/.$AMa1xpNnMEdq0nJGS553c.', 'admin@admin.com', 3),
+(20, '2014_1a_primaria_tm', '$1$ZL2.uW1.$trVUTH77OLk3BnJ8.0efy.', 'test@t.com', 2),
+(21, '2014_1a_primaria_tt', '$1$Tm/.g53.$8ToTP6z20D2izXkBAn7Wg/', 'test@test.com', 2),
+(22, '2014_2a_primaria_tm', '$1$iz5.Dm0.$rcSbRNrpEaNzYVO7wQT7R.', 'test@test.com', 2),
+(23, '2014_2a_primaria_tt', '$1$pa5.8V0.$d.QsFPlA9VZyoUszg7vwV/', 'test@test.com', 2),
+(24, '2014_3a_primaria_tm', '$1$U9/.Na5.$WaB/yJhyJDm3R8CwPnKKH0', 'test@test.com', 2),
+(25, '2014_3b_primaria_tm', '$1$Qg1.ZA4.$30F0hUn.3RE2e3NPm5B.n.', 'test@test.com', 2),
+(26, '2014_3a_primaria_tt', '$1$vC4.M10.$5o.gvpAQ4IgAx4KJYbnHW/', 'test@test.com', 2),
+(27, '2014_4a_primaria_tm', '$1$SF/.z...$snHFmILwXFIP6uEKQ6Jkk/', 'test@test.com', 2),
+(28, '2014_4a_primaria_tt', '$1$un0.f8..$TIILuCfmoI7qK1cSSBRhS0', 'test@test.com', 2),
+(29, '2014_5a_primaria_tm', '$1$Ao5.JN/.$9cHNTQzupYYtzTH6WdWPK.', 'test@test.com', 2),
+(30, '2014_5a_primaria_tt', '$1$6o4.Vm..$igbqF9I6RenkIfeRvTTHL1', 'test@test.com', 2),
+(31, '2014_6a_primaria_tm', '$1$lk5.Kw5.$g.XBOf5pMZ2B.3K6ZSOqS1', 'test@test.com', 2),
+(32, '2014_6a_primaria_tt', '$1$4v/.5u/.$UGyLzk5jzKQr138ZME0p10', 'test@test.com', 2),
+(33, '2014_7a_primaria_tm', '$1$L0..285.$1pd4VouAyFVhQYp7FJwfR.', 'test@test.com', 2),
+(34, '2014_7b_primaria_tm', '$1$eV/.P34.$YG24P6Ze2lPxZ2ZkLeErZ.', 'test@test.com', 2),
+(35, '2014_7a_primaria_tt', '$1$o43.R53.$VV3jliVqUJ4ibj1hpzsKc/', 'test@test.com', 2),
+(36, '2014_jsala_azul_jardin_tm', '$1$hd0.WO5.$.Dayc8GwCzX80ky3AbU/Y0', 'test@test.com', 2),
+(37, '2014_jsala_naranja_jardin_tm', '$1$sr3.F92.$TikescxJywvcO6AMJXyyk0', 'test@test.com', 2),
+(38, '2014_1a_secundario_tm', '$1$G34.Xk/.$AC3XSh0t/69LznOP2msTn0', 'test@test.com', 2),
+(39, '2014_2a_secundario_tm', '$1$nw..k91.$rIRXZ3ryijAjwOdngAjYt0', 'test@test.com', 2),
+(40, '2014_3a_secundario_tm', '$1$q23.rU1.$9PilfQH0Uwr8tpwZkvSeX1', 'test@test.com', 2),
+(41, '2014_4a_secundario_tm', '$1$UI3.Nv0.$wgOcxDPuFj2qt5KqDx4Bv0', 'test@test.com', 2),
+(42, '2014_5a_secundario_tm', '$1$d/..if3.$qIBwDnRdQc3DwVd0mKxHw1', 'test@test.com', 2);
 
 --
 -- Restricciones para tablas volcadas
@@ -723,9 +721,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `rol`) VALUES
 -- Filtros para la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  ADD CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`cursoactualid`) REFERENCES `curso` (`cursoid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `madres` FOREIGN KEY (`madreid`) REFERENCES `padres` (`idpadre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `padres` FOREIGN KEY (`padreid`) REFERENCES `padres` (`idpadre`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `madres` FOREIGN KEY (`madreid`) REFERENCES `padres` (`idpadre`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `padres` FOREIGN KEY (`padreid`) REFERENCES `padres` (`idpadre`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `alumno_materia_previa`
@@ -746,7 +743,7 @@ ALTER TABLE `apartado_materia`
 -- Filtros para la tabla `apartado_materia_nota`
 --
 ALTER TABLE `apartado_materia_nota`
-  ADD CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `curso`
@@ -761,7 +758,7 @@ ALTER TABLE `curso`
 --
 ALTER TABLE `curso_alumno`
   ADD CONSTRAINT `curso_alumno_ibfk_1` FOREIGN KEY (`curso`) REFERENCES `curso` (`cursoid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `curso_alumno_ibfk_2` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `curso_alumno_ibfk_2` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `curso_materia`
@@ -787,7 +784,7 @@ ALTER TABLE `materia`
 -- Filtros para la tabla `padres`
 --
 ALTER TABLE `padres`
-  ADD CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `preceptores`

@@ -8,8 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Apartado por Materia', 'url'=>array('index')),
-	array('label'=>'Administrar Apartado por Materia', 'url'=>array('admin')),
+	array('label'=>'Ver Todos', 'url'=>array('admin')),
 );
 ?>
 

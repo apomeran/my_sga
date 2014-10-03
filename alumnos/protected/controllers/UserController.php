@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'changepwd'),
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -60,6 +60,35 @@ class UserController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	 
+	public function actionChangepwd($id){
+	
+		$model=$this->loadModel($id);
+		
+		
+		if(isset($_POST['User']))
+		{
+			if ($model->password == crypt($_POST['User']['password'], $model->password)){
+				$model->password = crypt($_POST['User']['npassword']);
+				if ($model->save()){
+				
+					$this->render('msg_pwd',array(
+						'message'=>"Se cambio exitosamente la contraseña",
+					));
+				
+				}
+			}else{
+				$this->render('msg_pwd',array(
+					'message'=>"La contraseña ingresada es incorrecta",
+				));
+				
+			}
+			die;
+		}
+		$this->render('changepwd',array(
+			'model'=>$model,
+		));
+	}
 	public function actionCreate()
 	{
 		$model=new User;

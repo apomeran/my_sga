@@ -29,9 +29,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'alumno'); ?>
 		<?php 
-		
-				 echo $form->dropDownList($model,'alumno',CHtml::listData($alumnos),'idalumno','nombre');
-			
+			echo $form->dropDownList($model,'alumno',CHtml::listData($alumnos,'idalumno','fullname'));
 		?>
 		<?php echo $form->error($model,'alumno'); ?>
 	</div>
@@ -41,8 +39,8 @@
 	</div>
 	<?php
 	}else{
-				 echo "Todos los alumnos se encuentran ya inscriptos";
-			}
+		 echo "Todos los alumnos se encuentran ya inscriptos. ";
+	}
 	?>
 <?php $this->endWidget(); ?>
 

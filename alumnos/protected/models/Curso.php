@@ -89,10 +89,10 @@ class Curso extends CActiveRecord {
             return 'N/A';
         }
         if ($this->nivelid == 2) { // PRIMARIA
-            return '  <th>Materia</th>  <th>1º Bimestre</th>   <th>2º Bimestre</th>   <th>3º Bimestre</th> <th>4º Bimestre</th> ';
+            return '  <th>Materia</th>  <th>1º Bimestre</th>   <th>2º Bimestre</th>   <th>3º Bimestre</th> <th>4º Bimestre</th>  <th>Diciembre</th> <th>Marzo</th>';
         }
         if ($this->nivelid == 3) { // SECUNDARIO
-            return '  <th>Materia</th>  <th>1º Trimestre</th>   <th>2º Trimestre</th>   <th>3º Trimestre</th>';
+            return '  <th>Materia</th>  <th>1º Trimestre</th>   <th>2º Trimestre</th>   <th>3º Trimestre</th> <th>Diciembre</th> <th>Marzo</th>';
         }
     }
 
@@ -102,10 +102,10 @@ class Curso extends CActiveRecord {
             return 'N/A';
         }
         if ($this->nivelid == 2) { // PRIMARIA
-            return '  <th></th>  <th>1º Bimestre</th>   <th>2º Bimestre</th>   <th>3º Bimestre</th> <th>4º Bimestre</th> ';
+            return '  <th></th>  <th>1º Bimestre</th>   <th>2º Bimestre</th>   <th>3º Bimestre</th> <th>4º Bimestre</th> <th>Diciembre</th> <th>Marzo</th>';
         }
         if ($this->nivelid == 3) { // SECUNDARIO
-            return '  <th></th>  <th>1º Trimestre</th>   <th>2º Trimestre</th>   <th>3º Trimestre</th>';
+            return '  <th></th>  <th>1º Trimestre</th>   <th>2º Trimestre</th>   <th>3º Trimestre</th> <th>Diciembre</th> <th>Marzo</th>';
         }
     }
 

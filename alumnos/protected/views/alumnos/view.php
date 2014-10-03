@@ -33,9 +33,45 @@ $this->menu=array(
 <br>
 <br>
 
-<h3>Boletin</h3>
-<?php foreach ($model->cursoactual->cursoMaterias as $m) {
-	echo '<li>' . $m->materia0->nombre . '</li>';
+<h3>Boletin (Calificaciones Finales)</h3>
+<table style="width:600px; font-size:11px !important">
+<tr>
+<?php
+
+$final_apartado = Apartado::model()->findByAttributes(array('final' => 1));
+$final_apartado_id = $final_apartado['id'];
+
+if ($model->cursoactual != null){
+ 
+	echo $model->cursoactual->getLayout();
+	$j=0;
+	foreach ($model->cursoactual->cursoMaterias as $m) {
+			echo "<tr>";
+		echo '<td>' . $m->materia0->nombre . '</td>';
+		
+		for ($l=0 ; $l < $model->cursoactual->getPeriodosCount(); $l++){
+					$apartado_materia = ApartadoMateria::model()->findByAttributes(array('materia'=>$m->materia0->id, 'apartado'=> $final_apartado_id));
+					$apartado_materia_id = $apartado_materia['id'];
+						
+					$nota = ApartadoMateriaNota::model()->findByAttributes(array('periodo' => ($l+1), 'alumno' => $model->idalumno,'id_apartado_materia' => $apartado_materia_id));
+
+					if ($nota != null){
+						if ($model->cursoactual->nivelid == 2)
+						 $nota = $nota->notaConceptual->codigo;
+						if ($model->cursoactual->nivelid == 3)
+						 $nota = $nota->nota_numerica;
+					}else{
+						$nota = "-";
+					}
+					echo '<td><b>' . $nota . '</b></td>';
+		}
+		
+		echo "</tr>";
+		$j++;
+	}
+}else{
+	echo "El alumno no pertenece a ningun curso";
 }
 ?>
+</table>
 

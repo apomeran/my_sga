@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar Usuario', 'url'=>array('index')),
+	array('label'=>'Cambiar contraseña', 'url'=>array('changepwd', 'id'=>$model->id)),
 	array('label'=>'Crear Usuario', 'url'=>array('create')),
 	array('label'=>'Actualizar Usuario', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Eliminar Usuario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar este item?')),
@@ -16,7 +17,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver Usuario #<?php echo $model->id; ?></h1>
+<h1>Ver Usuario <?php echo $model->username; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

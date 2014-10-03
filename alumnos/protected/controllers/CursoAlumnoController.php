@@ -64,8 +64,12 @@ class CursoAlumnoController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['CursoAlumno'])) {
+			
             $model->attributes = $_POST['CursoAlumno'];
-            if ($model->save())
+			$alu = Alumnos::model()->findByPk($model->alumno);
+			$alu->cursoactualid = $model->curso;
+			
+            if ($model->save() && $alu->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
 

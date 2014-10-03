@@ -35,13 +35,12 @@ class Padres extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('usuario', 'required'),
-            array('usuario', 'numerical', 'integerOnly' => true),
+			
             array('nombre, apellido, observaciones', 'length', 'max' => 255),
             array('dni, mail, telefono_fijo, telefono_celular', 'length', 'max' => 45),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('idpadre, usuario, nombre, apellido, observaciones, dni, mail, telefono_fijo, telefono_celular', 'safe', 'on' => 'search'),
+            array('idpadre, nombre, apellido, observaciones, dni, mail, telefono_fijo, telefono_celular', 'safe', 'on' => 'search'),
         );
     }
 
@@ -98,7 +97,6 @@ class Padres extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('idpadre', $this->idpadre);
-        $criteria->compare('usuario', $this->usuario);
         $criteria->compare('nombre', $this->nombre, true);
         $criteria->compare('apellido', $this->apellido, true);
         $criteria->compare('observaciones', $this->observaciones, true);

@@ -64,12 +64,20 @@ class PreceptoresController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Preceptores'])) {
+			
             $model->attributes = $_POST['Preceptores'];
-            if ($model->save())
-                var_dump($model->usuario0->rol);
-            $model->usuario0->rol = "2";
-            $model->usuario0->save();
-            $this->redirect(array('view', 'id' => $model->id));
+			$curso = Curso::model()->findByPk($model->curso);
+			$user = new User;
+			
+			$user->username = strtolower($curso->ano_calendario . "_" . substr($curso->ano_academico,0,1) . $curso->division_salita . "_" . $curso->nivel->nombre . "_t" . substr($curso->turno->nombre,0,1));
+			$user->password = crypt($user->username);
+			$user->email = strtolower($model->email);
+			$user->rol = Roles::model()->findByAttributes(array('level' => 2))['id'];
+			if ($user->save()){
+				$model->usuario = $user->id;
+			}
+			if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
         }
 
         $this->render('create', array(

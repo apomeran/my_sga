@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Ver Apartados por Materia', 'url'=>array('index')),
-	array('label'=>'Create Apartados por Materia', 'url'=>array('create')),
-	array('label'=>'Update Apartados por Materia', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Apartados por Materia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Apartados por Materia', 'url'=>array('admin')),
+	array('label'=>'Crear Apartados por Materia', 'url'=>array('create')),
+	array('label'=>'Actualizar este apartado', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar este apartado', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar esto?')),
+	array('label'=>'Ver Todos', 'url'=>array('admin')),
 );
 ?>
 

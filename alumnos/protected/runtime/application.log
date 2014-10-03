@@ -11132,3 +11132,826 @@ Stack trace:
 REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=1
 HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=alumnos/admin
 ---
+2014/10/03 18:30:08 [error] [php] Undefined variable: alu (C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): AlumnosController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): AlumnosController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php(92): AlumnosController->render()
+#3 unknown(0): AlumnosController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): AlumnosController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): AlumnosController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): AlumnosController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): AlumnosController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=1
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php (47)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php (92)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 18:30:14 [error] [php] Undefined variable: ap_aux_array (C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php:48)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): AlumnosController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): AlumnosController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php(92): AlumnosController->render()
+#3 unknown(0): AlumnosController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): AlumnosController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): AlumnosController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): AlumnosController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): AlumnosController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=1
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php (48)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php (92)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 18:30:39 [error] [php] Undefined variable: periodo (C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php:49)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): AlumnosController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): AlumnosController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php(92): AlumnosController->render()
+#3 unknown(0): AlumnosController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): AlumnosController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): AlumnosController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): AlumnosController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): AlumnosController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=1
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php (49)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php (92)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 18:33:05 [error] [php] Undefined variable: curso (C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php:51)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): AlumnosController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): AlumnosController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php(92): AlumnosController->render()
+#3 unknown(0): AlumnosController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): AlumnosController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): AlumnosController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): AlumnosController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): AlumnosController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=1
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php (51)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php (92)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 18:40:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view_calificaci...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('apartadoMateria...')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=apartadoMateriaNota/view_calificaciones_materia&id=19&curso_id=12&periodo=4
+---
+2014/10/03 18:48:21 [error] [php] Missing argument 2 for CHtml::listData(), called in C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\_form.php on line 33 and defined (C:\xampp\htdocs\my_sga\yii\framework\web\helpers\CHtml.php:2073)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CursoAlumnoController->renderInternal()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CursoAlumnoController->renderFile()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\create.php(17): CursoAlumnoController->renderPartial()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CursoAlumnoController->renderInternal()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CursoAlumnoController->renderFile()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CursoAlumnoController->renderPartial()
+#7 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php(74): CursoAlumnoController->render()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): CursoAlumnoController->actionCreate()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CursoAlumnoController->runAction()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CursoAlumnoController->filterAccessControl()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CursoAlumnoController->runActionWithFilters()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CursoAlumnoController->run()
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=cursoAlumno/create
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\_form.php (33)
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\create.php (17)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php (74)
+2014/10/03 18:53:41 [error] [php] Object of class Alumnos could not be converted to string (C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\view.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CursoAlumnoController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CursoAlumnoController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php(53): CursoAlumnoController->render()
+#3 unknown(0): CursoAlumnoController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CursoAlumnoController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CursoAlumnoController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CursoAlumnoController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CursoAlumnoController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=cursoAlumno/view&id=3
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\view.php (19)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php (53)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 18:54:16 [error] [exception.CException] exception 'CException' with message 'Property "Curso.name" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('name')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\cursoAlumno\view.php(21): CActiveRecord->__get('name')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php(53): CController->render('view', Array)
+#7 [internal function]: CursoAlumnoController->actionView('3')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(CursoAlumnoController), Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CursoAlumnoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cursoAlumno/vie...')
+#20 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=cursoAlumno/view&id=3
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=cursoAlumno/create
+---
+2014/10/03 19:09:43 [error] [php] Undefined variable: curso (C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php:54)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): AlumnosController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): AlumnosController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php(92): AlumnosController->render()
+#3 unknown(0): AlumnosController->actionView()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): AlumnosController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): AlumnosController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): AlumnosController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): AlumnosController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=alumnos/view&id=3
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\alumnos\view.php (54)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\AlumnosController.php (92)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:39:31 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:40:39 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:47:02 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:47:47 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:48:41 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 19:48:50 [warning] [application] Failed to set unsafe attribute "nota_numerica" of "ApartadoMateriaNota".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\ApartadoMateriaNotaController.php (169)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:01:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2.
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php (109)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:01:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(109): CActiveRecord->delete()
+#3 [internal function]: PreceptoresController->actionDelete('13')
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PreceptoresController), Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PreceptoresController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/del...')
+#19 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?ajax=preceptores-grid&id=13&r=preceptores%2Fdelete
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/admin
+---
+2014/10/03 20:01:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2.
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (120)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:01:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(120): CActiveRecord->delete()
+#3 [internal function]: UserController->actionDelete('2')
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/delete')
+#19 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?ajax=user-grid&id=2&r=user%2Fdelete
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/admin
+---
+2014/10/03 20:02:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2.
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (120)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:02:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`apartado_materia_nota`, CONSTRAINT `apartado_materia_nota_ibfk_3` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `user` WHERE `user`.`id`=2' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(120): CActiveRecord->delete()
+#3 [internal function]: UserController->actionDelete('2')
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/delete')
+#19 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?ajax=user-grid&id=2&r=user%2Fdelete
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/admin
+---
+2014/10/03 20:12:39 [error] [exception.CException] exception 'CException' with message 'Padres has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\xampp\htdocs\my_sga\yii\framework\base\CModel.php:289
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CModel.php(304): CModel->getValidators('nombre')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('nombre')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(Padres), 'nombre', Array)
+#4 C:\xampp\htdocs\my_sga\alumnos\protected\views\padres\_form.php(23): CActiveForm->labelEx(Object(Padres), 'nombre')
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\my_sga\alumnos\protected\views\padres\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(77): CController->render('create', Array)
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/create')
+#25 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=padres/admin
+---
+2014/10/03 20:13:57 [error] [php] include(Users.php): failed to open stream: No such file or directory (C:\xampp\htdocs\my_sga\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(69): spl_autoload_call()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): PadresController->runAction()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): PadresController->filterAccessControl()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): PadresController->runActionWithFilters()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): PadresController->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php (69)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:14:31 [error] [php] Use of undefined constant model - assumed 'model' (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php:71)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): PadresController->runAction()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): PadresController->filterAccessControl()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): PadresController->runActionWithFilters()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): PadresController->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php (71)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:17:48 [error] [exception.CException] exception 'CException' with message 'Property "Padres.email" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('email')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(72): CActiveRecord->__get('email')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/create')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=padres/create
+---
+2014/10/03 20:17:53 [error] [php] include(Rol.php): failed to open stream: No such file or directory (C:\xampp\htdocs\my_sga\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(73): spl_autoload_call()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): PadresController->runAction()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): PadresController->filterAccessControl()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): PadresController->runActionWithFilters()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): PadresController->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php (73)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:18:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`escuela`.`padres`, CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `padres` (`nombre`, `apellido`, `observaciones`, `dni`, `mail`, `telefono_fijo`, `telefono_celular`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php (74)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:18:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`escuela`.`padres`, CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `padres` (`nombre`, `apellido`, `observaciones`, `dni`, `mail`, `telefono_fijo`, `telefono_celular`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(74): CActiveRecord->save()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/create')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=padres/create
+---
+2014/10/03 20:19:17 [error] [exception.CException] exception 'CException' with message 'Property "Padres.user" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('user', '13')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(75): CActiveRecord->__set('user', '13')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PadresController->actionCreate()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/create')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=padres/create
+---
+2014/10/03 20:28:33 [error] [php] Undefined index: Padres (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): PreceptoresController->runAction()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): PreceptoresController->filterAccessControl()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): PreceptoresController->runActionWithFilters()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): PreceptoresController->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php (68)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:56:48 [error] [exception.CException] exception 'CException' with message 'Property "Curso.nivel0" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nivel0')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(72): CActiveRecord->__get('nivel0')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PreceptoresController->actionCreate()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/cre...')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/create
+---
+2014/10/03 20:56:53 [error] [exception.CException] exception 'CException' with message 'Property "Curso.turno0" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('turno0')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(72): CActiveRecord->__get('turno0')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PreceptoresController->actionCreate()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/cre...')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/create
+---
+2014/10/03 20:58:28 [error] [exception.CException] exception 'CException' with message 'Property "Preceptores.idpadre" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idpadre')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(80): CActiveRecord->__get('idpadre')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PreceptoresController->actionCreate()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/cre...')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/create
+---
+2014/10/03 20:59:38 [warning] [application] Failed to set unsafe attribute "titular" of "Curso".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoController.php (94)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 20:59:51 [warning] [application] Failed to set unsafe attribute "titular" of "Curso".
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoController.php (94)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 21:08:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'IN/ALL/ANY subquery'. The SQL statement executed was: SELECT * FROM `curso` `t` WHERE id not in (SELECT  curso FROM `preceptores`).
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\_form.php (26)
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\create.php (18)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php (85)
+2014/10/03 21:08:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'IN/ALL/ANY subquery'. The SQL statement executed was: SELECT * FROM `curso` `t` WHERE id not in (SELECT  curso FROM `preceptores`)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\_form.php(26): CActiveRecord->findAll(Object(CDbCriteria))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(85): CController->render('create', Array)
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PreceptoresController->actionCreate()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/cre...')
+#24 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/admin
+---
+2014/10/03 21:11:04 [error] [exception.CException] exception 'CException' with message 'PreceptoresController contains improperly nested widget tags in its view "C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\preceptores\create.php(18): CController->renderPartial('_form', Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PreceptoresController.php(85): CController->render('create', Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): PreceptoresController->actionCreate()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('preceptores/cre...')
+#18 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=preceptores/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=preceptores/view&id=42
+---
+2014/10/03 22:14:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:14:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:15:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:15:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:15:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:15:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/03 22:16:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php:187
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(66): UserController->loadModel('')
+#1 [internal function]: UserController->actionChangepwd('')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd&id=
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=20
+---
+2014/10/03 22:18:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "msg_pwd".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('msg_pwd')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('msg_pwd')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/msg_pwd')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/msg_pwd&msg=La+contrase%C3%B1a+ingresada+es+incorrecta
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=11
+---
+2014/10/03 22:18:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "msg_pwd".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('msg_pwd')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('msg_pwd')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/msg_pwd')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/msg_pwd&msg=La+contrase%C3%B1a+ingresada+es+incorrecta
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=11
+---
+2014/10/03 22:18:41 [error] [php] Undefined variable: message (C:\xampp\htdocs\my_sga\alumnos\protected\views\user\msg_pwd.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(81): UserController->render()
+#3 unknown(0): UserController->actionChangepwd()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): UserController->run()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd&id=11
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\user\msg_pwd.php (16)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (81)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/03 22:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "msg_pwd".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('msg_pwd')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('msg_pwd')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/msg_pwd')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/msg_pwd&msg=Se+cambio+exitosamente+la+contrase%C3%B1a
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=11
+---
+2014/10/03 22:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "msg_pwd".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('msg_pwd')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('msg_pwd')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/msg_pwd')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/msg_pwd&msg=Se+cambio+exitosamente+la+contrase%C3%B1a
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd&id=11
+---

@@ -48,9 +48,10 @@ $this->menu=array(
 		else
 		if ($materia->getPeriodosCount() == 4){ $txt = "Bimestre";}
 		echo "<td>" . $title->titulo . "</td>";
-		for($i=0; $i < $materia->getPeriodosCount(); $i++){
+		for($i=0; $i < $materia->getPeriodosCount() + 2 ; $i++){
 			
-			$periodos_count[$i+1] = $i+1 ."º $txt";
+			if ($i < $materia->getPeriodosCount())
+				$periodos_count[$i+1] = $i+1 ."º $txt";
 			$nota_value = " - ";
 			foreach($notas as $nota){
 				 if($nota->idApartadoMateria->id == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
@@ -75,6 +76,17 @@ $this->menu=array(
 <br>
 
 <div class="form">
+
+<?php
+/**
+**
+	LOGICA PARA DICIEMBRE & MARZO
+**
+**/
+
+$periodos_count[] = "Diciembre";
+$periodos_count[] = "Marzo";
+?>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'curso-form',

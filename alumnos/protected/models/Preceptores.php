@@ -28,8 +28,8 @@ class Preceptores extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('curso, usuario', 'required'),
-            array('curso, usuario', 'numerical', 'integerOnly' => true),
+            array('curso, email', 'required'),
+            array('curso', 'numerical', 'integerOnly' => true),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, curso, usuario', 'safe', 'on' => 'search'),
@@ -56,6 +56,8 @@ class Preceptores extends CActiveRecord {
             'id' => 'ID',
             'curso' => 'Curso',
             'usuario' => 'Usuario',
+			'email' => 'Email',
+
         );
     }
 
@@ -79,6 +81,8 @@ class Preceptores extends CActiveRecord {
         $criteria->compare('id', $this->id);
         $criteria->compare('curso', $this->curso);
         $criteria->compare('usuario', $this->usuario);
+		$criteria->compare('email',$this->email,true);
+
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,

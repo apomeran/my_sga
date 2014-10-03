@@ -9,13 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Alumnos', 'url'=>array('index')),
-	array('label'=>'Create Alumnos', 'url'=>array('create')),
-	array('label'=>'View Alumnos', 'url'=>array('view', 'id'=>$model->idalumno)),
-	array('label'=>'Manage Alumnos', 'url'=>array('admin')),
+	array('label'=>'Ver Alumnos', 'url'=>array('index')),
 );
 ?>
 
-<h1>Update Alumnos <?php echo $model->idalumno; ?></h1>
+<h1>Actualizar Alumno <?php echo $model->fullname; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

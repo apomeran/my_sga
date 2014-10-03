@@ -14,27 +14,40 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-
+	
+	<?php
+			$criteria = new CDbCriteria();
+			$criteria->addCondition("cursoid not in (SELECT  curso FROM `preceptores`)");
+			$cursos = Curso::model()->findAll($criteria);
+			if (count($cursos) != 0){
+	?>
+	
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		
 		<?php echo $form->labelEx($model,'curso'); ?>
-		<?php echo $form->dropDownList($model,'curso',CHtml::listData(Curso::model()->findAll(),'cursoid','nombre'));?>
+		<?php echo $form->dropDownList($model,'curso',CHtml::listData($cursos,'cursoid','nombre'));?>
 		<?php echo $form->error($model,'curso'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'usuario'); ?>
-		<?php echo $form->dropDownList($model,'usuario',CHtml::listData(User::model()->findAllByAttributes(array(),"rol = 4"),'id','username'));?>		
-		<?php echo $form->error($model,'usuario'); ?>
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textArea($model,'email',array('rows'=>6, 'cols'=>50));;?>		
+		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
-
+	
+	<?php
+	}else{
+		echo "Todos los cursos ya tienen asignado un preceptor";
+	}
+	?>
+	<?php $this->endWidget(); ?>
 </div><!-- form -->

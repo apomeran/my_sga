@@ -64,8 +64,17 @@ class PadresController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Padres'])) {
+			
             $model->attributes = $_POST['Padres'];
-            if ($model->save())
+			$user = new User;
+			$user->username = strtolower($model->nombre . "_" . $model->apellido);
+			$user->password = crypt($user->username);
+			$user->email = strtolower($model->mail);
+			$user->rol = Roles::model()->findByAttributes(array('level' => 1))['id'];
+			if ($user->save()){
+				$model->usuario = $user->id;
+			}
+			if ($model->save())
                 $this->redirect(array('view', 'id' => $model->idpadre));
         }
 
