@@ -29,3 +29,13 @@ $this->menu=array(
 		'madre.fullname',
 	),
 )); ?>
+
+<br>
+<br>
+
+<h3>Boletin</h3>
+<?php foreach ($model->cursoactual->cursoMaterias as $m) {
+	echo '<li>' . $m->materia0->nombre . '</li>';
+}
+?>
+
