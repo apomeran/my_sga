@@ -5,20 +5,16 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('alumno')); ?>:</b>
-	<?php echo CHtml::encode($data->alumno); ?>
+	<?php echo CHtml::encode($data->alumno0->fullname); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('materia')); ?>:</b>
-	<?php echo CHtml::encode($data->materia); ?>
+	<?php echo CHtml::encode($data->materia0->nombre); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('curso')); ?>:</b>
-	<?php echo CHtml::encode($data->curso); ?>
+	<?php echo CHtml::encode($data->curso0->nombre); ?>
 	<br />
 
 

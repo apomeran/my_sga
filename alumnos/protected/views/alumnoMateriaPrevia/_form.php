@@ -3,6 +3,20 @@
 /* @var $model AlumnoMateriaPrevia */
 /* @var $form CActiveForm */
 ?>
+<?php 
+		$curso_id = Yii::app()->user->getPreceptorCursos()[0]->cursoid; 
+?>
+<?php $materias = CursoMateria::model()->findAllByAttributes(array(),"curso = " . $curso_id);
+		$i = 0; $str = "";
+		foreach ($materias as $m){
+			if($i!=0)
+			 $str .= ","; 
+			$str .=  $m->materia ;
+			$i++;
+		}
+		
+if (count($materias) > 0){		
+?>
 
 <div class="form">
 
@@ -21,9 +35,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'alumno'); ?>
-		<?php 
-		$curso_id = Yii::app()->user->getPreceptorCursos()[0]->cursoid; 
-		?>
+		
 		  
 		<?php echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAllByAttributes(array(),"cursoactualid=" . $curso_id ),'idalumno','fullname'));?>		
 		<?php echo $form->error($model,'alumno'); ?>
@@ -31,15 +43,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'materia'); ?>
-		<?php $materias = CursoMateria::model()->findAllByAttributes(array(),"curso = " . $curso_id);
-		$i = 0; $str = "";
-		foreach ($materias as $m){
-			if($i!=0)
-			 $str .= ","; 
-			$str .=  $m->materia ;
-			$i++;
-		}
-		?>
+		
 		<?php echo $form->dropDownList($model,'materia',CHtml::listData(Materia::model()->findAllByAttributes(array(), "id IN (" . $str . ")"),'id','nombre'));?>		
 		<?php echo $form->error($model,'materia'); ?>
 	</div>
@@ -51,3 +55,5 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php } else {echo "No hay materias asociadas al curso";}		
+?>

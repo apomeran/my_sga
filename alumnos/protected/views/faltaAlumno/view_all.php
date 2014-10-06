@@ -17,13 +17,13 @@ $this->menu = array(
 echo "<b>Primaria:</b> <br>";
 	foreach($cursos as $curso){
 		if ($curso->nivel->nombre == "Primaria")
-						echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) . '</li>';
+		    echo '<li>' . CHtml::link($curso->getNombre(),array('faltaAlumno/view_faltas&id=' . $curso->cursoid)) . '</li>';
 
 	}
 	echo "<br><b>Secundaria: </b>";
 	foreach($cursos as $curso){
 		if ($curso->nivel->nombre == "Secundario")
-			echo '<li>' . CHtml::link($curso->getNombre(),array('curso/view&id=' . $curso->cursoid)) . '</li>';
+			echo '<li>' . CHtml::link($curso->getNombre(),array('faltaAlumno/view_faltas&id=' . $curso->cursoid)) . '</li>';
 	}
 	
 ?>

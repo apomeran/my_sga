@@ -16,6 +16,15 @@ class SGAUser extends CWebUser
 						return true;
 				}
 			}
+			
+			if (Yii::app()->user->isExclusivePreceptor()){
+				$alumno = Alumnos::model()->findByPk($id);
+				if ($alumno == null)
+					return false;
+				return $this->isValidCurso($alumno->cursoactualid);
+			}
+			
+			
 			return Yii::app()->user->isAdmin();
 		}
 		

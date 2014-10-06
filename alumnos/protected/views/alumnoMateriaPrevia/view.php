@@ -8,22 +8,20 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List AlumnoMateriaPrevia', 'url'=>array('index')),
-	array('label'=>'Create AlumnoMateriaPrevia', 'url'=>array('create')),
-	array('label'=>'Update AlumnoMateriaPrevia', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete AlumnoMateriaPrevia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage AlumnoMateriaPrevia', 'url'=>array('admin')),
+	array('label'=>'Listar Previas para alumnos', 'url'=>array('index')),
+	array('label'=>'Crear Materia Previa para un Alumno', 'url'=>array('create')),
+	array('label'=>'Actualizar Materia Previa para un Alumno', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Materia Previa para un Alumno', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 
-<h1>View AlumnoMateriaPrevia #<?php echo $model->id; ?></h1>
+<h1>Ver Previa de Alumno: <?php echo $model->alumno0->fullname; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'alumno',
-		'materia',
-		'curso',
+		'alumno0.fullname',
+		'materia0.nombre',
+		'curso0.nombre',
 	),
 )); ?>

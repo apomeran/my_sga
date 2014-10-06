@@ -8,7 +8,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Crear Previas', 'url'=>array('create')),
-	array('label'=>'Administrar Previas', 'url'=>array('admin')),
 );
 ?>
 
