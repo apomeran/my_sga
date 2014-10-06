@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2014 a las 21:46:24
+-- Tiempo de generación: 06-10-2014 a las 19:08:09
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `escuela`
 --
-CREATE DATABASE IF NOT EXISTS `escuela` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `escuela`;
+CREATE DATABASE IF NOT EXISTS `284475_sistema` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `284475_sistema`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,15 @@ CREATE TABLE IF NOT EXISTS `alumnos` (
   KEY `padre_idx` (`padreid`),
   KEY `madre_idx` (`madreid`),
   KEY `cursoactualid` (`cursoactualid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`idalumno`, `nombre`, `apellido`, `dni`, `cursoactualid`, `codigoalumno`, `padreid`, `madreid`) VALUES
+(1, 'A', 'B', '1', 12, 'AB', 2, 2),
+(2, 'Alumno2', 'Aritstmn', '2', 30, 'AAritstmn', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -59,7 +67,15 @@ CREATE TABLE IF NOT EXISTS `alumno_materia_previa` (
   KEY `alumno` (`alumno`,`materia`),
   KEY `curso` (`curso`),
   KEY `materia` (`materia`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `alumno_materia_previa`
+--
+
+INSERT INTO `alumno_materia_previa` (`id`, `alumno`, `materia`, `curso`) VALUES
+(1, 1, 20, 12),
+(2, 1, 28, 12);
 
 -- --------------------------------------------------------
 
@@ -126,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `apartado_materia` (
   PRIMARY KEY (`id`),
   KEY `materia` (`materia`,`apartado`),
   KEY `apartado` (`apartado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=140 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=48 ;
 
 --
 -- Volcado de datos para la tabla `apartado_materia`
@@ -199,7 +215,16 @@ CREATE TABLE IF NOT EXISTS `apartado_materia_nota` (
   KEY `id_apartado_materia` (`id_apartado_materia`,`nota_conceptual`),
   KEY `nota_conceptual` (`nota_conceptual`),
   KEY `alumno` (`alumno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `apartado_materia_nota`
+--
+
+INSERT INTO `apartado_materia_nota` (`id`, `id_apartado_materia`, `alumno`, `nota_conceptual`, `nota_numerica`, `periodo`, `observaciones`) VALUES
+(1, 7, 1, 4, -1, 5, ''),
+(2, 7, 1, 9, -1, 6, ''),
+(3, 0, 1, 0, -1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -263,7 +288,15 @@ CREATE TABLE IF NOT EXISTS `curso_alumno` (
   PRIMARY KEY (`id`),
   KEY `z` (`curso`,`alumno`),
   KEY `alumno` (`alumno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `curso_alumno`
+--
+
+INSERT INTO `curso_alumno` (`id`, `curso`, `alumno`) VALUES
+(1, 12, 1),
+(2, 30, 2);
 
 -- --------------------------------------------------------
 
@@ -280,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `curso_materia` (
   KEY `curso` (`curso`),
   KEY `materia` (`materia`),
   KEY `profesor` (`profesor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Volcado de datos para la tabla `curso_materia`
@@ -308,7 +341,8 @@ INSERT INTO `curso_materia` (`id`, `curso`, `materia`, `profesor`) VALUES
 (27, 13, 27, 5),
 (28, 13, 28, 5),
 (29, 30, 57, 5),
-(30, 30, 60, 5);
+(30, 30, 60, 5),
+(31, 13, 37, 5);
 
 -- --------------------------------------------------------
 
@@ -364,7 +398,14 @@ CREATE TABLE IF NOT EXISTS `falta_alumno` (
   PRIMARY KEY (`id`),
   KEY `alumno` (`alumno`,`curso`),
   KEY `curso` (`curso`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `falta_alumno`
+--
+
+INSERT INTO `falta_alumno` (`id`, `alumno`, `valor`, `curso`, `date_inasistencia`) VALUES
+(2, 1, 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -501,7 +542,14 @@ CREATE TABLE IF NOT EXISTS `padres` (
   PRIMARY KEY (`idpadre`),
   UNIQUE KEY `idpadre_UNIQUE` (`idpadre`),
   KEY `usuario` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `padres`
+--
+
+INSERT INTO `padres` (`idpadre`, `usuario`, `nombre`, `apellido`, `observaciones`, `dni`, `mail`, `telefono_fijo`, `telefono_celular`) VALUES
+(2, 43, 'Padre', '1', 'a', 'a', 'aa', 'a', 'a');
 
 -- --------------------------------------------------------
 
@@ -517,14 +565,13 @@ CREATE TABLE IF NOT EXISTS `preceptores` (
   PRIMARY KEY (`id`),
   KEY `curso` (`curso`),
   KEY `usuario` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Volcado de datos para la tabla `preceptores`
 --
 
 INSERT INTO `preceptores` (`id`, `curso`, `usuario`, `email`) VALUES
-(20, 12, 20, 'test@t.com'),
 (21, 13, 21, 'test@test.com'),
 (22, 14, 22, 'test@test.com'),
 (23, 15, 23, 'test@test.com'),
@@ -546,7 +593,8 @@ INSERT INTO `preceptores` (`id`, `curso`, `usuario`, `email`) VALUES
 (39, 31, 39, 'test@test.com'),
 (40, 32, 40, 'test@test.com'),
 (41, 33, 41, 'test@test.com'),
-(42, 34, 42, 'test@test.com');
+(42, 34, 42, 'test@test.com'),
+(43, 12, 44, 'asd');
 
 -- --------------------------------------------------------
 
@@ -681,15 +729,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `rol` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `rol` (`rol`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `rol`) VALUES
-(11, 'admin', '$1$kz..dZ/.$AMa1xpNnMEdq0nJGS553c.', 'admin@admin.com', 3),
-(20, '2014_1a_primaria_tm', '$1$ZL2.uW1.$trVUTH77OLk3BnJ8.0efy.', 'test@t.com', 2),
+(11, 'admin', '$1$Xg0.UU1.$0w4k.au0yajJO6P0SvArf0', 'admin@admin.com', 3),
 (21, '2014_1a_primaria_tt', '$1$Tm/.g53.$8ToTP6z20D2izXkBAn7Wg/', 'test@test.com', 2),
 (22, '2014_2a_primaria_tm', '$1$iz5.Dm0.$rcSbRNrpEaNzYVO7wQT7R.', 'test@test.com', 2),
 (23, '2014_2a_primaria_tt', '$1$pa5.8V0.$d.QsFPlA9VZyoUszg7vwV/', 'test@test.com', 2),
@@ -711,7 +758,9 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `rol`) VALUES
 (39, '2014_2a_secundario_tm', '$1$nw..k91.$rIRXZ3ryijAjwOdngAjYt0', 'test@test.com', 2),
 (40, '2014_3a_secundario_tm', '$1$q23.rU1.$9PilfQH0Uwr8tpwZkvSeX1', 'test@test.com', 2),
 (41, '2014_4a_secundario_tm', '$1$UI3.Nv0.$wgOcxDPuFj2qt5KqDx4Bv0', 'test@test.com', 2),
-(42, '2014_5a_secundario_tm', '$1$d/..if3.$qIBwDnRdQc3DwVd0mKxHw1', 'test@test.com', 2);
+(42, '2014_5a_secundario_tm', '$1$d/..if3.$qIBwDnRdQc3DwVd0mKxHw1', 'test@test.com', 2),
+(43, 'padre_1', '$1$Xc0.Ug2.$dJL3SPtnN1zR39bJQvKCx1', 'aa', 1),
+(44, '2014_1a_primaria_tm', '$1$sw2.Fg5.$dsHYGm37.6UcVrZ0HsRRg0', 'asd', 2);
 
 --
 -- Restricciones para tablas volcadas

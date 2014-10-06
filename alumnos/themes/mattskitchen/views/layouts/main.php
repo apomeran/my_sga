@@ -29,7 +29,7 @@
 
 <div class="container" id="wrapper">
 
-  <header id="header">
+ <header id="header">
     <div id="logo"><?php echo CHtml::link("Instituto Amanecer" , '/'); ?></div>
 
     <nav id="mainmenu">
@@ -85,7 +85,7 @@
       <?php $this->widget('zii.widgets.CMenu',array('items'=>$menuItems)); ?>
     </nav>
     <div class="content">
-      <?php echo Yii::powered(); ?>
+    
     </div>
   </footer><!-- footer -->
 
