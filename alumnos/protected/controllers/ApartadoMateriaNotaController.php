@@ -73,7 +73,8 @@ class ApartadoMateriaNotaController extends Controller {
     }
 
     public function actionView_calificaciones_materia($id, $curso_id, $periodo = 1) {
-       if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($id))) {
+		
+       if (Yii::app()->user->isAdmin() || (Yii::app()->user->isPreceptor() && Yii::app()->user->isValidCurso($curso_id))) {
             $alumnos = array();
             $materia = Materia::model()->findByPk($id);
             $curso = Curso::model()->findByPk($curso_id);

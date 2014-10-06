@@ -39,6 +39,7 @@ class SGAUser extends CWebUser
 		}
 		
 		public function isValidCurso($id){
+			
 			if ($this->rol == 2){
 				$r = Preceptores::model()->findAllByAttributes(array(), "usuario = " . $this->id . " AND curso = " . $id);
 				return (count($r) > 0);

@@ -59,15 +59,22 @@ class Curso extends CActiveRecord {
         );
     }
 
-    public function getPeriodoName() {
+    public function getPeriodoName($periodo = -1) {
+		$txt = "";
+		if ($periodo == 5)
+			return "Diciembre";
+		if ($periodo == 6)
+			return "Marzo";	
+		if ($periodo != -1)
+			$txt = $periodo . " "; 
         if ($this->nivelid == 1) { // JARDIN
             return "N/A";
         }
         if ($this->nivelid == 2) { // PRIMARIA
-            return "Bimestre";
+            return $txt . "Bimestre";
         }
         if ($this->nivelid == 3) { // SECUNDARIO
-            return "Trimestre";
+            return $txt . "Trimestre";
         }
     }
 

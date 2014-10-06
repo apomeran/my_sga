@@ -20,7 +20,7 @@ $this->menu = array(
 <h3>Calificaciones para <b><?php echo $materia->nombre ?> </b><small> - <?php echo $curso->nombre ?> </small></h3>
 <br>
 
-<h3><small><?php if($periodo > 1) echo CHtml::link("Anterior", array("apartadoMateriaNota/view_calificaciones_materia&id=".$param1."&curso_id=".$param2."&periodo=". ($periodo-1))) . ' - ' ?> </small> <?php echo $periodo . " " . $curso->getPeriodoName()?> <small> <?php if($periodo < $curso->getPeriodosCount()) echo ' - ' . CHtml::link("Siguiente", array("apartadoMateriaNota/view_calificaciones_materia&id=".$param1."&curso_id=".$param2."&periodo=". ($periodo+1))) ?></small></h3>
+<h3><small><?php if($periodo > 1) echo CHtml::link("Anterior", array("apartadoMateriaNota/view_calificaciones_materia&id=".$param1."&curso_id=".$param2."&periodo=". ($periodo-1))) . ' - ' ?> </small> <?php echo $curso->getPeriodoName($periodo)?> <small> <?php if($periodo < $curso->getPeriodosCount() + 2 ) echo ' - ' . CHtml::link("Siguiente", array("apartadoMateriaNota/view_calificaciones_materia&id=".$param1."&curso_id=".$param2."&periodo=". ($periodo+1))) ?></small></h3>
 
 
 
@@ -48,7 +48,7 @@ $this->menu = array(
 				echo "<tr>";
 		echo '<td>' . ($j+1) . '</td>';
 		echo '<td>' . $alu->fullname . '</td>';
-		for ($l=0 ; $l < count($ap_aux_array); $l++){
+		for ($l=0 ; $l < count($ap_aux_array) ; $l++){
 				$val_1 = $alu->idalumno;
 				$val_2 = $ap_aux_array[$l];
 				$nota = ApartadoMateriaNota::model()->findByAttributes(array('periodo' => $periodo, 'alumno' => $val_1,'id_apartado_materia' => $val_2));

@@ -67,6 +67,7 @@ class PreceptoresController extends Controller {
 			
             $model->attributes = $_POST['Preceptores'];
 			$curso = Curso::model()->findByPk($model->curso);
+			
 			$user = new User;
 			
 			$user->username = strtolower($curso->ano_calendario . "_" . substr($curso->ano_academico,0,1) . $curso->division_salita . "_" . $curso->nivel->nombre . "_t" . substr($curso->turno->nombre,0,1));
