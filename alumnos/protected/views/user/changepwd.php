@@ -6,11 +6,15 @@ $this->breadcrumbs=array(
 	'Users'=>array('index'),
 	'Manage',
 );
+if (Yii::app()->user->isAdmin()) {
 
 $this->menu=array(
 	array('label'=>'Listar Usuarios', 'url'=>array('index')),
 	array('label'=>'Crear Usuarios', 'url'=>array('create')),
 );
+}else{
+$this->menu=array(array('label'=>'Volver', 'url'=>array('account')));
+}
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

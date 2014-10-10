@@ -28,12 +28,12 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'changepwd'),
+				'actions'=>array('index','view', 'changepwd', 'create', 'update'),
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('admin'),
+				'actions'=>array('account', 'changepwd'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -61,6 +61,13 @@ class UserController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	 
+	public function actionAccount(){
+	  $user = Yii::app()->user;
+	  $this->render('account',array(
+					'user'=> $user,
+				));
+				
+	}
 	public function actionChangepwd($id){
 	
 		$model=$this->loadModel($id);

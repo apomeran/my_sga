@@ -41,7 +41,10 @@ $this->menu=array(
 			$nota_value = " - ";
 			foreach($notas as $nota){
 				 if($nota->idApartadoMateria->apartado == $apartado->id && $nota->idApartadoMateria->materia == $materia->id && $nota->periodo == $i+1){
+					if ($alumno->cursoactual->nivelid == 2)
 					 $nota_value = $nota->notaConceptual->codigo;
+					if ($alumno->cursoactual->nivelid == 3)
+					 $nota_value = $nota->nota_numerica; 
 				 }
 			}
 			echo "<td>" . $nota_value . "</td>";

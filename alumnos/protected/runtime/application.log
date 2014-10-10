@@ -12242,3 +12242,305 @@ Stack trace:
 REQUEST_URI=/my_sga/alumnos/index.php?r=alumnoMateriaPrevia/admin
 HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=alumnoMateriaPrevia/index
 ---
+2014/10/10 21:22:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`alumno_materia_previa`, CONSTRAINT `alumno_materia_previa_ibfk_1` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `padres` WHERE `padres`.`idpadre`=2.
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php (114)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/10 21:22:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`escuela`.`alumno_materia_previa`, CONSTRAINT `alumno_materia_previa_ibfk_1` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`idalumno`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `padres` WHERE `padres`.`idpadre`=2' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('2')
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(114): CActiveRecord->delete()
+#3 [internal function]: PadresController->actionDelete('2')
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PadresController), Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PadresController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/delete')
+#19 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?ajax=padres-grid&id=2&r=padres%2Fdelete
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=padres/admin
+---
+2014/10/10 21:56:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=alumnos/legajo&id=2
+---
+2014/10/10 21:58:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=alumnos/legajo&id=2
+---
+2014/10/10 21:58:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "account".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('account')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/10 21:59:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/10 22:00:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/10 22:00:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/10 22:00:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/changepwd
+---
+2014/10/10 22:00:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:00:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:00:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:01:32 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "user".' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(65): CComponent->__call('user', Array)
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(65): CWebApplication->user()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): UserController->actionAccount()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('account')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/account')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/account
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:04:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:05:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:06:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:06:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---
+2014/10/10 22:07:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('changepwd')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/changepwd')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=user/account
+---

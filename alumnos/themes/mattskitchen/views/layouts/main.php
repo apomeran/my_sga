@@ -65,6 +65,10 @@
 			}
 		}
 		
+		if ( Yii::app()->user->isStandardUser() && !Yii::app()->user->isAdmin() && !Yii::app()->user->isPreceptor()){
+				$menuItems[] = array('label'=>'Mi cuenta', 'url'=>array('user/account'));
+		}
+		
 		$menuItems[] = array('label'=>'Ingresar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
 		$menuItems[] = array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
       ?>
