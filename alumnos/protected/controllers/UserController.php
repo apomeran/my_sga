@@ -32,7 +32,7 @@ class UserController extends Controller
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('account', 'changepwd'),
+				'actions'=>array('account', 'changepwd', 'changedata'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -63,11 +63,33 @@ class UserController extends Controller
 	 
 	public function actionAccount(){
 	  $user = Yii::app()->user;
+	  $user_data = Padres::model()->findByAttributes(array('usuario' => $user->id));
 	  $this->render('account',array(
 					'user'=> $user,
+					'user_data' => $user_data
 				));
 				
 	}
+	
+	public function actionChangedata($id){
+		
+        $model =  Padres::model()->findByPk($id);
+
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+        if (isset($_POST['Padres'])) {
+            $model->attributes = $_POST['Padres'];
+            if ($model->save())
+                $this->redirect(array('account'));
+        }
+
+        $this->render('update_user_data', array(
+            'model' => $model,
+        ));
+    
+	}
+	
 	public function actionChangepwd($id){
 	
 		$model=$this->loadModel($id);
