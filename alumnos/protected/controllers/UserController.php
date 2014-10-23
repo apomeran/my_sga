@@ -73,7 +73,7 @@ class UserController extends Controller
 	
 	public function actionChangedata($id){
 		
-        $model =  Padres::model()->findByPk($id);
+		$model =  Padres::model()->findByPk($id);
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -236,3 +236,6 @@ class UserController extends Controller
 		}
 	}
 }
+
+
+

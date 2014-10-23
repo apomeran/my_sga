@@ -37,6 +37,7 @@
       <?php
         $menuItems = array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
+				array('label'=>'Notificaciones', 'url'=>array('/nfy'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Inscripcion', 'url'=>array('cursoAlumno/admin') , 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Calificar', 'url'=>array('apartadoMateriaNota/create'), 'visible'=>Yii::app()->user->isPreceptor()),
 				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),

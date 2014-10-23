@@ -27,6 +27,7 @@ class SGAUser extends CWebUser
 			
 			return Yii::app()->user->isAdmin();
 		}
+
 		
 		public function getSons(){
 			$id_sons = array();

@@ -8,6 +8,7 @@ $this->pageTitle=Yii::app()->name;
 
 
 
+
 <?php
 $this->menu=array(
 	array('label'=>'Cambiar Clave', 'url'=>array('changepwd','id'=>$user->id)),

@@ -20,14 +20,16 @@
  * @property User $usuario0
  */
 class Padres extends CActiveRecord {
-
+	
+	
     /**
      * @return string the associated database table name
      */
     public function tableName() {
         return 'padres';
     }
-
+	
+    
     /**
      * @return array validation rules for model attributes.
      */

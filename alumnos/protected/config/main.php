@@ -16,10 +16,19 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.modules.nfy.components.*',
+		'application.modules.nfy.models.*',
+		
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
+		
+		'nfy'=>array(
+            'class'=>'application.modules.nfy.NfyModule',
+            'longPolling'=>null,
+			'queues' => array('queue_preceptores')
+			),
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
@@ -36,6 +45,11 @@ return array(
 			// enable cookie-based authentication
 			'class'=>'SGAUser',
 			'allowAutoLogin'=>true,
+		),
+		'queue_preceptores' => array(
+			'class' => 'nfy.components.NfyDbQueue',
+			'id' => 'queue_preceptores',
+			'timeout' => 30,
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -60,6 +74,11 @@ return array(
 			'password' => '',
 			'charset' => 'utf8',
 		),
+		
+		'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+        ),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
