@@ -48,8 +48,6 @@ o <b>=</b>) al comienzo de cada uno de los valores de busqueda para especificar 
 		'usuario0.username',
 		'nombre',
 		'apellido',
-		'observaciones',
-		'dni',
 		'mail',
 		array(
 			'class'=>'CButtonColumn',

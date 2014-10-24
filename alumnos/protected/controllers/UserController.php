@@ -93,7 +93,11 @@ class UserController extends Controller
 	public function actionChangepwd($id){
 	
 		$model=$this->loadModel($id);
-		
+		$user = Yii::app()->user;
+		if ($user->getId() != $id){
+			throw new CHttpException(403,'Operación no permitida');
+			die;
+		}
 		
 		if(isset($_POST['User']))
 		{
