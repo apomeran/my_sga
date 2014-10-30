@@ -11,7 +11,7 @@ if(Yii::app()->user->isGuest){
 	echo '<h3> Por favor Iniciar Sesión</h3>';
 }else{
 	echo "<h3> Bienvenido " . Yii::app()->user->getuserName() ."</h3>";
-	$this->widget('nfy.extensions.webNotifications.WebNotifications', array('url'=>$this->createUrl('/nfy/queue/poll&id=queue_preceptores')));
+	$this->widget('nfy.extensions.webNotifications.WebNotifications', array('url'=>$this->createUrl('/nfy/queue/poll&id=queue_amanecer')));
 	// $auth=Yii::app()->authManager;
 	 // $auth->createOperation('nfy.queue.read.subscribe','Suscribe to a Queue');
 	// $role=$auth->getRole('nfy.queue.read');

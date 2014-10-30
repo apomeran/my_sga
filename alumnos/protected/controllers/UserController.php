@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'changepwd', 'create', 'update'),
+				'actions'=>array('index','queue','view', 'changepwd', 'create', 'update'),
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -186,11 +186,53 @@ class UserController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+	public function actionQueue(){
+		$users = User::model()->findAll();
+		$auth = Yii::app()->authManager;
+		$queue_name = "queue_amanecer";
+		$queue = Yii::app()->getComponent($queue_name);
+		
+		//CHECK WITH THIS
+		foreach($users as $user){
+			try{
+				$auth->assign('nfy.queue.read', $user->id);
+				echo "Assigned User Permissions<br>";
+			}
+			catch(Exception $e){
+				// CATCH DB EXCEPTION ON DUPLICATED ENTRY
+			}
+			
+			if($user->registered_queue == 0) {
+				$nfy = new NfySubscriptions;
+				$nfy->queue_id = $queue_name;
+				if ($user->rol == 2)
+					$nfy->label = 'preceptor';
+				if ($user->rol == 1)
+					$nfy->label = 'padre';
+				if ($user->rol == 3)
+					$nfy->label = 'admin';
+				$nfy->subscriber_id = $user->id;
+				$nfy->is_deleted = 0;
+				if ($nfy->save()){
+					$nfyCat = new NfySubscriptionCategories;
+					$nfyCat->subscription_id = $nfy->id;
+					$nfyCat->category = $nfy->label;
+					$nfyCat->is_exception = 0;
+					$nfyCat->save();
+					$user->registered_queue = 1;
+					$user->save();
+					echo "Saved <br>";
+				}
+			}
+		}
+		echo "Done!";
+	}
 	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
+		
 		$dataProvider=new CActiveDataProvider('User');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

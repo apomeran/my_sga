@@ -27,7 +27,7 @@ return array(
 		'nfy'=>array(
             'class'=>'application.modules.nfy.NfyModule',
             'longPolling'=>null,
-			'queues' => array('queue_preceptores')
+			'queues' => array('queue_amanecer')
 			),
 		
 		'gii'=>array(
@@ -46,9 +46,9 @@ return array(
 			'class'=>'SGAUser',
 			'allowAutoLogin'=>true,
 		),
-		'queue_preceptores' => array(
+		'queue_amanecer' => array(
 			'class' => 'nfy.components.NfyDbQueue',
-			'id' => 'queue_preceptores',
+			'id' => 'queue_amanecer',
 			'timeout' => 30,
 		),
 		// uncomment the following to enable URLs in path-format

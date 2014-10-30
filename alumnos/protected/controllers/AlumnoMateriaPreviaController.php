@@ -60,7 +60,7 @@ class AlumnoMateriaPreviaController extends Controller {
      */
     public function actionCreate() {
 	
-        $model = new alumnoMateriaPrevia;
+        $model = new AlumnoMateriaPrevia;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);

@@ -64,7 +64,7 @@ class AlumnosController extends Controller {
     public function actionLegajo($id) {
 
         if (Yii::app()->user->isValidSon($id)) {
-            $previas = alumnoMateriaPrevia::model()->findAllByAttributes(array('alumno' => $id));
+            $previas = AlumnoMateriaPrevia::model()->findAllByAttributes(array('alumno' => $id));
             $alumno = Alumnos::model()->findByPk($id);
             $inasistencias = FaltaAlumno::model()->findAllByAttributes(array('alumno' => $id), "curso = " . $alumno->cursoactualid . " AND valor != 0) ORDER BY (date_inasistencia");
             $materias = CursoMateria::model()->findAllByAttributes(array('curso' => $alumno->cursoactualid));

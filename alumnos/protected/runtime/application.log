@@ -16217,3 +16217,632 @@ Stack trace:
 #15 {main}
 REQUEST_URI=/my_sga/alumnos/index.php?r=user/changepwd&id=42
 ---
+2014/10/30 15:12:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/user/admin".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/user/admin')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/user/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy/queue/messages&queue_name=queue_preceptores&subscriber_id=11
+---
+2014/10/30 15:16:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'escuela.{{nfy_subscriptions}}' doesn't exist. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`queue_id` AS `t0_c1`, `t`.`created_on` AS `t0_c2`, `t`.`sender_id` AS `t0_c3`, `t`.`message_id` AS `t0_c4`, `t`.`subscription_id` AS `t0_c5`, `t`.`status` AS `t0_c6`, `t`.`timeout` AS `t0_c7`, `t`.`reserved_on` AS `t0_c8`, `t`.`deleted_on` AS `t0_c9`, `t`.`mimetype` AS `t0_c10`, `t`.`body` AS `t0_c11`, `subscription`.`id` AS `t1_c0`, `subscription`.`queue_id` AS `t1_c1`, `subscription`.`label` AS `t1_c2`, `subscription`.`subscriber_id` AS `t1_c3`, `subscription`.`created_on` AS `t1_c4`, `subscription`.`is_deleted` AS `t1_c5` FROM `{{nfy_messages}}` `t`  LEFT OUTER JOIN `{{nfy_subscriptions}}` `subscription` ON (`t`.`subscription_id`=`subscription`.`id`)  WHERE ((`t`.queue_id=:queue_id) AND ((`t`.status=0) OR ((`t`.status=1 AND `t`.reserved_on <= :timeout)))) AND (`subscription`.subscriber_id=:subscriber_id) ORDER BY `t`.id ASC.
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php (137)
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php (127)
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php (255)
+2014/10/30 15:16:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'escuela.{{nfy_subscriptions}}' doesn't exist. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`queue_id` AS `t0_c1`, `t`.`created_on` AS `t0_c2`, `t`.`sender_id` AS `t0_c3`, `t`.`message_id` AS `t0_c4`, `t`.`subscription_id` AS `t0_c5`, `t`.`status` AS `t0_c6`, `t`.`timeout` AS `t0_c7`, `t`.`reserved_on` AS `t0_c8`, `t`.`deleted_on` AS `t0_c9`, `t`.`mimetype` AS `t0_c10`, `t`.`body` AS `t0_c11`, `subscription`.`id` AS `t1_c0`, `subscription`.`queue_id` AS `t1_c1`, `subscription`.`label` AS `t1_c2`, `subscription`.`subscriber_id` AS `t1_c3`, `subscription`.`created_on` AS `t1_c4`, `subscription`.`is_deleted` AS `t1_c5` FROM `{{nfy_messages}}` `t`  LEFT OUTER JOIN `{{nfy_subscriptions}}` `subscription` ON (`t`.`subscription_id`=`subscription`.`id`)  WHERE ((`t`.queue_id=:queue_id) AND ((`t`.status=0) OR ((`t`.status=1 AND `t`.reserved_on <= :timeout)))) AND (`subscription`.subscriber_id=:subscriber_id) ORDER BY `t`.id ASC' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(803): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php(137): CActiveRecord->findAll(Array)
+#7 C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php(127): NfyDbQueue->receiveInternal('43', -1, 2)
+#8 C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php(255): NfyDbQueue->receive('43')
+#9 C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php(221): QueueController->getMessages(Object(NfyDbQueue), '43')
+#10 [internal function]: QueueController->actionPoll('queue_preceptor...', true)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#22 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#23 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_preceptores&_=1414678567961
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 15:52:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "queue".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('queue')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/queue')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/queue
+---
+2014/10/30 15:52:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/queue')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+---
+2014/10/30 15:54:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/user/admin".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/user/admin')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/user/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy/queue/messages&queue_name=queue_amanecer&subscriber_id=21
+---
+2014/10/30 15:54:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php
+---
+2014/10/30 15:54:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 15:56:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 15:57:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 15:58:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '40-padre' for key '{{nfy_subscription_categories}}_subscription_id_category_idx'. The SQL statement executed was: INSERT INTO `{{nfy_subscription_categories}}` (`is_exception`, `subscription_id`, `category`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php (249)
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\components\NfyDbQueue.php (225)
+in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php (54)
+2014/10/30 16:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/user/admin".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/user/admin')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/user/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy/queue/messages&queue_name=queue_amanecer&subscriber_id=43
+---
+2014/10/30 16:09:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414681779133
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php
+---
+2014/10/30 16:09:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php
+---
+2014/10/30 16:09:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414681782747
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 16:09:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 16:09:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414681791454
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 16:09:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 16:09:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414681796172
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 16:10:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414681803391
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 17:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/user/admin".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/user/admin')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/user/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy
+---
+2014/10/30 17:51:32 [error] [php] Undefined variable: queue (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php:197)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (197)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 17:52:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\my_sga\alumnos\protected\modules\nfy\controllers\QueueController.php:215
+Stack trace:
+#0 [internal function]: QueueController->actionPoll('queue_amanecer', true)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414687965323
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/10/30 17:53:04 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "checkAccess".' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('checkAccess', Array)
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(198): CActiveRecord->__call('checkAccess', Array)
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(198): User->checkAccess('nfy.message.rea...', Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): UserController->actionQueue()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/queue')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+---
+2014/10/30 17:54:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-admin' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 17:54:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-admin' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CDbAuthManager.php(263): CDbCommand->insert('AuthAssignment', Array)
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(198): CDbAuthManager->assign('nfy.queue.read', 'admin')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): UserController->actionQueue()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/queue')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+---
+2014/10/30 17:55:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 17:55:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CDbAuthManager.php(263): CDbCommand->insert('AuthAssignment', Array)
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(198): CDbAuthManager->assign('nfy.queue.read', '11')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): UserController->actionQueue()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/queue')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+---
+2014/10/30 17:55:31 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 17:55:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data)' in C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CDbAuthManager.php(263): CDbCommand->insert('AuthAssignment', Array)
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php(198): CDbAuthManager->assign('nfy.queue.read', '11')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): UserController->actionQueue()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('queue')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/queue')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=user/queue
+---
+2014/10/30 18:03:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (199)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-21' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-22' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-24' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-25' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-26' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-27' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-28' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-29' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-30' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-31' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-32' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-33' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-34' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-35' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-36' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-37' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-38' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-39' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-40' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-41' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-42' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-43' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:04:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-44' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-11' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-21' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-22' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-23' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-24' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-25' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-26' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-27' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-28' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-29' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-30' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-31' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-32' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-33' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-34' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-35' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-36' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-37' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-38' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-39' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-40' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-41' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-42' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-43' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:05:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'nfy.queue.read-44' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES (:itemname, :userid, :bizrule, :data).
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\UserController.php (198)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/10/30 18:06:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in C:\xampp\htdocs\my_sga\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(SGAUser), 'You are not aut...')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('poll')
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/poll')
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/poll&id=queue_amanecer&_=1414688816526
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
