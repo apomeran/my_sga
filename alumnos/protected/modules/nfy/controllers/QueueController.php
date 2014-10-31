@@ -29,12 +29,14 @@ class QueueController extends Controller
 		$user = Yii::app()->user;
         $subscribedOnly = $user->checkAccess('nfy.queue.read.subscribed', array(), true, false);
 		$queues = array();
+		$i = 0;
 		foreach($this->module->queues as $queueId) {
 			/** @var NfyQueue */
 			
 			$queue = Yii::app()->getComponent($queueId);
 			// if (!($queue instanceof NfyQueueInterface) || ($subscribedOnly && !$queue->isSubscribed($user->getId()))) continue;
-			$queues[$queueId] = $queue;
+			 $queues[$queueId] = $queue;
+			
 		}
 		$this->render('index', array('queues'=>$queues, 'subscribedOnly' => false));
 	}

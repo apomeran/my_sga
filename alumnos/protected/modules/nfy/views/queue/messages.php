@@ -6,10 +6,7 @@
 /* @var $model MessageForm */
 /* @var $authItems array */
 
-$this->breadcrumbs=array(
-	Yii::t('NfyModule.app', 'Queues')=>array('index'),
-	$queue->label,
-);
+
 ?>
 <h1><?php echo $queue->label; ?></h1>
 

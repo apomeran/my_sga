@@ -201,22 +201,48 @@ class UserController extends Controller
 			catch(Exception $e){
 				// CATCH DB EXCEPTION ON DUPLICATED ENTRY
 			}
-			
+			$category_curso = "";
+			if ($user->rol == 1){ //CASO DE UN PADRE - BUSCO LOS CURSOS DE SUS HIJOS PARA SABER EN QUE
+				//GRUUPO DE PRECEPTORES TIENE QUE ESTAR
+				$padres = Padres::model()->findByAttributes(array('usuario'=>$user->id));
+				$alumnos = null;
+				
+				if ($padres != null)
+					$alumnos = Alumnos::model()->findAllByAttributes(array(), "padreid = " .$padres->idpadre. " OR madreid = " .$padres->idpadre);
+				if ($alumnos != null){
+					foreach($alumnos as $alumno){
+						$category_curso .=  ",curso_id_" . $alumno->cursoactualid;
+					}
+				}
+			}
+			if ($user->rol == 2){
+				$preceptor = Preceptores::model()->findByAttributes(array('usuario'=>$user->id));
+				if ($preceptor != null){
+						$category_curso .=  ",curso_id_" . $preceptor->curso;
+				}
+			}
 			if($user->registered_queue == 0) {
 				$nfy = new NfySubscriptions;
 				$nfy->queue_id = $queue_name;
-				if ($user->rol == 2)
-					$nfy->label = 'preceptor';
-				if ($user->rol == 1)
-					$nfy->label = 'padre';
-				if ($user->rol == 3)
+				$cat = "";
+				if ($user->rol == 2){
+					$nfy->label = 'admin,preceptor' . $category_curso;
+					$cat = 'admin,preceptor' . $category_curso;
+				}
+				if ($user->rol == 1){
+					$nfy->label = 'admin,padre' . $category_curso;
+					$cat = 'admin,padre' . $category_curso;
+				}
+				if ($user->rol == 3){
 					$nfy->label = 'admin';
+					$cat = 'admin';
+				}
 				$nfy->subscriber_id = $user->id;
 				$nfy->is_deleted = 0;
 				if ($nfy->save()){
 					$nfyCat = new NfySubscriptionCategories;
 					$nfyCat->subscription_id = $nfy->id;
-					$nfyCat->category = $nfy->label;
+					$nfyCat->category = $cat;
 					$nfyCat->is_exception = 0;
 					$nfyCat->save();
 					$user->registered_queue = 1;
