@@ -106,6 +106,7 @@ class NfyDbQueue extends NfyQueue
      */
     public function peek($subscriber_id = null, $limit = -1, $status = NfyMessage::AVAILABLE)
     {
+
         $pk = NfyDbMessage::model()->tableSchema->primaryKey;
         $messages = NfyDbMessage::model()->withQueue($this->id)->withSubscriber($subscriber_id)->withStatus($status, $this->timeout)->findAll(array('index' => $pk, 'limit' => $limit));
         return NfyDbMessage::createMessages($messages);

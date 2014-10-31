@@ -10,7 +10,8 @@ try {
 }
 ?>
 
-<h3><?php echo CHtml::encode($data->label); ?> <small><?php echo CHtml::link(Yii::t('NfyModule.app','Ver todos los mensajes'), array('messages', 'queue_name'=>$index))?></small></h3>
+<!--<h3><?php //echo CHtml::encode($data->label); ?> <small><?php //echo CHtml::link(Yii::t('NfyModule.app','Ver todos los mensajes'), array('messages', 'queue_name'=>$index))?></small></h3>!-->
+<h3><?php echo CHtml::encode($data->label); ?> <small><?php echo CHtml::link(Yii::t('NfyModule.app','Ver todos los mensajes'), array('messages', 'queue_name'=>$index, 'subscriber_id'=>Yii::app()->user->getId()))?></small></h3>
 <?php if ($supportSubscriptions): ?>
 <p>
 	<?php //echo CHtml::link(Yii::t('NfyModule.app', 'Subscribe'), array('subscribe', 'queue_name'=>$index)); echo '/';?> 

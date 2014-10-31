@@ -77,7 +77,7 @@ class QueueController extends Controller
 	 * @param string $subscriber_id
 	 */
 	public function actionMessages($queue_name, $subscriber_id=null)
-	{
+	{	
 		if (($subscriber_id=trim($subscriber_id))==='')
 			$subscriber_id = null;
         list($queue, $authItems) = $this->loadQueue($queue_name, array('nfy.message.read', 'nfy.message.create'));
@@ -98,10 +98,10 @@ class QueueController extends Controller
 				$queue->peek($subscriber_id, 200, array(NfyMessage::AVAILABLE, NfyMessage::RESERVED, NfyMessage::DELETED)),
 				array('sort'=>array('attributes'=>array('id'), 'defaultOrder' => array('id' => CSort::SORT_DESC)))
 			);
+			
             // reverse display order to simulate a chat window, where latest message is right above the message form
             $dataProvider->setData(array_reverse($dataProvider->getData()));
         }
-
 		$this->render('messages', array(
 			'queue' => $queue,
 			'queue_name' => $queue_name,

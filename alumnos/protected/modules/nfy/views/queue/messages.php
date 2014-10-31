@@ -19,8 +19,8 @@
 	'template' => "{summary}\n{pager}\n{items}",
     'pager' => array(
         'class' => 'CLinkPager',
-        'prevPageLabel' => Yii::t('NfyModule.app', 'Newer'),
-        'nextPageLabel' => Yii::t('NfyModule.app', 'Older'),
+        'prevPageLabel' => Yii::t('NfyModule.app', 'Nuevos'),
+        'nextPageLabel' => Yii::t('NfyModule.app', 'Viejos'),
     ),
 )); ?>
 </p>
