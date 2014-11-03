@@ -46,7 +46,7 @@
 	
 	<?php
 	}else{
-		echo "Todos los cursos ya tienen asignado un preceptor";
+		echo "Todos los cursos ya tienen asignado un preceptor. <br> Puede cambiar la contraseña desde el panel. <br> Para cambiar el curso debe eliminar este preceptor, y volver a crearlo.";
 	}
 	?>
 	<?php $this->endWidget(); ?>

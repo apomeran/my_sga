@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Crear Preceptores', 'url'=>array('create')),
 	array('label'=>'Ver Preceptores', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
+	array('label'=>'Cambiar contraseña para el Preceptor', 'url'=>array('user/changepwd&id='.$model->id .'&preceptor_search=1')),
 );
 ?>
 

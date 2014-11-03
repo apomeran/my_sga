@@ -23,10 +23,30 @@ $this->menu=array(
 		'dni',
 		'cursoactual.nombre',
 		'codigoalumno',
-		'padre.fullname',
-		'madre.fullname',
 	),
 )); ?>
+
+<?php if (Yii::app()->user->isPreceptor()) {?>
+<br>
+<h3> Padres </h3>
+	<?php 
+		$padre = Padres::model()->findByPk($model->padreid);
+		$madre = Padres::model()->findByPk($model->madreid);
+	?>
+
+	<h5> Padre </h5>
+	<li>
+		<?php echo CHtml::link($padre->nombre . " " . $padre->apellido ,array('padres/view&id=' . $padre->idpadre),array('class'=>'search-button')); ?>
+	</li>
+	<br>
+	<h5> Madre </h5>
+	<li>
+		<?php echo CHtml::link($madre->nombre . " " . $madre->apellido ,array('padres/view&id=' . $madre->idpadre),array('class'=>'search-button')); ?>  
+	</li>
+
+<?php } ?>
+
+
 <br><br>
 <h3>-Materias en Curso- (Click para ver calificaciones)</h3>
 <?php
@@ -79,5 +99,6 @@ foreach($previas as $p){
 	echo $p->materia0->nombre;
 	echo " - ";
 	echo $p->curso0->nombre;
+	echo '<br>';
 }
 ?>

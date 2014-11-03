@@ -25,10 +25,24 @@ $this->menu=array(
 		'dni',
 		'cursoactual.nombre',
 		'codigoalumno',
-		'padre.fullname',
-		'madre.fullname',
 	),
 )); ?>
+<br>
+<h3> Padres </h3>
+	<?php 
+		$padre = Padres::model()->findByPk($model->padreid);
+		$madre = Padres::model()->findByPk($model->madreid);
+	?>
+
+	<h5> Padre </h5>
+	<li>
+		<?php echo CHtml::link($padre->nombre . " " . $padre->apellido ,array('padres/view&id=' . $padre->idpadre),array('class'=>'search-button')); ?> <br> <?php echo "E-Mail: " . $padre->mail ?> <br> <?php echo "Telefono: " . $padre->telefono_fijo  ?>  <?php echo " / " . $padre->telefono_celular  ?> 
+	</li>
+	<br>
+	<h5> Madre </h5>
+	<li>
+		<?php echo CHtml::link($madre->nombre . " " . $madre->apellido ,array('padres/view&id=' . $madre->idpadre),array('class'=>'search-button')); ?> <br> <?php echo "E-Mail: " . $madre->mail ?> <br> <?php echo "Telefono: " . $madre->telefono_fijo  ?>  <?php echo " / " . $madre->telefono_celular  ?> 
+	</li>
 
 <br>
 <br>

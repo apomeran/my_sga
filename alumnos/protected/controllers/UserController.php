@@ -90,31 +90,48 @@ class UserController extends Controller
     
 	}
 	
-	public function actionChangepwd($id){
-	
+	public function actionChangepwd($id , $padre_search = null){
+		if ($padre_search != null){
+			$id = Padres::model()->findByPk($id)->usuario;
+		}
+		if ($padre_search != null){
+			$id = Preceptores::model()->findByPk($id)->usuario;
+		}
 		$model=$this->loadModel($id);
+		
 		$user = Yii::app()->user;
-		if ($user->getId() != $id){
-			throw new CHttpException(403,'Operación no permitida');
-			die;
+		if (!Yii::app()->user->isAdmin()){
+			if ($user->getId() != $id){
+				throw new CHttpException(403,'Operación no permitida');
+				die;
+			}
 		}
 		
 		if(isset($_POST['User']))
 		{
-			if ($model->password == crypt($_POST['User']['password'], $model->password)){
+			if (Yii::app()->user->isAdmin()){
 				$model->password = crypt($_POST['User']['npassword']);
 				if ($model->save()){
-				
 					$this->render('msg_pwd',array(
 						'message'=>"Se cambio exitosamente la contraseña",
 					));
-				
 				}
 			}else{
-				$this->render('msg_pwd',array(
-					'message'=>"La contraseña ingresada es incorrecta",
-				));
-				
+				if ($model->password == crypt($_POST['User']['password'], $model->password)){
+					$model->password = crypt($_POST['User']['npassword']);
+					if ($model->save()){
+					
+						$this->render('msg_pwd',array(
+							'message'=>"Se cambio exitosamente la contraseña",
+						));
+					
+					}
+				}else{
+					$this->render('msg_pwd',array(
+						'message'=>"La contraseña ingresada es incorrecta",
+					));
+					
+				}
 			}
 			die;
 		}

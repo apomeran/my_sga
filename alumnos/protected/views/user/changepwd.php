@@ -7,13 +7,12 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 if (Yii::app()->user->isAdmin()) {
-
-$this->menu=array(
-	array('label'=>'Listar Usuarios', 'url'=>array('index')),
+	$this->menu=array(
+	array('label'=>'Listar Usuarios', 'url'=>array('admin')),
 	array('label'=>'Crear Usuarios', 'url'=>array('create')),
-);
+	);
 }else{
-$this->menu=array(array('label'=>'Volver', 'url'=>array('account')));
+	$this->menu=array(array('label'=>'Volver', 'url'=>array('account')));
 }
 
 Yii::app()->clientScript->registerScript('search', "
@@ -35,11 +34,11 @@ $('.search-form form').submit(function(){
 	<form id="user-form" action="/my_sga/alumnos/index.php?r=user/changepwd&id=<?php echo($model->id);?>" method="post">
 		<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
-		
+	<?php if(!Yii::app()->user->isAdmin()){ ?>
 		<div class="row">
 			<label for="User_password" class="required">Password Anterior<span class="required">*</span></label>		<input size="60" maxlength="128" name="User[password]" id="User_password" type="password">		
 		</div>
-		
+	<?php } ?>
 		<div class="row">
 			<label for="User_npassword" class="required">Nueva Password <span class="required">*</span></label>		<input size="60" maxlength="128" name="User[npassword]" id="User_npassword" type="password">		
 		</div>

@@ -44,6 +44,7 @@ $this->breadcrumbs=array(
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Iniciar Sesion'); ?>
+		<a href="./index.php?r=site/forgot">Olvide mi clave</a>
 	</div>
 
 <?php $this->endWidget(); ?>

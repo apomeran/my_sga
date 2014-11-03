@@ -9,13 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Padres', 'url'=>array('index')),
-	array('label'=>'Create Padres', 'url'=>array('create')),
-	array('label'=>'View Padres', 'url'=>array('view', 'id'=>$model->idpadre)),
-	array('label'=>'Manage Padres', 'url'=>array('admin')),
+	array('label'=>'Listar Todos los Padres', 'url'=>array('index')),
+	array('label'=>'Cambiar contraseña', 'url'=>array('user/changepwd&id='.$model->idpadre .'&padre_search=1')),
 );
 ?>
 
-<h1>Update Padres <?php echo $model->idpadre; ?></h1>
+<h1>Actualizar Padre <?php echo $model->idpadre; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

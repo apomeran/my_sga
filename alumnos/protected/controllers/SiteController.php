@@ -95,5 +95,70 @@ class SiteController extends Controller {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
+	
+	public function getToken($token)
+    {
+        $model=Users::model()->findByAttributes(array('token'=>$token));
+        if($model===null)
+            throw new CHttpException(404,'The requested page does not exist.');
+        return $model;
+    }
+ 
+ 
+        public function actionVerToken($token)
+        {
+            $model=$this->getToken($token);
+            if(isset($_POST['Ganti']))
+            {
+                if($model->token==$_POST['Ganti']['tokenhid']){
+                    $model->password=md5($_POST['Ganti']['password']);
+                    $model->token="null";
+                    $model->save();
+                    Yii::app()->user->setFlash('ganti','<b>Password has been successfully changed! please login</b>');
+                    $this->redirect('?r=site/login');
+                    $this->refresh();
+                }
+            }
+            $this->render('verifikasi',array(
+            'model'=>$model,
+        ));
+        }
+ 
+ 
+        public function actionForgot()
+    {
+         
+            if(isset($_POST['Lupa']))
+            {
+				$getEmail=$_POST['Lupa']['email'];
+				$getModel= User::model()->findByAttributes(array('email'=>$getEmail));
+				if ($getModel == null){
+					echo "No existe ningun usuario con dicho mail";die;
+				}
+                $getToken=rand(0, 99999);
+                $getTime=date("H:i:s");
+                $getModel->token=md5($getToken.$getTime);
+                $namaPengirim="Owner Jsource Indonesia";
+                $emailadmin="fahmi.j@programmer.net";
+                $subjek="Resetear Clave Acceso - Instituto Amanecer / SIACCIA";
+                $setpesan="Has exitosamente reseteado tu clave de acceso<br/>
+                    <a href='http://yourdomain.com/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>";
+                if($getModel->validate())
+				{
+                $name='=?UTF-8?B?'.base64_encode($namaPengirim).'?=';
+                $subject='=?UTF-8?B?'.base64_encode($subjek).'?=';
+                $headers="From: $name <{$emailadmin}>\r\n".
+                    "Reply-To: {$emailadmin}\r\n".
+                    "MIME-Version: 1.0\r\n".
+                    "Content-type: text/html; charset=UTF-8";
+                $getModel->save();
+                Yii::app()->user->setFlash('forgot','Un enlace para resetear tu clave ha sido enviado a tu email');
+                mail($getEmail,$subject,$setpesan,$headers);
+                $this->refresh();
+            }
+ 
+            }
+        $this->render('forgot');
+    }
 
 }

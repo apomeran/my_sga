@@ -9,8 +9,7 @@ $this->breadcrumbs=array(
 if (Yii::app()->user->isAdmin()) {
 
 $this->menu=array(
-	array('label'=>'Listar Usuarios', 'url'=>array('index')),
-	array('label'=>'Crear Usuarios', 'url'=>array('create')),
+	array('label'=>'Listar Usuarios', 'url'=>array('admin')),
 );
 }else{
 $this->menu=array(array('label'=>'Volver', 'url'=>array('account')));

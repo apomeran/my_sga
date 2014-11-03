@@ -23,4 +23,18 @@ if(Yii::app()->user->isGuest){
 	echo '<img style="height:100px;" src="http://simpleicon.com/wp-content/uploads/user1.png" />';
 }
 
+if (Yii::app()->user->isExclusivePreceptor()){
+	$preceptor = Preceptores::model()->findByPk(Yii::app()->user->id);
+	$curso = Curso::model()->findByPk($preceptor->curso);
+	echo '<br>';
+	echo '<br>';
+	echo '<h3> Curso a cargo: ' . ($curso->getNombre()) . '</h3>';
+	echo '<br>';
+	if ($preceptor != null){
+		$alumnosEntry = CursoAlumno::model()->findAllByAttributes(array('curso'=>$preceptor->curso));
+		foreach($alumnosEntry as $alumno){
+			echo '<li>'.Alumnos::model()->findByPk($alumno->alumno)->getFullName().'</li>';
+		}
+	}
+}
 
