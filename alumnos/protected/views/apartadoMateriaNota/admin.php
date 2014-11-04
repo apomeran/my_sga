@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ApartadoMateriaNota', 'url'=>array('index')),
-	array('label'=>'Create ApartadoMateriaNota', 'url'=>array('create')),
+	array('label'=>'Listar ApartadoMateriaNota', 'url'=>array('index')),
+	array('label'=>'Crear ApartadoMateriaNota', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Apartado Materia Notas</h1>
+<h1>Administrar Apartado Materia Notas</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

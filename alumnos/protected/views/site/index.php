@@ -25,15 +25,19 @@ if(Yii::app()->user->isGuest){
 
 if (Yii::app()->user->isExclusivePreceptor()){
 	$preceptor = Preceptores::model()->findByPk(Yii::app()->user->id);
-	$curso = Curso::model()->findByPk($preceptor->curso);
-	echo '<br>';
-	echo '<br>';
-	echo '<h3> Curso a cargo: ' . ($curso->getNombre()) . '</h3>';
-	echo '<br>';
+	
 	if ($preceptor != null){
+		$curso = Curso::model()->findByPk($preceptor->curso);
+		echo '<br>';
+		echo '<br>';
+		echo '<h3> Curso a cargo: ' . ($curso->getNombre()) . '</h3>';
+		echo '<br>';
 		$alumnosEntry = CursoAlumno::model()->findAllByAttributes(array('curso'=>$preceptor->curso));
+		if (empty($alumnosEntry))
+			echo "No hay alumnos asociados a este curso";
 		foreach($alumnosEntry as $alumno){
-			echo '<li>'.Alumnos::model()->findByPk($alumno->alumno)->getFullName().'</li>';
+			$alu = Alumnos::model()->findByPk($alumno->alumno);
+			echo '<li>'. CHtml::link($alu->getFullName(),array('alumnos/legajo&id='. $alu->idalumno ),array('class'=>'search-button')) .'</li>';
 		}
 	}
 }

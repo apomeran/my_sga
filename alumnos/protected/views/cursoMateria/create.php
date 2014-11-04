@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CursoMateria', 'url'=>array('index')),
-	array('label'=>'Manage CursoMateria', 'url'=>array('admin')),
+	array('label'=>'Listar CursoMateria', 'url'=>array('index')),
+	array('label'=>'Administrar CursoMateria', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create CursoMateria</h1>
+<h1>Crear CursoMateria</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

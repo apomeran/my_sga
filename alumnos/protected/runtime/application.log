@@ -19515,3 +19515,167 @@ REQUEST_URI=/my_sga/alumnos/index.php
 in C:\xampp\htdocs\my_sga\alumnos\protected\views\site\index.php (36)
 in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php (30)
 in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/11/04 14:52:54 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\my_sga\alumnos\protected\views\site\index.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(30): SiteController->render()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php
+in C:\xampp\htdocs\my_sga\alumnos\protected\views\site\index.php (28)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php (30)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/11/04 15:08:01 [error] [exception.CException] exception 'CException' with message 'Property "Alumnos.id" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\site\index.php(40): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(30): CController->render('index')
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/login
+---
+2014/11/04 15:08:07 [error] [exception.CException] exception 'CException' with message 'Property "Alumnos.alumnoid" is not defined.' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('alumnoid')
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\views\site\index.php(40): CActiveRecord->__get('alumnoid')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#6 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(30): CController->render('index')
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/my_sga/alumnos/index.php
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/login
+---
+2014/11/04 15:12:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/faltaAlumno/create".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/faltaAlumno...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/faltaAlumno/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy
+---
+2014/11/04 15:12:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/apartadoMateriaNota/create".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/apartadoMat...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/apartadoMateriaNota/create
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy
+---
+2014/11/04 15:13:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nfy".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('nfy')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('nfy')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/queue/nfy')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/queue/nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy
+---
+2014/11/04 15:13:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nfy".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('nfy')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('nfy')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/nfy')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/11/04 15:13:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nfy".' in C:\xampp\htdocs\my_sga\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(270): CController->missingAction('nfy')
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('nfy')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/nfy')
+#3 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/nfy
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=site/index
+---
+2014/11/04 15:15:26 [error] [exception.CException] exception 'CException' with message 'NfyModule and its behaviors do not have a method or closure named "getBaseUrl".' in C:\xampp\htdocs\my_sga\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\themes\mattskitchen\views\layouts\main.php(38): CComponent->__call('getBaseUrl', Array)
+#1 C:\xampp\htdocs\my_sga\alumnos\themes\mattskitchen\views\layouts\main.php(38): NfyModule->getBaseUrl()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\my_sga\alumnos\themes\mattskitchen\views\layouts\column2.php(23): CBaseController->endContent()
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\CursoAlumnoController.php(134): CController->render('admin', Array)
+#14 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(49): CursoAlumnoController->actionAdmin()
+#15 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cursoAlumno/adm...')
+#25 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=cursoAlumno/admin
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=alumnos/view&id=3
+---
+2014/11/04 15:26:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php:155
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\PadresController.php(92): PadresController->loadModel('7')
+#1 [internal function]: PadresController->actionUpdate('7')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PadresController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PadresController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('padres/update')
+#14 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=padres/update&id=7
+---

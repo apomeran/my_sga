@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Nivel', 'url'=>array('index')),
-	array('label'=>'Create Nivel', 'url'=>array('create')),
-	array('label'=>'View Nivel', 'url'=>array('view', 'id'=>$model->idnivel)),
-	array('label'=>'Manage Nivel', 'url'=>array('admin')),
+	array('label'=>'Listar Niveles', 'url'=>array('index')),
+	array('label'=>'Crear Nivel', 'url'=>array('create')),
+	array('label'=>'Ver Niveles', 'url'=>array('view', 'id'=>$model->idnivel)),
+	array('label'=>'Administrar Niveles', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Nivel <?php echo $model->idnivel; ?></h1>
+<h1>Actualizar Niveles <?php echo $model->idnivel; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

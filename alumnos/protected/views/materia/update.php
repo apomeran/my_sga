@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Materia', 'url'=>array('index')),
-	array('label'=>'Create Materia', 'url'=>array('create')),
-	array('label'=>'View Materia', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Materia', 'url'=>array('admin')),
+	array('label'=>'Listar Materias', 'url'=>array('index')),
+	array('label'=>'Crear Materia', 'url'=>array('create')),
+	array('label'=>'Ver Materias', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Materias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Materia <?php echo $model->id; ?></h1>
+<h1>Actualizar Materia <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

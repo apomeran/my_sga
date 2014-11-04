@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TemasMateria', 'url'=>array('index')),
-	array('label'=>'Create TemasMateria', 'url'=>array('create')),
+	array('label'=>'Listar Temas Materia', 'url'=>array('index')),
+	array('label'=>'Crear Temas Materia', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Temas Materias</h1>
+<h1>Administrar Temas Materias</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

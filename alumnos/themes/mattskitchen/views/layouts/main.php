@@ -38,22 +38,22 @@
         $menuItems = array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Notificaciones', 'url'=>array('/nfy'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Inscripcion', 'url'=>array('cursoAlumno/admin') , 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Calificar', 'url'=>array('apartadoMateriaNota/create'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Ver Calificaciones', 'url'=>array('apartadoMateriaNota/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Cargar Falta', 'url'=>array('faltaAlumno/create'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Ver Faltas', 'url'=>array('faltaAlumno/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Cargar Previas', 'url'=>array('alumnoMateriaPrevia/create'), 'visible'=>Yii::app()->user->isPreceptor()),
-				array('label'=>'Alumnos', 'url'=>array('alumnos/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Padres', 'url'=>array('padres/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Cursos', 'url'=>array('curso/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Docentes', 'url'=>array('docentes/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Preceptores', 'url'=>array('preceptores/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Usuarios', 'url'=>array('user/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Materias', 'url'=>array('materia/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Materias por Curso', 'url'=>array('cursoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Apartados', 'url'=>array('apartado/admin'), 'visible'=>Yii::app()->user->isAdmin()),
-				array('label'=>'Apartado por materia', 'url'=>array('apartadoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Inscripcion', 'url'=>array('/cursoAlumno/admin') , 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Calificar', 'url'=>array('/apartadoMateriaNota/create'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Ver Calificaciones', 'url'=>array('/apartadoMateriaNota/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Cargar Falta', 'url'=>array('/faltaAlumno/create'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Ver Faltas', 'url'=>array('/faltaAlumno/viewall'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Cargar Previas', 'url'=>array('/alumnoMateriaPrevia/create'), 'visible'=>Yii::app()->user->isPreceptor()),
+				array('label'=>'Alumnos', 'url'=>array('/alumnos/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Padres', 'url'=>array('/padres/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Cursos', 'url'=>array('/curso/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Docentes', 'url'=>array('/docentes/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Preceptores', 'url'=>array('/preceptores/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Usuarios', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Materias', 'url'=>array('/materia/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Materias por Curso', 'url'=>array('/cursoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Apartados', 'url'=>array('/apartado/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Apartado por materia', 'url'=>array('/apartadoMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				// array('label'=>'Programas', 'url'=>array('programas/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				// array('label'=>'Asociar Materias a Programas', 'url'=>array('programaMateria/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				
@@ -62,7 +62,7 @@
 		if ( Yii::app()->user->isStandardUser() && !Yii::app()->user->isAdmin() && !Yii::app()->user->isPreceptor()){
 			foreach(Yii::app()->user->getSons() as $son_id){
 				
-				$menuItems[] = array('label'=>'Ver Legajo ' . $son_id[1], 'url'=>array('alumnos/legajo&id=' . $son_id[0]));
+				$menuItems[] = array('label'=>'Ver Legajo ' . $son_id[1], 'url'=>array('/alumnos/legajo&id=' . $son_id[0]));
 			}
 		}
 		

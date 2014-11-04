@@ -14,16 +14,25 @@ $this->menu = array(
 <h1>Ver calificaciones por curso</h1>
 <br>
 <?php
-echo "<b>Primaria:</b> <br>";
+	$print="";
 	foreach($cursos as $curso){
 		if ($curso->nivel->nombre == "Primaria")
-						echo '<li>' . CHtml::link($curso->getNombre(),array('apartadoMateriaNota/view_calificaciones&id=' . $curso->cursoid)) . '</li>';
-
+						$print .= '<li>' . CHtml::link($curso->getNombre(),array('apartadoMateriaNota/view_calificaciones&id=' . $curso->cursoid)) . '</li>';
 	}
-	echo "<br><b>Secundaria: </b>";
+	if ($print != ""){
+		echo "<b>Primaria: </b> <br>";
+		echo $print;
+	}
+
+	$print="";
 	foreach($cursos as $curso){
-		if ($curso->nivel->nombre == "Secundario")
-			echo '<li>' . CHtml::link($curso->getNombre(),array('apartadoMateriaNota/view_calificaciones&id=' . $curso->cursoid)) . '</li>';
+		if ($curso->nivel->nombre == "Secundario"){
+			$print .= '<li>' . CHtml::link($curso->getNombre(),array('apartadoMateriaNota/view_calificaciones&id=' . $curso->cursoid)) . '</li>';
+		}
+	}
+	if ($print != ""){
+		echo "<br><b>Secundaria: </b> <br>";
+		echo $print;
 	}
 	
 ?>

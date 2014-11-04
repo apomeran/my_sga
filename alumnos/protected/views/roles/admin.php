@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Roles', 'url'=>array('index')),
-	array('label'=>'Create Roles', 'url'=>array('create')),
+	array('label'=>'Listar Roles', 'url'=>array('index')),
+	array('label'=>'Crear Roles', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Roles</h1>
+<h1>Administrar Roles</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

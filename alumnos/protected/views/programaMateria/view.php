@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ProgramaMateria', 'url'=>array('index')),
-	array('label'=>'Create ProgramaMateria', 'url'=>array('create')),
-	array('label'=>'Update ProgramaMateria', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ProgramaMateria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ProgramaMateria', 'url'=>array('admin')),
+	array('label'=>'Listar ProgramaMateria', 'url'=>array('index')),
+	array('label'=>'Crear ProgramaMateria', 'url'=>array('create')),
+	array('label'=>'Actualizar ProgramaMateria', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar ProgramaMateria', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar ProgramaMateria', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View ProgramaMateria #<?php echo $model->id; ?></h1>
+<h1>Ver Programa Materia #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

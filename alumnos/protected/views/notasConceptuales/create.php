@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Notas Conceptuales'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List NotasConceptuales', 'url'=>array('index')),
-	array('label'=>'Manage NotasConceptuales', 'url'=>array('admin')),
+	array('label'=>'Listar Notas Conceptuales', 'url'=>array('index')),
+	array('label'=>'Administrar Notas Conceptuales', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create NotasConceptuales</h1>
+<h1>Crear Notas Conceptuales</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

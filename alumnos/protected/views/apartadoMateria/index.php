@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create ApartadoMateria', 'url'=>array('create')),
-	array('label'=>'Manage ApartadoMateria', 'url'=>array('admin')),
+	array('label'=>'Crear ApartadoMateria', 'url'=>array('create')),
+	array('label'=>'Administrar ApartadoMateria', 'url'=>array('admin')),
 );
 ?>
 

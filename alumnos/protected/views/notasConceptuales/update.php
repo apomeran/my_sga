@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List NotasConceptuales', 'url'=>array('index')),
-	array('label'=>'Create NotasConceptuales', 'url'=>array('create')),
-	array('label'=>'View NotasConceptuales', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage NotasConceptuales', 'url'=>array('admin')),
+	array('label'=>'Listar Notas Conceptuales', 'url'=>array('index')),
+	array('label'=>'Crear Notas Conceptuales', 'url'=>array('create')),
+	array('label'=>'Ver Notas Conceptuales', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Notas  Conceptuales', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update NotasConceptuales <?php echo $model->id; ?></h1>
+<h1>Actualizar Notas Conceptuales <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

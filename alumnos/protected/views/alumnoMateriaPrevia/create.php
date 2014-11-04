@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Alumno Materia Previas'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

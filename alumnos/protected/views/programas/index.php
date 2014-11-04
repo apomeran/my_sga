@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Programas', 'url'=>array('create')),
-	array('label'=>'Manage Programas', 'url'=>array('admin')),
+	array('label'=>'Crear Programas', 'url'=>array('create')),
+	array('label'=>'Administrar Programas', 'url'=>array('admin')),
 );
 ?>
 

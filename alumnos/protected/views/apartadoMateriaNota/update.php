@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ApartadoMateriaNota', 'url'=>array('index')),
-	array('label'=>'Create ApartadoMateriaNota', 'url'=>array('create')),
-	array('label'=>'View ApartadoMateriaNota', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage ApartadoMateriaNota', 'url'=>array('admin')),
+	array('label'=>'Listar ApartadoMateriaNota', 'url'=>array('index')),
+	array('label'=>'Crear ApartadoMateriaNota', 'url'=>array('create')),
+	array('label'=>'Ver ApartadoMateriaNota', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar ApartadoMateriaNota', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update ApartadoMateriaNota <?php echo $model->id; ?></h1>
+<h1>Actualizar ApartadoMateriaNota </h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

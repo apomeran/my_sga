@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Nivel', 'url'=>array('create')),
-	array('label'=>'Manage Nivel', 'url'=>array('admin')),
+	array('label'=>'Crear Nivel', 'url'=>array('create')),
+	array('label'=>'Administrar Niveles', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Nivels</h1>
+<h1>Niveles</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

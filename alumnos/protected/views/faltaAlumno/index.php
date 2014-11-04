@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create FaltaAlumno', 'url'=>array('create')),
-	array('label'=>'Manage FaltaAlumno', 'url'=>array('admin')),
+	array('label'=>'Crear FaltaAlumno', 'url'=>array('create')),
+	array('label'=>'Administrar FaltaAlumno', 'url'=>array('admin')),
 );
 ?>
 

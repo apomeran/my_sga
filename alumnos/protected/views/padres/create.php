@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Padres'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Padres', 'url'=>array('index')),
-	array('label'=>'Manage Padres', 'url'=>array('admin')),
+	array('label'=>'Listar Padres', 'url'=>array('index')),
+	array('label'=>'Administrar Padres', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Padres</h1>
+<h1>Crear Nuevo Padre</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

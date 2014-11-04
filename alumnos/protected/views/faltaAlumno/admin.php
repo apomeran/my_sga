@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List FaltaAlumno', 'url'=>array('index')),
-	array('label'=>'Create FaltaAlumno', 'url'=>array('create')),
+	array('label'=>'Listar FaltaAlumno', 'url'=>array('index')),
+	array('label'=>'Crear FaltaAlumno', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Falta Alumnos</h1>
+<h1>Administrar Falta Alumnos</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

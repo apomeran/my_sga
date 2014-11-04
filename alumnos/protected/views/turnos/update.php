@@ -3,19 +3,19 @@
 /* @var $model Turnos */
 
 $this->breadcrumbs=array(
-	'Turnoses'=>array('index'),
+	'Turnos'=>array('index'),
 	$model->idturno=>array('view','id'=>$model->idturno),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List Turnos', 'url'=>array('index')),
-	array('label'=>'Create Turnos', 'url'=>array('create')),
-	array('label'=>'View Turnos', 'url'=>array('view', 'id'=>$model->idturno)),
-	array('label'=>'Manage Turnos', 'url'=>array('admin')),
+	array('label'=>'Listar Turnos', 'url'=>array('index')),
+	array('label'=>'Crear Turnos', 'url'=>array('create')),
+	array('label'=>'Ver Turnos', 'url'=>array('view', 'id'=>$model->idturno)),
+	array('label'=>'Administrar Turnos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Turnos <?php echo $model->idturno; ?></h1>
+<h1>Actualizar Turno</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

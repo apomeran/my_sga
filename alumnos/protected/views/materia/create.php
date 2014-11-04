@@ -4,15 +4,15 @@
 
 $this->breadcrumbs=array(
 	'Materias'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Materia', 'url'=>array('index')),
-	array('label'=>'Manage Materia', 'url'=>array('admin')),
+	array('label'=>'Listar Materias', 'url'=>array('index')),
+	array('label'=>'Administrar Materias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Materia</h1>
+<h1>Crear Materia</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

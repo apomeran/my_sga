@@ -63,7 +63,7 @@ $this->menu = array(
 				echo '<td><b>' . $nota . '</b></td>';
 		}
 		if (count($ap_aux_array) > 0)
-		 echo '<td>' . CHtml::link("Calificar", array('apartadoMateriaNota/create')) . '</td>';
+		 echo '<td>' . CHtml::link("Calificar", array('apartadoMateriaNota/create&id_alumno='.$alu->idalumno)) . '</td>';
 		echo "</tr>";
 		$j++;
 	}

@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Programas', 'url'=>array('index')),
-	array('label'=>'Create Programas', 'url'=>array('create')),
-	array('label'=>'View Programas', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Programas', 'url'=>array('admin')),
+	array('label'=>'Listar Programas', 'url'=>array('index')),
+	array('label'=>'Crear Programas', 'url'=>array('create')),
+	array('label'=>'Ver Programas', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Programas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Programas <?php echo $model->id; ?></h1>
+<h1>Actualizar Programas <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

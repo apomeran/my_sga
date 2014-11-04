@@ -3,13 +3,13 @@
 /* @var $model Nivel */
 
 $this->breadcrumbs=array(
-	'Nivels'=>array('index'),
-	'Manage',
+	'Niveles'=>array('index'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List Nivel', 'url'=>array('index')),
-	array('label'=>'Create Nivel', 'url'=>array('create')),
+	array('label'=>'Listar Niveles', 'url'=>array('index')),
+	array('label'=>'Crear Nivel', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Nivels</h1>
+<h1>Administrar Niveles</h1>
 
 <p>
 Opcionalmente puedes ingresar un operador de comparacion (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
