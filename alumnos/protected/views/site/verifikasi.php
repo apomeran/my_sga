@@ -4,9 +4,9 @@ $this->breadcrumbs=array(
     'Cambiar Contraseña',
 );
 ?>
-<h2>Hola! <?php echo $model->username;?> :v</h2>
+<h2>Hola! <br> <br><?php echo $model->username;?> </h2>
 <div class="form">
-    <h2>Cambiar Contraseña</h2>
+    <h3>Cambiar Contraseña</h3>
 <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'Ganti-form',
 )); ?>

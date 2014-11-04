@@ -28,36 +28,6 @@ $this->menu=array(
 <b><?php echo $curso->nombre ?></b>
 <br><br>
 
-<h3>-Inasistencias Actuales- </h3>
-<b><?php
-
-	if (count($inasistencias) == 0 ){
-		echo "El alumno <i>" . $alumno->nombre . " " . $alumno->apellido . "</i> no presenta inasistencias al dia de hoy <br><br>";
-	}
-	?><table>
-	<?php 
-		$j=0;
-		$total=0;
-	     foreach($inasistencias as $inasistencia){
-			
-				if ($j != 0){
-					echo "<tr>";
-				}
-					echo "<td>" . date("Y - M - d D", strtotime($inasistencia->date_inasistencia)) . "</td>";
-					$total += $inasistencia->valor;
-					echo "<td>" .  $inasistencia->valor . "</td>";
-					echo "<td>" .  CHtml::link("Eliminar",array('faltaAlumno/Mydelete&id=' .$inasistencia->id .'&redirect_id=' . $model->id)) . "</td>";
-
-				echo "</tr>";
-				$j++;
-		} 
-		echo "<td> <b>Total</b> </td>";
-		echo "<td> <b>$total</b> </td>";
-	?>
-	 </table>
-</b>
-<br><br>
-
 <h3>-Cargar Falta- </h3>
 <div class="form">
 
@@ -103,3 +73,35 @@ $this->menu=array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<h3>-Inasistencias Actuales- </h3>
+<b><?php
+
+	if (count($inasistencias) == 0 ){
+		echo "El alumno <i>" . $alumno->nombre . " " . $alumno->apellido . "</i> no presenta inasistencias al dia de hoy <br><br>";
+	}
+	?><table>
+	<?php 
+		$j=0;
+		$total=0;
+	     foreach($inasistencias as $inasistencia){
+			
+				if ($j != 0){
+					echo "<tr>";
+				}
+					echo "<td>" . date("Y - M - d D", strtotime($inasistencia->date_inasistencia)) . "</td>";
+					$total += $inasistencia->valor;
+					echo "<td>" .  $inasistencia->valor . "</td>";
+					echo "<td>" .  CHtml::link("Eliminar",array('faltaAlumno/Mydelete&id=' .$inasistencia->id .'&redirect_id=' . $model->id)) . "</td>";
+
+				echo "</tr>";
+				$j++;
+		} 
+		echo "<td> <b>Total</b> </td>";
+		echo "<td> <b>$total</b> </td>";
+	?>
+	 </table>
+</b>
+<br><br>
+
+

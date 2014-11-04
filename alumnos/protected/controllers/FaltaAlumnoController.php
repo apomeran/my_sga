@@ -97,7 +97,22 @@ class FaltaAlumnoController extends Controller {
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
+    public function actionCreate($id_alumno = null) {
+		
+		if($id_alumno != null){
+			
+			if (Alumnos::model()->findByPk($id_alumno) != null){
+				
+				$model = new FaltaAlumno;
+				$model->alumno = $id_alumno;
+				if ($model->save()) {
+                    $this->redirect(array('FaltaAlumno/createstep', 'id' => $model->id));
+                }
+			}else{
+				echo "<br> <b>Error</b> <br>El alumno con id $id_alumno no existe <br>";
+			}
+		}
+		
         if (Yii::app()->user->isPreceptor()) {
             $model = new FaltaAlumno;
 

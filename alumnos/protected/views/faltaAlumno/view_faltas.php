@@ -47,7 +47,7 @@ $this->menu = array(
 			
 		}
 		echo '<td><b>' . $total . '</b></td>';
-	    echo '<td>' . CHtml::link("Ver", array('alumnos/legajo&id=' . $alu->idalumno)) . '</td>';
+	    echo '<td>' . CHtml::link("Cargar Falta", array('faltaAlumno/create&id_alumno=' . $alu->idalumno)) . '</td>';
 		echo "</tr>";
 		$j++;
 	}

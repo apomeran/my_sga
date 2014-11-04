@@ -19679,3 +19679,73 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/my_sga/alumnos/index.php?r=padres/update&id=7
 ---
+2014/11/04 18:11:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "nfy/apartadoMateriaNota/viewall".' in C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nfy/apartadoMat...')
+#1 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=nfy/apartadoMateriaNota/viewall
+HTTP_REFERER=http://localhost/my_sga/alumnos/index.php?r=nfy
+---
+2014/11/04 18:48:26 [error] [php] Object of class JPhpMailer could not be converted to string (C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php:168)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/forgot
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php (168)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/11/04 18:52:13 [error] [php] include(Users.php): failed to open stream: No such file or directory (C:\xampp\htdocs\my_sga\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(101): spl_autoload_call()
+#1 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(110): SiteController->getToken()
+#2 unknown(0): SiteController->actionVerToken()
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CWebApplication->run()
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/vertoken/view&token=d928b06884f600c28812a2f7051a89d1
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php (101)
+in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php (110)
+in C:\xampp\htdocs\my_sga\alumnos\index.php (13)
+2014/11/04 18:52:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php:103
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(110): SiteController->getToken('d928b06884f600c...')
+#1 [internal function]: SiteController->actionVerToken('d928b06884f600c...')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('vertoken')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/vertoken/v...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/vertoken/view&token=d928b06884f600c28812a2f7051a89d1
+---
+2014/11/04 19:07:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php:103
+Stack trace:
+#0 C:\xampp\htdocs\my_sga\alumnos\protected\controllers\SiteController.php(110): SiteController->getToken('7540ba72e744589...')
+#1 [internal function]: SiteController->actionVerToken('7540ba72e744589...')
+#2 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#3 C:\xampp\htdocs\my_sga\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\my_sga\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(282): CController->run('vertoken')
+#8 C:\xampp\htdocs\my_sga\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/vertoken/v...')
+#9 C:\xampp\htdocs\my_sga\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\my_sga\alumnos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/my_sga/alumnos/index.php?r=site/vertoken/view&token=7540ba72e744589ad225b27a3c155310
+---

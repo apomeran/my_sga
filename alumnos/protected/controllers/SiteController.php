@@ -98,7 +98,7 @@ class SiteController extends Controller {
 	
 	public function getToken($token)
     {
-        $model=Users::model()->findByAttributes(array('token'=>$token));
+        $model=User::model()->findByAttributes(array('token'=>$token));
         if($model===null)
             throw new CHttpException(404,'The requested page does not exist.');
         return $model;
@@ -110,8 +110,10 @@ class SiteController extends Controller {
             $model=$this->getToken($token);
             if(isset($_POST['Ganti']))
             {
+			
                 if($model->token==$_POST['Ganti']['tokenhid']){
-                    $model->password=md5($_POST['Ganti']['password']);
+					
+                    $model->password= crypt($_POST['Ganti']['password']);
                     $model->token="null";
                     $model->save();
                     Yii::app()->user->setFlash('ganti','<b>Password has been successfully changed! please login</b>');
@@ -139,21 +141,41 @@ class SiteController extends Controller {
                 $getTime=date("H:i:s");
                 $getModel->token=md5($getToken.$getTime);
                 $namaPengirim="Owner Jsource Indonesia";
-                $emailadmin="fahmi.j@programmer.net";
-                $subjek="Resetear Clave Acceso - Instituto Amanecer / SIACCIA";
-                $setpesan="Has exitosamente reseteado tu clave de acceso<br/>
-                    <a href='http://yourdomain.com/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>";
+
+				
+				
+				
+                // $emailadmin="fahmi.j@programmer.net";
+                // $subjek="Resetear Clave Acceso - Instituto Amanecer / SIACCIA";
+                // $setpesan="Has exitosamente reseteado tu clave de acceso<br/>
+                    // <a href='http://yourdomain.com/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>";
                 if($getModel->validate())
 				{
-                $name='=?UTF-8?B?'.base64_encode($namaPengirim).'?=';
-                $subject='=?UTF-8?B?'.base64_encode($subjek).'?=';
-                $headers="From: $name <{$emailadmin}>\r\n".
-                    "Reply-To: {$emailadmin}\r\n".
-                    "MIME-Version: 1.0\r\n".
-                    "Content-type: text/html; charset=UTF-8";
+				
+				
+				Yii::import('application.extensions.phpmailer.JPhpMailer');
+				$mail = new JPhpMailer;
+				$mail->IsSMTP();
+				$mail->Host = 'mail.institutoamanecer.edu.ar';
+				$mail->SMTPAuth = true;
+				$mail->Username = 'notificaciones@institutoamanecer.edu.ar';
+				$mail->Password = '7ZKvHBed';
+				$mail->SetFrom('notificaciones@institutoamanecer.edu.ar', 'InstitutoAmanecer');
+				$mail->Subject = 'Restablecer tu clave de acceso - Instituto Amanecer SiACCIA';
+				$mail->AltBody = 'Para ver este mail, por favor utiliza un visor de emails HTML compatible!';
+				$mail->MsgHTML("Has exitosamente reseteado tu clave de acceso<br/>
+                    <a href='http://localhost/my_sga/alumnos/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>");
+				$mail->AddAddress($getEmail, 'Responsable');
+				$mail->Send();
+                // $name='=?UTF-8?B?'.base64_encode($namaPengirim).'?=';
+                // $subject='=?UTF-8?B?'.base64_encode($subjek).'?=';
+                // $headers="From: $name <{$emailadmin}>\r\n".
+                    // "Reply-To: {$emailadmin}\r\n".
+                    // "MIME-Version: 1.0\r\n".
+                    // "Content-type: text/html; charset=UTF-8";
                 $getModel->save();
                 Yii::app()->user->setFlash('forgot','Un enlace para resetear tu clave ha sido enviado a tu email');
-                mail($getEmail,$subject,$setpesan,$headers);
+                // mail($getEmail,$subject,$setpesan,$headers);
                 $this->refresh();
             }
  
