@@ -164,7 +164,7 @@ class SiteController extends Controller {
 				$mail->Subject = 'Restablecer tu clave de acceso - Instituto Amanecer SiACCIA';
 				$mail->AltBody = 'Para ver este mail, por favor utiliza un visor de emails HTML compatible!';
 				$mail->MsgHTML("Has exitosamente reseteado tu clave de acceso<br/>
-                    <a href='http://localhost/my_sga/alumnos/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>");
+                    <a href='http://institutoamanecer.edu.ar/SiACCIA/trunk/alumnos/index.php?r=site/vertoken/view&token=".$getModel->token."'>Haz click aqui para resetear tu clave</a>");
 				$mail->AddAddress($getEmail, 'Responsable');
 				$mail->Send();
                 // $name='=?UTF-8?B?'.base64_encode($namaPengirim).'?=';

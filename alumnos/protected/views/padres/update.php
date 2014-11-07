@@ -11,6 +11,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar Todos los Padres', 'url'=>array('index')),
 	array('label'=>'Cambiar contraseña', 'url'=>array('user/changepwd&id='.$model->idpadre .'&padre_search=1')),
+	array('label'=>'Enviar un email al Padre', 'url'=>array('user/sendemail&id='. $model->idpadre . '&padre=1')),
 );
 ?>
 

@@ -76,18 +76,56 @@ class QueueController extends Controller
 	 * @param string $queue_name
 	 * @param string $subscriber_id
 	 */
+	 
+	public function isValidEmail($email){ 
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
+	} 
+	 
 	public function actionMessages($queue_name, $subscriber_id=null)
 	{	
-		if (($subscriber_id=trim($subscriber_id))==='')
+		if (($subscriber_id=trim($subscriber_id))=== '')
 			$subscriber_id = null;
         list($queue, $authItems) = $this->loadQueue($queue_name, array('nfy.message.read', 'nfy.message.create'));
 		$this->verifySubscriber($queue, $subscriber_id);
-
+		
 		$formModel = new MessageForm('create');
         if ($authItems['nfy.message.create'] && isset($_POST['MessageForm'])) {
 			$formModel->attributes=$_POST['MessageForm'];
 			if($formModel->validate()) {
-				$queue->send($formModel->content, $formModel->category);
+				$uid = Yii::app()->user->id;
+				$u = User::model()->findByPk($uid);
+				Yii::import('application.extensions.phpmailer.JPhpMailer');
+				$mail = new JPhpMailer;
+				$mail->IsSMTP();
+				$mail->Host = 'mail.institutoamanecer.edu.ar';
+				$mail->SMTPAuth = true;
+				$mail->Username = 'notificaciones@institutoamanecer.edu.ar';
+				$mail->Password = '7ZKvHBed';
+				$mail->SetFrom('notificaciones@institutoamanecer.edu.ar', 'InstitutoAmanecer');
+				$mail->Subject = 'Tienes una nueva notificacion - Instituto Amanecer SiACCIA';
+				$mail->AltBody = 'Para ver este mail, por favor utiliza un visor de emails HTML compatible!';
+				$mail->MsgHTML("Has recibido un nuevo mensaje de " . $u->username . " <br/><a href='http://institutoamanecer.edu.ar/SiACCIA/'>Haz click aqui para poder visualizarlo</a>");
+			
+			
+				$condition = 'category LIKE :param1';
+				$params = array(
+						':param1' => '%' . $formModel->category . '%',
+				);
+				$matchesInCategories = NfySubscriptionCategories::model()->findAll($condition, $params);
+				
+				foreach($matchesInCategories as $m){
+					if ($m != null){
+						$subscriptor = NfySubscriptions::model()->findByPk($m->id);
+						if ($subscriptor != null){
+							$uData = User::model()->findByPk($subscriptor->subscriber_id);
+							if ($uData != null && $this->isValidEmail($uData->email)){
+								$mail->AddAddress($uData->email, 'Receptor');
+							}
+						}
+					}
+				}
+				$mail->Send();
+				$queue->send( $u->username . "/" . $formModel->content, $formModel->category);
 				$this->redirect(array('messages', 'queue_name'=>$queue_name, 'subscriber_id'=>$subscriber_id));
 			}
         }
@@ -220,18 +258,28 @@ class QueueController extends Controller
 
 
 		$data = array();
+		$data['title'] = "Mensaje de " ;
 		$data['messages'] = $this->getMessages($queue, $subscribed ? $userId : null);
-
+		foreach($data['messages'] as $key => $msg){
+			if (Yii::app()->user->username == substr($msg['title'],4)){
+				  unset($data['messages'][$key]);
+			}
+		}
 		$pollFor = $this->getModule()->longPolling;
 		$maxPoll = $this->getModule()->maxPollCount;
 		if ($pollFor && $maxPoll && empty($data['messages'])) {
 			while(empty($data['messages']) && $maxPoll) {
 				$data['messages'] = $this->getMessages($queue, $subscribed ? $userId : null);
+				foreach($data['messages'] as $key => $msg){
+					if (Yii::app()->user->username == substr($msg['title'],4)){
+						  unset($data['messages'][$key]);
+					}
+				}			
+
 				usleep($pollFor * 1000);
 				$maxPoll--;
 			}
 		}
-
         if(empty($data['messages'])) {
             header("HTTP/1.0 304 Not Modified");
             exit();
@@ -254,6 +302,7 @@ class QueueController extends Controller
 	 */
     protected function getMessages($queue, $userId)
     {
+		
 		$messages = $queue->receive($userId);
 
         if (empty($messages)) {
@@ -265,9 +314,11 @@ class QueueController extends Controller
 
         $results = array();
         foreach($messages as $message) {
+			$content_msg = strstr($message->body, '/');
+			$sender_name = strstr($message->body, '/', true);
             $result = array(
-                'title'=>$queue->label,
-                'body'=>$message->body,
+                'title'=>"De: " . $sender_name, //SEGUIR ACA
+                'body'=>substr($content_msg, 1),
             );
             if ($soundUrl!==null) {
                 $result['sound'] = $soundUrl;

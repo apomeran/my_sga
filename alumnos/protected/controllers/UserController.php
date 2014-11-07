@@ -28,11 +28,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','queue','view', 'changepwd', 'create', 'update'),
+				'actions'=>array('index','queue','view', 'changepwd', 'create', 'update','sendemail'),
 				'users'=>array('admin'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('account', 'changepwd', 'changedata'),
+				'actions'=>array('account', 'changepwd', 'changedata', 'sendemail'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -52,6 +52,23 @@ class UserController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+	
+	public function actionSendemail($id, $padre=null, $preceptor=null)
+	{
+		echo "not done"; // SEGUIR DESDE ACA
+		if (isset($padre)){
+		}
+		if (isset($preceptor)){
+		}
+		if (isset($_POST['User'])) {
+            $model->attributes = $_POST['Padres'];
+            if ($model->save())
+                $this->redirect(array('account'));
+        }
+		$this->render('sendemail',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
