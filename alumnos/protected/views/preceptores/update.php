@@ -14,6 +14,7 @@ $this->menu=array(
 	array('label'=>'Ver Preceptores', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
 	array('label'=>'Cambiar contraseña para el Preceptor', 'url'=>array('user/changepwd&id='.$model->id .'&preceptor_search=1')),
+	array('label'=>'Enviar un email al Preceptor', 'url'=>array('user/sendemail&id='. $model->id . '&preceptor=1')),
 );
 ?>
 

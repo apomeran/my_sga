@@ -22,10 +22,8 @@ if(Yii::app()->user->isGuest){
 	// Yii::app()->queue_preceptores->subscribe(Yii::app()->user->getId());
 	echo '<img style="height:100px;" src="http://simpleicon.com/wp-content/uploads/user1.png" />';
 }
-
 if (Yii::app()->user->isExclusivePreceptor()){
-	$preceptor = Preceptores::model()->findByPk(Yii::app()->user->id);
-	
+	$preceptor = Preceptores::model()->findByAttributes(array('usuario' => Yii::app()->user->id));
 	if ($preceptor != null){
 		$curso = Curso::model()->findByPk($preceptor->curso);
 		echo '<br>';

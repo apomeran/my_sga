@@ -58,18 +58,42 @@ class UserController extends Controller
 	
 	public function actionSendemail($id, $padre=null, $preceptor=null)
 	{
-		echo "not done"; // SEGUIR DESDE ACA
 		if (isset($padre)){
+			$user = Padres::model()->findByPk($id)->usuario;
+			$to = "padre";
 		}
 		if (isset($preceptor)){
+			$user = Preceptores::model()->findByPk($id)->usuario;
+			$to = "preceptor";
+
 		}
-		if (isset($_POST['User'])) {
-            $model->attributes = $_POST['Padres'];
-            if ($model->save())
-                $this->redirect(array('account'));
+		$model = $this->loadModel($user);
+	
+		if ($model != null && isset($_POST['emailcontent'])) {
+			$sender = $this->loadModel(Yii::app()->user->id);
+			Yii::import('application.extensions.phpmailer.JPhpMailer');
+			$mail = new JPhpMailer;
+			$mail->IsSMTP();
+			$mail->Host = 'mail.institutoamanecer.edu.ar';
+			$mail->SMTPAuth = true;
+			$mail->Username = 'notificaciones@institutoamanecer.edu.ar';
+			$mail->Password = '7ZKvHBed';
+			$mail->SetFrom('notificaciones@institutoamanecer.edu.ar', 'InstitutoAmanecer');
+			$mail->Subject = 'Has recibido un mensaje del usuario ' . $sender->username;
+			$mail->AltBody = $_POST['emailcontent'];
+			$mail->MsgHTML('<b>' . $_POST['emailcontent'] .'</b><br><br> [ Para poder responderle puedes enviarle un mensaje a '. $sender->email .'  traves del sitio http://institutoamanecer.edu.ar/SiACCIA/ ]');
+			$mail->AddAddress($model->email, 'Responsable');
+			$mail->Send();
+		
+            $this->render('sendemailsuccess',array(
+			'model'=>$model,
+			));
+			die;
         }
 		$this->render('sendemail',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'to' => $to,
+			
 		));
 	}
 

@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Actualizar Preceptores', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Eliminar Preceptores', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar este item?')),
 	array('label'=>'Administrar Preceptores', 'url'=>array('admin')),
+	array('label'=>'Enviar un email al Preceptor', 'url'=>array('user/sendemail&id='. $model->id . '&preceptor=1')),
 );
 ?>
 

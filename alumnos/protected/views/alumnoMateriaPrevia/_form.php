@@ -6,7 +6,14 @@
 <?php 
 		$curso_id = Yii::app()->user->getPreceptorCursos()[0]->cursoid; 
 ?>
-<?php $materias = CursoMateria::model()->findAllByAttributes(array(),"curso = " . $curso_id);
+<?php 
+
+if (Yii::app()->user->isExclusiveAdmin()){
+$materias = CursoMateria::model()->findAll();
+}
+else{
+$materias = CursoMateria::model()->findAllByAttributes(array(),"curso = " . $curso_id);
+}
 		$i = 0; $str = "";
 		foreach ($materias as $m){
 			if($i!=0)
@@ -14,7 +21,6 @@
 			$str .=  $m->materia ;
 			$i++;
 		}
-		
 if (count($materias) > 0){		
 ?>
 
@@ -37,14 +43,30 @@ if (count($materias) > 0){
 		<?php echo $form->labelEx($model,'alumno'); ?>
 		
 		  
-		<?php echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAllByAttributes(array(),"cursoactualid=" . $curso_id ),'idalumno','fullname'));?>		
+		<?php 
+		
+		if (Yii::app()->user->isExclusiveAdmin()){
+			echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAll(),'idalumno','fullname'));
+		}
+		else{
+			echo $form->dropDownList($model,'alumno',CHtml::listData(Alumnos::model()->findAllByAttributes(array(),"cursoactualid=" . $curso_id ),'idalumno','fullname'));
+		}
+		
+		
+		?>		
 		<?php echo $form->error($model,'alumno'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'materia'); ?>
 		
-		<?php echo $form->dropDownList($model,'materia',CHtml::listData(Materia::model()->findAllByAttributes(array(), "id IN (" . $str . ")"),'id','nombre'));?>		
+		<?php 
+		if (Yii::app()->user->isExclusiveAdmin()){
+			echo $form->dropDownList($model,'materia',CHtml::listData(Materia::model()->findAll(),'id','nombre'));
+		}else{
+			echo $form->dropDownList($model,'materia',CHtml::listData(Materia::model()->findAllByAttributes(array(), "id IN (" . $str . ")"),'id','nombre'));
+		}
+		?>		
 		<?php echo $form->error($model,'materia'); ?>
 	</div>
 

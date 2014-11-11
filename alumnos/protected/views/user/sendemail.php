@@ -17,13 +17,13 @@ $this->menu=array(
 );
 ?>
 
-<h1>Ver Usuario <?php echo $model->username; ?></h1>
+<h1>Enviar un mail al Usuario <?php echo $model->username; ?></h1>
+<h3>E-Mail: <?php echo $model->email; ?></h3>
+<?php echo '
+<form action="/my_sga/alumnos/index.php?r=user/sendemail&id=' . $model->id . '&'. trim($to).'=1" method="POST">
+	Mensaje:
+	<input type="textarea" name="emailcontent"></input>
+	<input type="submit"/>
+</form>
+';
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'username',
-		'email',
-		'rol0.nombre',
-	),
-)); ?>
