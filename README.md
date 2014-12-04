@@ -1,8 +1,8 @@
-my_sga
+'My_Sga'
 ======
 
-Yii MVC - 
+Yii - PHP MVC Framework 
 
-WebApp for managing students in Instituto Amanecer (Primary School)
+Example webApp for Managing Students @ (Primary/High School)
 
-Sistema Gestion Alumnos
+
